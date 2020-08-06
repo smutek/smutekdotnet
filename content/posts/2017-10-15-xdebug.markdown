@@ -59,7 +59,7 @@ Simply put, Xdebug is a tool to help us understand our PHP codes. It provides fa
 
 
 
-![](https://smutek.net/app/uploads/2017/10/bug.jpg)
+![](/img/2017/10/bug.jpg)
 
 
 We all know what a bug is, but a cool little historical tidbit follows.

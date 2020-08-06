@@ -19,7 +19,7 @@ Pretty cool, I think I'm going to get mine in blue! :)
 
 [CommitPrint](https://commitprint.com/)
 
-![github heatmap](https://smutek.net/app/uploads/2019/06/smutek.jpg)
+![github heatmap](/img/2019/06/smutek.jpg)
 
 
 - via Hacker News

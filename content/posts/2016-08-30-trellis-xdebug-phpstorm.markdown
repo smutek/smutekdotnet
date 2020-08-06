@@ -16,10 +16,12 @@ tags:
 - Xdebug
 ---
 
+{{< vimeo 180681909 >}}
+
 I love running Xdebug through PhpStorm's built in debugger but have had the hardest time getting it to work with Trellis. I have no problem getting it going with VVV but have never been able to get my path mappings correct in Trellis.
 
 Well, turns out it's really simple with PhpStorm's Zero-Configuration debugging. Here's the [JetBrains documentation](https://www.jetbrains.com/help/phpstorm/2016.2/zero-configuration-debugging.html) on that - but the short of it is:
-
+=
 
 
 

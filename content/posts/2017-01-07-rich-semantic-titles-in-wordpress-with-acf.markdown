@@ -68,7 +68,7 @@ So for the backend, what I've started doing is setting up an ACF field group cal
 
 To the end user it looks something like this - 
 
-![Animated gif showing ACF back end](https://smutek.net/app/uploads/2017/01/example.gif)
+![Animated gif showing ACF back end](/img/2017/01/example.gif)
 
 
 The logic is simple and can go right in the template file, but I prefer to drop it in a function. It just needs to get the page title, check if we are doing an override, generate the appropriate markup if so, and return the results to the template.

@@ -11,7 +11,7 @@ url: /about-me/
 
 
 
-![Headshot for Jimmy Smutek](https://smutek.net/wp-content/uploads/2015/02/headshot-web-300x300.jpeg)
+![Headshot for Jimmy Smutek](/static/img/2015/02/headshot-web.jpeg)
 
 
 I’m a web developer from Baltimore Maryland. I work at Johns Hopkins, [Bloomberg School of Public Health](https://jhsph.edu) as Sr. Programmer Analyst on the Communications & Marketing team, in the Department of External Affairs. Before that I worked at [Ainsley Agency](https://ainsleyagency.com), first as a Web Developer and eventually as Lead Web Developer.

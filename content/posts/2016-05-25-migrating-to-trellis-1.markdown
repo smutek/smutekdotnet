@@ -19,16 +19,17 @@ tags:
 
 ### Pt. 1 - Setting up Trellis & Bedrock locally
 
+{{<vimeo 167991973>}}
 
 This is the first in a series of screencasts that will document the process of moving a WordPress website (this website) from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let's Encrypt.
 
 In this screencast I'll get my local development environment setup with Trellis & Bedrock.
 
-[In part 2](https://smutek.net/migrating-to-trellis-2/) I get my theme and plugins installed, and migrate my data into my development environment.
+[In part 2](/migrating-to-trellis-2/) I get my theme and plugins installed, and migrate my data into my development environment.
 
-[In part 3](https://smutek.net/shared-hosting-to-roots-stack-part-3/)  I setup my Digital Ocean droplet, prepare my project, provision the server and deploy the site. 
+[In part 3](/shared-hosting-to-roots-stack-part-3/)  I setup my Digital Ocean droplet, prepare my project, provision the server and deploy the site. 
 
 Links:
-[Trellis](https://roots.io/trellis/)
-[Bedrock](https://roots.io/bedrock/)
-[Sage](https://roots.io/sage/)
+- [Trellis](https://roots.io/trellis/)
+- [Bedrock](https://roots.io/bedrock/)
+- [Sage](https://roots.io/sage/)

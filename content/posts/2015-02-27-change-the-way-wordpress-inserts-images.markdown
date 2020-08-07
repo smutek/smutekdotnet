@@ -26,13 +26,13 @@ Part of a series of posts from my days of self employment.
 
 This week I want to do a quick tip to show you how to change the way that WordPress inserts images. What I mean by this is that, by default, every time you insert an image into one of your WordPress posts, WordPress will default to linking to the image.
 
-[caption id="attachment_786" align="alignnone" width="600"]![Image of the default insert media settings.](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214861/ScreenShot-MediaFile_wqgs3x.jpg)
-This is the default setting.[/caption]
+![Image of the default insert media settings.](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214861/ScreenShot-MediaFile_wqgs3x.jpg)
+This is the default setting.
 
 This is fine if this is the way you like your WordPress site to run. If you don't, and if you're like me, then you will find yourself changing this setting to none every time you insert an image into one of your posts.
 
-[caption id="attachment_790" align="alignnone" width="600"]![Image of the insert media settings set to none.](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214861/ScreenShot-NoLink_olhcq3.jpg)
-This is what I want, by default, every time.[/caption]
+![Image of the insert media settings set to none.](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214861/ScreenShot-NoLink_olhcq3.jpg)
+This is what I want, by default, every time.
 
 Also, if you are like me then you probably have been driving yourself crazy because you forget to change this setting. The result, for me, is that every time I insert an image I have to delete it, reset the option, and reinsert the image. Every. Single. Time. Almost...
 
@@ -54,7 +54,7 @@ Just log in to your WP Admin screen and point your browser at this url -
 
 
     
-    http://example.com/wp-admin/options.php
+    https://your-site.whatever/wp-admin/options.php
 
 
 
@@ -78,8 +78,8 @@ This field has a few options, with the default being "file".
 
 Just delete the word file, and type in the word none, just like this.
 
-[caption id="attachment_795" align="alignnone" width="927"]![Image of image link type changed to none](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214860/ScreenShot-ChangedSettings_ruayeq.jpg)
-Just type in none, as shown[/caption] 
+![Image of image link type changed to none](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214860/ScreenShot-ChangedSettings_ruayeq.jpg)
+Just type in none, as shown 
 
 Scroll down to the bottom of the page, click "save settings", and that's it.
 

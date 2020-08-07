@@ -9,7 +9,8 @@ categories:
 - Web Design
 ---
 
-I no longer use MAMP, I suggest checking out something like [VVV](https://smutek.net/setting-up-vvv-for-wordpress-development/), or [Trellis](https://smutek.net/migrating-to-trellis-1/).
+I no longer use MAMP, I suggest checking out something like [VVV](/setting-up-vvv-for-wordpress-development/), or
+ [Trellis](/migrating-to-trellis-1/).
 
 
 
@@ -43,6 +44,7 @@ Okay, first, what is MAMP? MAMP stands for Mac, Apache, Mysql, PHP. The short of
 
 ### tl;dr - The Video Version
 
+{{<vimeo 64028966>}}
 
 [Here's the "too long; didn't read" video version](https://vimeo.com/64028966). Actually, the video is kind of long too. It seems that I just can't help being long winded at times. If there's something in the video that doesn't make sense just refer to the text below or drop me a comment or an email and I'll do my best to sort you out. Really, this is a pretty simple process. Once you've done it once, it's a snap.
 

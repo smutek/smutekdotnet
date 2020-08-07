@@ -14,7 +14,7 @@ tags:
 - snippets
 ---
 
-<code class="language-php">
+{{<highlight php>}}
     /**
      * Output Post Format icons
      * 
@@ -51,8 +51,7 @@ tags:
       // return the output
       return $output;
     }
-    </code>
-
+    {{</highlight>}}
 
 
 [Github Gist](https://gist.github.com/smutek/f15e7723db1e5e84c23b)

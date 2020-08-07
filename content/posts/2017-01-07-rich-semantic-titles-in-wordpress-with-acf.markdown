@@ -72,71 +72,51 @@ To the end user it looks something like this -
 
 
 The logic is simple and can go right in the template file, but I prefer to drop it in a function. It just needs to get the page title, check if we are doing an override, generate the appropriate markup if so, and return the results to the template.
-  
+      
+{{<highlight php>}}
+/**
+ * Title override
+ * @return string - title
+ */
+function overrideTitle()
+{
+  // true/false 
+  $override = get_field('title_override');
+  $title    = get_the_title();
+  if ($override) {
+    // If using the override, get the title description
+    $description = get_field('title_description');
+    // Setup the modified markup
+    $output = '<span class="sr-only">' . $title . ': </span><small class="title-description">' . $description . '</small>';
+  } else {
+    // Not doing an override, use the regular title
+    $output = $title;
+  }
 
-    
-    <code class="language-php">
-    
-    /**
-     * Title override
-     * @return string - title
-     */
-    function overrideTitle()
-    {
-      // true/false 
-      $override = get_field('title_override');
-      $title    = get_the_title();
-      if ($override) {
-        // If using the override, get the title description
-        $description = get_field('title_description');
-        // Setup the modified markup
-        $output = '<span class="sr-only">' . $title . ': </span><small class="title-description">' . $description . '</small>';
-      } else {
-        // Not doing an override, use the regular title
-        $output = $title;
-      }
-    
-      // return the output to the template
-      return $output;
-    }
-    </code>
-
-
-  
-
+  // return the output to the template
+  return $output;
+}
+{{</highlight>}}
 
 Note the sr-only class; We use a lot of [Bootstrap](http://getbootstrap.com/), and in this case I'm using Bootstraps sr-only class to hide the "About:" keyword portion of the title. This way it doesn't display in the browser, but it's still visible to screen-readers and bots. Aside from that, the description is still wrapped in a _<small>_ tag which, aside from the semantic meaning it provides, also has the effect of making our text smaller. So it needs to be styled to match its parent. This is simple using the _@extend_ directive in Sass. 
-
-
     
-    <code class="language-scss">
-    h1 .override-title {
-      @extend h1;
-    }
-    </code>
-
-
-  
-
+{{<highlight scss>}}
+h1 .override-title {
+  @extend h1;
+}
+{{</highlight>}}
 
 Then in my template I call the title like this - 
-
-
-    
-    <code class="language-php">
-    <h1><?= overrideTitle(); ?></h1>
-    </code>
-
-
-
+   
+{{<highlight php>}}
+<h1><?= overrideTitle(); ?></h1>
+{{</highlight>}}
 
 Now if there's no override the browser gets the regular title, but if override returns true the browser gets -
-
-
     
-    <code class="language-html">
-    <h1><span class="sr-only">About: </span><small class="override-title">A Safe Haven for Hermit Crabs Since 1861</small></h1>
-    </code>
+{{<highlight html>}}
+<h1><span class="sr-only">About: </span><small class="override-title">A Safe Haven for Hermit Crabs Since 1861</small></h1>
+{{</highlight>}}
 
 
 
@@ -147,11 +127,7 @@ That's it, screen readers and search-bots get rich, valid, semantic, and fully d
 
 Good stuff!
 
-
-
 * * *
-
-
 
 Resources -
 

@@ -23,14 +23,6 @@ My slides are here:
 
 And notes on my presentation are below.
 
-
-
-## 
-
-
-
-
-
 ## What is Xdebug
 
 
@@ -39,25 +31,11 @@ Xdebug is a PHP extension that provides expanded profiling and tracing capabilit
 
 Simply put, Xdebug is a tool to help us understand our PHP codes. It provides facilities for:
 
-
-
-
-      * Debugging (what went wrong?)
-      * Profiling (how efficient is my code?)
-      * Tracing (how were things executed?)
-
-
-
-
-### 
-
-
-
-
+* Debugging (what went wrong?)
+* Profiling (how efficient is my code?)
+* Tracing (how were things executed?)
 
 ### What is a bug?
-
-
 
 ![](/img/2017/10/bug.jpg)
 
@@ -81,25 +59,13 @@ Grade Hoper, by the way, did a lot of awesome things, including earning a PhD in
 
 ## Why use Xdebug?
 
-
-
 Xdebug allows us to view, step through, and manipulate our code while it is being executed.
 
 At the end of the day, on the back end, most of what we are doing involves grabbing some bit of data and displaying it in some way.
 
 Xdebug helps with this by providing insight and clarity into what’s going on with our program as it happens. I sometimes find myself running my debugger when there’s no bugs to debug - I run it simply to see what data is available to me to use.
 
-
-
-## 
-
-
-
-
-
 ## When not to use Xdebug
-
-
 
 **Don’t use Xdebug on a public facing server**. It is processor intensive and can be a security risk.
 
@@ -109,11 +75,7 @@ More importantly, Xdebug requires no encryption or authentication by default and
 
 It is strictly a development tool.
 
-
-
 ## How to get Xdebug?
-
-
 
 If you use Vagrant, Xdebug comes preinstalled on Trellis, by the Roots team, and on VVV.
 
@@ -123,66 +85,40 @@ Xdebug is also preinstalled on Local, by Flywheel, which is available on OS X an
 
 You can also install it yourself on MAMP, XAMP, etc. or wherever works best for you.
 
-[Trellis | WordPress LEMP Stack | Roots](https://roots.io/trellis/)
-[Varying Vagrant Vagrants](https://varyingvagrantvagrants.org/)
-[Local by Flywheel | Local WordPress development made simple](https://local.getflywheel.com/)
-[PuPHPet - Online GUI configurator for Puppet & Vagrant](https://puphpet.com/)
-[Xdebug: Documentation](https://xdebug.org/docs/install)
-
-
-
-## 
-
-
-
-
+- [Trellis | WordPress LEMP Stack | Roots](https://roots.io/trellis/)
+- [Varying Vagrant Vagrants](https://varyingvagrantvagrants.org/)
+- [Local by Flywheel | Local WordPress development made simple](https://local.getflywheel.com/)
+- [PuPHPet - Online GUI configurator for Puppet & Vagrant](https://puphpet.com/)
+- [Xdebug: Documentation](https://xdebug.org/docs/install)
 
 ## How to use?
 
-
-
 There’s tons of ways to run Xdebug. My preference is PhpStorm, but Xdebug clients are also available for:
 
-**PhpStorm**
-[PhpStorm: Lightning-Smart IDE for PHP Programming by JetBrains](https://www.jetbrains.com/phpstorm/)
-
-**Sublime Text:**
-[Xdebug - Packages - Package Control](https://packagecontrol.io/packages/Xdebug)
-
-**Atom**
-[php-debug](https://atom.io/packages/php-debug)
+- **PhpStorm** [PhpStorm: Lightning-Smart IDE for PHP Programming by JetBrains](https://www.jetbrains.com/phpstorm/)
+- **Sublime Text:** [Xdebug - Packages - Package Control](https://packagecontrol.io/packages/Xdebug)
+- **Atom** [php-debug](https://atom.io/packages/php-debug)
 
 See [Xdebug: Documentation](https://xdebug.org/docs/remote) for a more comprehensive, but not complete, list of Xdebug clients.
 
-
-
 ### Browser extensions
-
-
 
 I’ve found the following browser extensions to be super helpful, I prefer Xdebug helper.
 
 **Xdebug Helper**
-Firefox: [Xdebug Helper for Firefox :: Add-ons for Firefox](https://addons.mozilla.org/en-US/firefox/addon/xdebug-helper-for-firefox/)
-Chrome: [Xdebug helper - Chrome Web Store](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en)
+- Firefox: [Xdebug Helper for Firefox :: Add-ons for Firefox](https://addons.mozilla.org/en-US/firefox/addon/xdebug
+-helper-for-firefox/)
+- Chrome: [Xdebug helper - Chrome Web Store](https://chrome.google.com/webstore/detail/xdebug-helper
+/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en)
 
 **The Easiest Xdebug**
-Firefox: [The easiest Xdebug :: Add-ons for Firefox](https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/)
+- Firefox: [The easiest Xdebug :: Add-ons for Firefox](https://addons.mozilla.org/en-US/firefox/addon/the-easiest
+-xdebug/)
 
 **Jetbrains Browser Plugins**
-[Xdebug & Zend Debugger Bookmarklets Generator - Marklets | PhpStorm](https://www.jetbrains.com/phpstorm/marklets/)
-
-
-
-### 
-
-
-
-
+- [Xdebug & Zend Debugger Bookmarklets Generator - Marklets | PhpStorm](https://www.jetbrains.com/phpstorm/marklets/)
 
 ### Project Setup
-
-
 
 I’m not going to run through project setup here but I did a post recently on setting Xdebug up in PhpStorm on a Trellis VM.
 
@@ -192,17 +128,9 @@ The principles are the same on any environment, the only variable being the IDE 
 
 Note - if you get zero hits when searching `xdebug` then Xdebug is not installed or configured correctly on your server.
 
-
-
 ## Examples
 
-
-
-
-
 ### Example 1
-
-
 
 I was tasked with making a Gravity Form send different emails depending on whether a file was attached or not.
 
@@ -228,15 +156,9 @@ From there I was able to set up and manipulate a hidden field in my form which c
 
 ### Example 2
 
-
-
 Example 2 was less specific, and simple by intent, but I hoped to illustrate how Xdebug can help to keep track of what’s going on while building complex data structures.
 
-
-
 ### Closing
-
-
 
 Truthfully, Xdebug has helped me out in so many different ways that it’s nearly impossible to pick which examples to show.
 

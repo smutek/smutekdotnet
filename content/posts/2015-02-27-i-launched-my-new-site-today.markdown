@@ -32,7 +32,8 @@ The audience I seek to serve is small business owners who would like help with t
 
 My goal is to provide value to, and build relationships with anyone who is running a business and who has a web presence. I'll be posting weekly blog posts, on Friday afternoons, with various WordPress and web design related tips and tricks. I plan to cover everything from basic day to day stuff, like this weeks post, to super geeky coding tutorials. 
 
-I have a large list of ideas for posts but if you have an idea for something you'd like me to cover please hit my [contact form](https://smutek.net/contact/) and send a suggestion.
+I have a large list of ideas for posts but if you have an idea for something you'd like me to cover please hit my
+ [contact form](/contact/) and send a suggestion.
 
 
 
@@ -40,7 +41,11 @@ I have a large list of ideas for posts but if you have an idea for something you
 
 
 
-I've been working as a professional designer since 2003. My background is in print design and I used to do lot of posters, logos, brochures, small websites and just about everything else under the sun. I love technology and I've always been an avid self teacher, so eventually I moved from print design to web design. You can read more in my [about](https://smutek.net/about/about-me/) section, but the main point is that I was laid off from my job doing WordPress work back in August of 2013 and I've been self employed ever since.
+I've been working as a professional designer since 2003. My background is in print design and I used to do lot of
+ posters, logos, brochures, small websites and just about everything else under the sun. I love technology and I've
+  always been an avid self teacher, so eventually I moved from print design to web design. You can read more in my
+   [about](/about-me/) section, but the main point is that I was laid off from my job doing WordPress work back in
+    August of 2013 and I've been self employed ever since.
 
 
 

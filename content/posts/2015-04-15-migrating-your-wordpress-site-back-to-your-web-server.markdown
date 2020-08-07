@@ -15,7 +15,7 @@ tags:
 - plugins
 ---
 
-In my last post I covered [how to get a copy of your WordPress site running on your computer](https://smutek.net/running-your-wordpress-site-from-your-computer/), in this post I will cover migrating your WordPress site back to your web server.
+In my last post I covered [how to get a copy of your WordPress site running on your computer](/running-your-wordpress-site-from-your-computer/), in this post I will cover migrating your WordPress site back to your web server.
 
 <!-- more -->
 

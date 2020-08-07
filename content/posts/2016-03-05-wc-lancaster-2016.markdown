@@ -21,13 +21,14 @@ I was super honored to speak at WordCamp Lancaster today! My topic was WordPress
 
 Here's some resources that I've found helpful -
 
-[Jeffery Way's PHPStorm series on Laracasts](https://laracasts.com/series/how-to-be-awesome-in-phpstorm)
+- [Jeffery Way's PHPStorm series on Laracasts](https://laracasts.com/series/how-to-be-awesome-in-phpstorm)
 
-[Good article on the Delicious Brains blog](https://deliciousbrains.com/how-we-use-phpstorm-wordpress-development/)
+- [Good article on the Delicious Brains blog](https://deliciousbrains.com/how-we-use-phpstorm-wordpress-development/)
 
-[PHP Storm color schemes, by Dayle Rees](https://github.com/daylerees/colour-schemes/tree/master/jetbrains) ([demos here](http://daylerees.github.io/))
+- [PHP Storm color schemes, by Dayle Rees](https://github.com/daylerees/colour-schemes/tree/master/jetbrains) ([demos
+ here](http://daylerees.github.io/))
 
-[Using xDebug & PHPStorm, by Aaron Holbrook](https://www.youtube.com/watch?v=jkv0dzW3IM4) (YouTube)
+- [Using xDebug & PHPStorm, by Aaron Holbrook](https://www.youtube.com/watch?v=jkv0dzW3IM4) (YouTube)
 
-[caption id="attachment_1136" align="alignnone" width="1024"]![Photo of me speaking at WordCamp Lancaster](https://smutek.net/wp-content/uploads/2016/03/wc-lanc.jpg)
-Geek city! :) Photo by my friend Solomon Scott[/caption]
+![Photo of me speaking at WordCamp Lancaster](/img/2016/03/wc-lanc.jpg)
+Geek city! :) Photo by my friend Solomon Scott

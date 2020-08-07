@@ -21,20 +21,15 @@ tags:
 I love running Xdebug through PhpStorm's built in debugger but have had the hardest time getting it to work with Trellis. I have no problem getting it going with VVV but have never been able to get my path mappings correct in Trellis.
 
 Well, turns out it's really simple with PhpStorm's Zero-Configuration debugging. Here's the [JetBrains documentation](https://www.jetbrains.com/help/phpstorm/2016.2/zero-configuration-debugging.html) on that - but the short of it is:
-=
 
-
-
-	  * Install a bookmarklet or browser extension. I use The easiest Xdebug on Firefox, and Xdebug Helper on Chrome.
+* Install a bookmarklet or browser extension. I use The easiest Xdebug on Firefox, and Xdebug Helper on Chrome.
  
-	  * On your browser extension, set the IDE key to _XDEBUG_
-	  * Set a breakpoint somewhere
+* On your browser extension, set the IDE key to _XDEBUG_
+* Set a breakpoint somewhere
 
-	  * Tell PhpStorm to start listening for connections
+* Tell PhpStorm to start listening for connections
 
-	  * Start the debugger on your browser and refresh the page
-
-
+* Start the debugger on your browser and refresh the page
 
 The first time you run the debugger PhpStorm will pop up a window showing the path mappings it has detected. These are fine to select as defaults. 
 
@@ -42,14 +37,13 @@ Also, I've found that eventually the browser will time out, however this does no
 
 Links - 
 
+* [PhpStorm Zero-Configuration Debugging](https://www.jetbrains.com/help/phpstorm/2016.2/zero-configuration-debugging.html)
 
-	  * [PhpStorm Zero-Configuration Debugging](https://www.jetbrains.com/help/phpstorm/2016.2/zero-configuration-debugging.html)
+* [Easiest Xdebug (Firefox)](https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/)
 
-	  * [Easiest Xdebug (Firefox)](https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/)
+* [Xdebug Helper (Chrome)](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en)
 
-	  * [Xdebug Helper (Chrome)](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en)
-
-	  * [Trellis ](https://roots.io/trellis/)
+* [Trellis ](https://roots.io/trellis/)
 
 
 

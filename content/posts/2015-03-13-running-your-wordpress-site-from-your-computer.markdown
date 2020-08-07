@@ -25,7 +25,7 @@ Part of a series of posts from my days of self employment.
 
 
 
-In last weeks post I covered [how to set up a WordPress backup plugin](https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/) and how to have your backups sync to your Dropbox account. This week I'm going to cover how to take one of those full site backups and get a copy of your WordPress website running on your computer.
+In last weeks post I covered [how to set up a WordPress backup plugin](/how-to-set-up-a-wordpress-backup-plugin/) and how to have your backups sync to your Dropbox account. This week I'm going to cover how to take one of those full site backups and get a copy of your WordPress website running on your computer.
 
 
 
@@ -247,8 +247,8 @@ Once the plugin is installed and activated, go to the plugin settings page (sett
 
 Switch back over to your live site (I like to keep two browser tabs open for this, one with my live site, and one with my local site). Copy the existing prefix from your live site, and switch back over to your local site. 
 
-[caption id="attachment_871" align="alignnone" width="1140"]![Fields correctly filled out inChange DB Prefix plugin](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214839/change-db-prefix-filled-correctly_x21rzt.jpg)
-Here's the fields filled out correctly on my Local site![/caption]
+![Fields correctly filled out inChange DB Prefix plugin](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214839/change-db-prefix-filled-correctly_x21rzt.jpg)
+Here's the fields filled out correctly on my Local site!
 
 Now, on your local site, and with the table prefix copied, paste the value into the New Prefix field, as shown, and click save.  
 
@@ -279,8 +279,8 @@ This is relatively straightforward if you have already setup a backup and synced
 
 Your backup file is in an archive, most likely with the file extension .gz 
 
-[caption id="attachment_875" align="alignnone" width="1140"]![Image of backup up wp-content folder](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214837/backup-wp-content_rxzd9l.jpg)
-This backup of the wp-content folder is what we need.[/caption]
+![Image of backup up wp-content folder](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214837/backup-wp-content_rxzd9l.jpg)
+This backup of the wp-content folder is what we need.
 
 Once you've copied the archive to your computer go ahead and double click it to open it. Inside of this folder you'll see a subfolder called wp-content - this folder contains all your media, themes, and plugins.
 
@@ -311,8 +311,8 @@ Still with me? Good, because we are just about finished. Now that we have a copy
 
 On both the local and the live site, install the free WP Migrate DB plugin, by the good folks at Delicious Brains. From the install plugins page, just search for WP Migrate DB, it should be the first option, as shown above. Install this plugin and activate it on both sites. 
 
-[caption id="attachment_877" align="alignnone" width="1140"]![WP Migrate DB Plugin migrate page](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214836/wp-migrate-db-plugin-migrate-page_q70ytq.jpg)
-Here's the plugin running on my local site.[/caption]
+![WP Migrate DB Plugin migrate page](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214836/wp-migrate-db-plugin-migrate-page_q70ytq.jpg)
+Here's the plugin running on my local site.
 
 On both sites, with the WP Migrate DB plugin activated, go to tools/Migrate DB
 
@@ -328,8 +328,8 @@ On your local site, go ahead and copy the first value from the Find fields. This
 
 Next, switch back to your local site, copy the second value from the find fields, this is the file path. With the value copied, switch to your live site and paste the value into the second Replace field (new file path) on your live site.
 
-[caption id="attachment_878" align="alignnone" width="1140"]![Migrate DB Plugin with all fields filled](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214836/wp-migrate-db-plugin-fields-filled_c42ebx.jpg)
-Here's what the plugin looks like on my Live site once I've filled in all of the fields.[/caption]
+![Migrate DB Plugin with all fields filled](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214836/wp-migrate-db-plugin-fields-filled_c42ebx.jpg)
+Here's what the plugin looks like on my Live site once I've filled in all of the fields.
 
 When you're done, it should look something like the image above.
 
@@ -358,13 +358,13 @@ You can go ahead and close your live site, we're finished with it.
 
 We're in the home stretch here. No, really, I promise! Now that you've downloaded the database we have to import it into our local site. Switch back to your Desktop Server program.
 
-[caption id="attachment_863" align="alignnone" width="886"]![Desktop Server configuration complete](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214844/desktop-server-local-url_nux5p9.jpg)
-Here's where we left off with Desktop Server[/caption]
+![Desktop Server configuration complete](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214844/desktop-server-local-url_nux5p9.jpg)
+Here's where we left off with Desktop Server
 
 If your Desktop Server app still looks like this, just click the next button. 
 
-[caption id="attachment_860" align="alignnone" width="886"]![Desktop Server Create a new site](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214847/desktop-server-create-new-site_cowzhz.jpg)
-Back to the start page. Click that button in the lower left, that says "Sites"[/caption]
+![Desktop Server Create a new site](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214847/desktop-server-create-new-site_cowzhz.jpg)
+Back to the start page. Click that button in the lower left, that says "Sites"
 
 Now we are back to the start page. In the lower left hand corner of the Desktop Server window, click the button that is labeled "Sites". Your browser should open a page that looks something like the image below.
 
@@ -378,13 +378,13 @@ Click the first link titled "MySQL Administration - phpMyAdmin". You'll see a pa
 
 This page is a program called phpMyAdmin. It manages all your databases. Mine probably has a lot more stuff in it, but that's okay. It should make it easier for you to find your local database. :)
 
-[caption id="attachment_883" align="alignnone" width="1140"]![PHPMyAdmin enlarged.](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214833/phpmyadmin-enlarged_ctbday.jpg)
-Here's a blow up. My test site is called photoninja.dev, my database name starts with photonin[/caption]
+![PHPMyAdmin enlarged.](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214833/phpmyadmin-enlarged_ctbday.jpg)
+Here's a blow up. My test site is called photoninja.dev, my database name starts with photonin
 
 Your local sites database name will be prepended with the first few letters of your site name. Here's mine. My local site is called www.photoninja.dev, and the name of my local database starts with "photonin". Click the name of your database and you'll see another screen. 
 
-[caption id="attachment_885" align="alignnone" width="1140"]![PHP MyAdmin site tables](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214833/phpmyadmin-site-tables_eyfa72.jpg)
-Click import![/caption]
+![PHP MyAdmin site tables](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214833/phpmyadmin-site-tables_eyfa72.jpg)
+Click import!
 
 This is all of the tables from your local database. Click the import button, as shown.
 
@@ -393,13 +393,13 @@ This is all of the tables from your local database. Click the import button, as 
 
 Click the browse button....
 
-[caption id="attachment_887" align="alignnone" width="1140"]![PHPMyAdmin browsing for the DB](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214832/phpmyadmin-browse-for-db_eaj9rz.jpg)
-Find your database file that was downloaded by WP Migrate DB and click Open[/caption]
+![PHPMyAdmin browsing for the DB](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214832/phpmyadmin-browse-for-db_eaj9rz.jpg)
+Find your database file that was downloaded by WP Migrate DB and click Open
 
 Locate your downloaded database, and click "Open".
 
-[caption id="attachment_888" align="alignnone" width="1140"]![phpMyAdmin, importing the databse](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214831/phpmyadmin-click-go_hsd9f0.jpg)
-Click Go![/caption]
+![phpMyAdmin, importing the databse](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214831/phpmyadmin-click-go_hsd9f0.jpg)
+Click Go!
 
 Scroll down to the bottom the page, and click "Go".
 
@@ -408,8 +408,8 @@ Scroll down to the bottom the page, and click "Go".
 
 Once you're done you should see a success message that says something like "Import has been successfully finished..." with the number of queries that were executed. Close out phpMyAdmin, we're finished with it. 
 
-[caption id="attachment_890" align="alignnone" width="1140"]![WordPress login screen](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214830/WordPress-login_harzjj.jpg)
-Just what we want! Don't log in or go to the front page yet.[/caption]
+![WordPress login screen](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214830/WordPress-login_harzjj.jpg)
+Just what we want! Don't log in or go to the front page yet.
 
 Now, you'll probably notice that you've been logged out of your local site, as shown above. This is good! This means that all of the database tables, and users, from our local site have been replaced with the info from our live site. 
 
@@ -424,8 +424,8 @@ Go ahead and leave this window open, **but don't log in just yet, and don't try 
 Go ahead and find your local site installation. Mine is located at documents/websites/www.photoninja.dev
 Also, open the window with your full site backup, that we copied to your computer back in step 4.
 
-[caption id="attachment_891" align="alignnone" width="1140"]![Swapping wp-content folders](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214829/replace-files_je86ar.jpg)
-Do not put the wp-content folder in the other. Replace the other one![/caption]
+![Swapping wp-content folders](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214829/replace-files_je86ar.jpg)
+Do not put the wp-content folder in the other. Replace the other one!
 
 Position these two windows side by side and drag the wp-content folder from your backup into your local site folder as shown. We're just replacing the wp-content folder in our local site with the wp-content folder from our backup file.
 
@@ -435,8 +435,8 @@ Don't put the wp-content folder inside of the other one. We want to replace the 
 
 
 
-[caption id="attachment_892" align="alignnone" width="511"]![Replace warning dialog](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214829/replace-warning-dialog_kffyyx.jpg)
-Yes, replace all the things.[/caption]
+![Replace warning dialog](http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214829/replace-warning-dialog_kffyyx.jpg)
+Yes, replace all the things.
 
 
 You'll probably see a warning, like this. It's okay, just click "Replace" and, believe it or not, you're done, mostly. :-p
@@ -462,7 +462,7 @@ That's it, you're done. Go ahead and visit the front page of your local site. Yo
 
 
 
-Thanks for reading. I hope this was helpful and as always, if you have any comments or suggestions leave a comment or drop me a line via my [contact page](https://smutek.net/contact/). 
+Thanks for reading. I hope this was helpful and as always, if you have any comments or suggestions leave a comment or drop me a line via my [contact page](/contact/). 
 
 Next week I'll be showing you how to take any changes that you've made to your local site, and move them back to your live site using WP Migrate DB Pro, the premium version of WP Migrate DB.
 

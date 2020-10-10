@@ -110,23 +110,23 @@ logoHomeLink = "/"
 # Social icons
 [[params.social]]
 name = "twitter"
-url  = "https://twitter.com/"
+url  = "https://twitter.com/smutek"
 
 [[params.social]]
 name = "email"
-url  = "mailto:nobody@example.com"
+url  = "mailto:contact@smutek.net"
 
 [[params.social]]
 name = "github"
-url  = "https://github.com/"
+url  = "https://github.com/smutek"
 
 [[params.social]]
 name = "linkedin"
-url  = "https://www.linkedin.com/"
+url  = "https://www.linkedin.com/in/jamessmutek/"
 
 [[params.social]]
 name = "stackoverflow"
-url  = "https://www.stackoverflow.com/"
+url  = "https://stackexchange.com/users/3694355/jimmy-smutek"
 
 [languages]
 [languages.en]

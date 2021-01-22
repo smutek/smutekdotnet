@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Design on smutek.net</title>
+    <link>https://smutek.net/categories/web-design/</link>
+    <description>Recent content in Web Design on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 14 Apr 2013 15:43:26 +0000</lastBuildDate><atom:link href="https://smutek.net/categories/web-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Local WordPress with MAMP!</title>
+      <link>https://smutek.net/mamp-awesome/</link>
+      <pubDate>Sun, 14 Apr 2013 15:43:26 +0000</pubDate>
+      
+      <guid>https://smutek.net/mamp-awesome/</guid>
+      <description>I no longer use MAMP, I suggest checking out something like VVV, or Trellis.
+This quick post will explain how to quickly and easily get a local development environment up and running on your Mac, using a free tool called MAMP. With MAMP, you’ll be able to work on WordPress, or Drupal, or Joomla (hark!), or any similar software from the comfort of your own computer, no web host needed.</description>
+    </item>
+    
+  </channel>
+</rss>

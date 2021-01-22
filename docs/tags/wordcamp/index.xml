@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WordCamp on smutek.net</title>
+    <link>https://smutek.net/tags/wordcamp/</link>
+    <description>Recent content in WordCamp on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 07:25:56 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/wordcamp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xdebuggin at WordCamp Baltimore 2017</title>
+      <link>https://smutek.net/xdebug/</link>
+      <pubDate>Sun, 15 Oct 2017 07:25:56 +0000</pubDate>
+      
+      <guid>https://smutek.net/xdebug/</guid>
+      <description>Thanks Today I had the honor to speak at WordCamp Baltimore on the topic of using Xdebug to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.
+My slides are here: https://slides.com/smutek/xdebug/
+And notes on my presentation are below.
+What is Xdebug Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP.</description>
+    </item>
+    
+    <item>
+      <title>WC Lancaster 2016</title>
+      <link>https://smutek.net/wc-lancaster-2016/</link>
+      <pubDate>Sat, 05 Mar 2016 18:47:45 +0000</pubDate>
+      
+      <guid>https://smutek.net/wc-lancaster-2016/</guid>
+      <description>I was super honored to speak at WordCamp Lancaster today! My topic was WordPress workflows with PHPStorm. Here&amp;rsquo;s a link to my slides -
+slides.com/smutek/lancaster-2016/
+Here&amp;rsquo;s some resources that I&amp;rsquo;ve found helpful -
+  Jeffery Way&amp;rsquo;s PHPStorm series on Laracasts
+  Good article on the Delicious Brains blog
+  PHP Storm color schemes, by Dayle Rees (demos here)
+  Using xDebug &amp;amp; PHPStorm, by Aaron Holbrook (YouTube)</description>
+    </item>
+    
+  </channel>
+</rss>

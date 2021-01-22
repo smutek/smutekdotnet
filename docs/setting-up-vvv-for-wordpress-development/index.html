@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="jimmy.smutek">
+<meta name="description" content="This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp;amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.
+It&amp;rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&amp;rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack." />
+<meta name="keywords" content=", Local Server, vagrant, vvv" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://smutek.net/setting-up-vvv-for-wordpress-development/" />
+
+
+    <title>
+        
+            Setting up VVV for WordPress Development :: smutek.net  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://smutek.net/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://smutek.net/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://smutek.net/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://smutek.net/favicon-16x16.png">
+    <link rel="manifest" href="https://smutek.net/site.webmanifest">
+    <link rel="mask-icon" href="https://smutek.net/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://smutek.net/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Setting up VVV for WordPress Development">
+<meta itemprop="description" content="This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.
+It&rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack.">
+<meta itemprop="datePublished" content="2016-04-17T17:27:14+00:00" />
+<meta itemprop="dateModified" content="2016-04-17T17:27:14+00:00" />
+<meta itemprop="wordCount" content="319">
+<meta itemprop="image" content="https://smutek.net"/>
+
+
+
+<meta itemprop="keywords" content="Local Server,vagrant,vvv," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://smutek.net"/>
+
+<meta name="twitter:title" content="Setting up VVV for WordPress Development"/>
+<meta name="twitter:description" content="This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.
+It&rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack."/>
+
+
+
+    <meta property="og:title" content="Setting up VVV for WordPress Development" />
+<meta property="og:description" content="This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.
+It&rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://smutek.net/setting-up-vvv-for-wordpress-development/" />
+<meta property="og:image" content="https://smutek.net"/>
+<meta property="article:published_time" content="2016-04-17T17:27:14+00:00" />
+<meta property="article:modified_time" content="2016-04-17T17:27:14+00:00" />
+
+
+
+
+    <meta property="article:section" content="Tools" />
+
+
+
+    <meta property="article:published_time" content="2016-04-17 17:27:14 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://smutek.net/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">My Interwebs Blog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://smutek.net/about-me/">About</a></li><li><a href="https://smutek.net/contact/">Contact</a></li><li><a href="https://smutek.net/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://smutek.net/setting-up-vvv-for-wordpress-development/">Setting up VVV for WordPress Development</a></h2>
+
+            
+
+            <div class="post-content">
+                
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/163160322" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.</p>
+<p>It&rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack.</p>
+<p>Also, once you&rsquo;re comfortable with Vagrant it&rsquo;s possible to start exploring some of the other boxes out there, such as Trellis or Scotch, for example, and it becomes possible to setup the development stack to match the production stack exactly, for perfect parity between development and production environments.</p>
+<p>Short of it is, it&rsquo;s pretty straight forward to set up and, in my case, taking the time to learn this has helped me to up my skill set.</p>
+<p>Links -</p>
+<ul>
+<li>
+<p><strong>Virtual Box</strong>
+<a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
+</li>
+<li>
+<p><strong>Vagrant</strong>
+<a href="https://www.vagrantup.com/">https://www.vagrantup.com/</a></p>
+</li>
+<li>
+<p><strong>VVV</strong>
+<a href="https://github.com/Varying-Vagrant-Vagrants/VVV">https://github.com/Varying-Vagrant-Vagrants/VVV</a></p>
+</li>
+<li>
+<p><strong>Homebrew</strong> (optional)
+<a href="http://brew.sh/">http://brew.sh/</a></p>
+</li>
+<li>
+<p><strong>Variable VVV</strong>
+<a href="https://github.com/bradp/vv">https://github.com/bradp/vv</a></p>
+</li>
+<li>
+<p><strong>VVV Provision Flipper</strong>
+<a href="https://github.com/bradp/vvv-provision-flipper">https://github.com/bradp/vvv-provision-flipper</a></p>
+</li>
+<li>
+<p><strong>topdown</strong>
+<a href="https://github.com/topdown/VVV-Dashboard">https://github.com/topdown/VVV-Dashboard</a></p>
+</li>
+</ul>
+<p>If you prefer reading over watching, Brad Parbs wrote <a href="https://webdevstudios.com/2015/01/14/getting-started-vagrant-vvv-local-development/">an excellent walk-through</a> on the WebDevStudios blog.</p>
+<p>Note - around the 14 minute mark I ran into an issue with Varying VVV not remembering the path to my VVV installation folder. The fix was pretty easy.</p>
+<p>In my case, VVV is in a folder called vvv, so just open the .vvv-config file in vim, or nano, or whatever.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/.vvv-config</code></pre></div>
+<p>Then update the path and save the file. In my case my install is located in my <code>home-directory/sites/vvv</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/Users/jimmysmutek/sites/vagrant-local&#34;</span>
+}</code></pre></div>
+<p>changes to -</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/Users/jimmysmutek/sites/vvv&#34;</span>
+}</code></pre></div>
+<p>The next <code>vv-create</code> ran without issue.</p>
+<p>Hope this post is helpful to someone!</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://smutek.net/tags/local-server">Local Server</a></span><span class="tag"><a href="https://smutek.net/tags/vagrant">vagrant</a></span><span class="tag"><a href="https://smutek.net/tags/vvv">vvv</a></span>
+  				</p>
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://smutek.net">Jimmy Smutek</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://smutek.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://smutek.net/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

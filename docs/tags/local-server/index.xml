@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Local Server on smutek.net</title>
+    <link>https://smutek.net/tags/local-server/</link>
+    <description>Recent content in Local Server on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 25 May 2016 04:51:13 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/local-server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shared hosting to Roots stack: Part 1</title>
+      <link>https://smutek.net/migrating-to-trellis-1/</link>
+      <pubDate>Wed, 25 May 2016 04:51:13 +0000</pubDate>
+      
+      <guid>https://smutek.net/migrating-to-trellis-1/</guid>
+      <description>Pt. 1 - Setting up Trellis &amp;amp; Bedrock locally   This is the first in a series of screencasts that will document the process of moving a WordPress website (this website) from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+In this screencast I&amp;rsquo;ll get my local development environment setup with Trellis &amp;amp; Bedrock.
+In part 2 I get my theme and plugins installed, and migrate my data into my development environment.</description>
+    </item>
+    
+    <item>
+      <title>Setting up VVV for WordPress Development</title>
+      <link>https://smutek.net/setting-up-vvv-for-wordpress-development/</link>
+      <pubDate>Sun, 17 Apr 2016 17:27:14 +0000</pubDate>
+      
+      <guid>https://smutek.net/setting-up-vvv-for-wordpress-development/</guid>
+      <description>This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp;amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.
+It&amp;rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&amp;rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack.</description>
+    </item>
+    
+    <item>
+      <title>Migrating Your WordPress Site Back To Your Web Server</title>
+      <link>https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/</link>
+      <pubDate>Wed, 15 Apr 2015 13:46:47 +0000</pubDate>
+      
+      <guid>https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/</guid>
+      <description>In my last post I covered how to get a copy of your WordPress site running on your computer, in this post I will cover migrating your WordPress site back to your web server.
+Overview There&amp;rsquo;s 2 ways to go about this, the easy way and the really easy way. The easy way will show how to move your site back using the same free tools that we used to set up our local site.</description>
+    </item>
+    
+    <item>
+      <title>Running Your WordPress Site From Your Computer</title>
+      <link>https://smutek.net/running-your-wordpress-site-from-your-computer/</link>
+      <pubDate>Fri, 13 Mar 2015 19:33:20 +0000</pubDate>
+      
+      <guid>https://smutek.net/running-your-wordpress-site-from-your-computer/</guid>
+      <description>Put your full site backups to good use. Part of a series of posts from my days of self employment.
+In last weeks post I covered how to set up a WordPress backup plugin and how to have your backups sync to your Dropbox account. This week I&amp;rsquo;m going to cover how to take one of those full site backups and get a copy of your WordPress website running on your computer.</description>
+    </item>
+    
+  </channel>
+</rss>

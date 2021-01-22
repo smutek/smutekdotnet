@@ -1,0 +1,1469 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on smutek.net</title>
+        <link>https://smutek.net/posts/</link>
+        <description>Recent content in Posts on smutek.net</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sun, 15 Oct 2017 07:25:56 +0000</lastBuildDate>
+        <atom:link href="https://smutek.net/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Xdebuggin at WordCamp Baltimore 2017</title>
+            <link>https://smutek.net/xdebug/</link>
+            <pubDate>Sun, 15 Oct 2017 07:25:56 +0000</pubDate>
+            
+            <guid>https://smutek.net/xdebug/</guid>
+            <description>Thanks Today I had the honor to speak at WordCamp Baltimore on the topic of using Xdebug to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.
+My slides are here: https://slides.com/smutek/xdebug/
+And notes on my presentation are below.
+What is Xdebug Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP.</description>
+            <content type="html"><![CDATA[<h2 id="thanks">Thanks</h2>
+<p>Today I had the honor to speak at <a href="https://2017.baltimore.wordcamp.org">WordCamp Baltimore</a> on the topic of using <a href="https://xdebug.org">Xdebug</a> to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.</p>
+<p>My slides are here:
+<a href="https://slides.com/smutek/xdebug/">https://slides.com/smutek/xdebug/</a></p>
+<p>And notes on my presentation are below.</p>
+<h2 id="what-is-xdebug">What is Xdebug</h2>
+<p>Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP.</p>
+<p>Simply put, Xdebug is a tool to help us understand our PHP codes. It provides facilities for:</p>
+<ul>
+<li>Debugging (what went wrong?)</li>
+<li>Profiling (how efficient is my code?)</li>
+<li>Tracing (how were things executed?)</li>
+</ul>
+<h3 id="what-is-a-bug">What is a bug?</h3>
+<p><img src="/img/2017/10/bug.jpg" alt=""></p>
+<p>We all know what a bug is, but a cool little historical tidbit follows.</p>
+<p>On September 9, 1947, engineers found a moth between the relays of the Harvard mark 2 computer they were working on.</p>
+<p>One of the engineers, Grace Hopper, taped the moth into the log book with the notation “First actual case of bug being found.” Grace Hopper had just literally debugged the computer.</p>
+<p>The logbook (and the bug) is part of the Smithsonian collection.</p>
+<p>The engineers did not coin the term “bug”, but it&rsquo;s widely accepted that it was this incident that made the term stick.</p>
+<p>Grade Hoper, by the way, did a lot of awesome things, including earning a PhD in Mathematics from Yale and attaining the rank of Rear Admiral in the US Navy. She was brilliant and amazing.</p>
+<p><a href="http://www.cs.yale.edu/homes/tap/Files/hopper-story.html">Grace Murray Hopper</a>
+<a href="http://americanhistory.si.edu/collections/search/object/nmah_334663">Log Book With Computer Bug | National Museum of American History</a></p>
+<h2 id="why-use-xdebug">Why use Xdebug?</h2>
+<p>Xdebug allows us to view, step through, and manipulate our code while it is being executed.</p>
+<p>At the end of the day, on the back end, most of what we are doing involves grabbing some bit of data and displaying it in some way.</p>
+<p>Xdebug helps with this by providing insight and clarity into what’s going on with our program as it happens. I sometimes find myself running my debugger when there’s no bugs to debug - I run it simply to see what data is available to me to use.</p>
+<h2 id="when-not-to-use-xdebug">When not to use Xdebug</h2>
+<p><strong>Don’t use Xdebug on a public facing server</strong>. It is processor intensive and can be a security risk.</p>
+<p>The work that Xdebug does is processor intensive and will impact the performance of your production site.</p>
+<p>More importantly, Xdebug requires no encryption or authentication by default and provides a ton of sensitive information that could be exploited by malicious users.</p>
+<p>It is strictly a development tool.</p>
+<h2 id="how-to-get-xdebug">How to get Xdebug?</h2>
+<p>If you use Vagrant, Xdebug comes preinstalled on Trellis, by the Roots team, and on VVV.</p>
+<p>You can spin up your own Vagrant box with Xdebug installed using something like PuPHPet.</p>
+<p>Xdebug is also preinstalled on Local, by Flywheel, which is available on OS X and Windows and looks to be a very nice tool.</p>
+<p>You can also install it yourself on MAMP, XAMP, etc. or wherever works best for you.</p>
+<ul>
+<li><a href="https://roots.io/trellis/">Trellis | WordPress LEMP Stack | Roots</a></li>
+<li><a href="https://varyingvagrantvagrants.org/">Varying Vagrant Vagrants</a></li>
+<li><a href="https://local.getflywheel.com/">Local by Flywheel | Local WordPress development made simple</a></li>
+<li><a href="https://puphpet.com/">PuPHPet - Online GUI configurator for Puppet &amp; Vagrant</a></li>
+<li><a href="https://xdebug.org/docs/install">Xdebug: Documentation</a></li>
+</ul>
+<h2 id="how-to-use">How to use?</h2>
+<p>There’s tons of ways to run Xdebug. My preference is PhpStorm, but Xdebug clients are also available for:</p>
+<ul>
+<li><strong>PhpStorm</strong> <a href="https://www.jetbrains.com/phpstorm/">PhpStorm: Lightning-Smart IDE for PHP Programming by JetBrains</a></li>
+<li><strong>Sublime Text:</strong> <a href="https://packagecontrol.io/packages/Xdebug">Xdebug - Packages - Package Control</a></li>
+<li><strong>Atom</strong> <a href="https://atom.io/packages/php-debug">php-debug</a></li>
+</ul>
+<p>See <a href="https://xdebug.org/docs/remote">Xdebug: Documentation</a> for a more comprehensive, but not complete, list of Xdebug clients.</p>
+<h3 id="browser-extensions">Browser extensions</h3>
+<p>I’ve found the following browser extensions to be super helpful, I prefer Xdebug helper.</p>
+<p><strong>Xdebug Helper</strong></p>
+<ul>
+<li>Firefox: [Xdebug Helper for Firefox :: Add-ons for Firefox](<a href="https://addons.mozilla.org/en-US/firefox/addon/xdebug">https://addons.mozilla.org/en-US/firefox/addon/xdebug</a>
+-helper-for-firefox/)</li>
+<li>Chrome: [Xdebug helper - Chrome Web Store](<a href="https://chrome.google.com/webstore/detail/xdebug-helper">https://chrome.google.com/webstore/detail/xdebug-helper</a>
+/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en)</li>
+</ul>
+<p><strong>The Easiest Xdebug</strong></p>
+<ul>
+<li>Firefox: [The easiest Xdebug :: Add-ons for Firefox](<a href="https://addons.mozilla.org/en-US/firefox/addon/the-easiest">https://addons.mozilla.org/en-US/firefox/addon/the-easiest</a>
+-xdebug/)</li>
+</ul>
+<p><strong>Jetbrains Browser Plugins</strong></p>
+<ul>
+<li><a href="https://www.jetbrains.com/phpstorm/marklets/">Xdebug &amp; Zend Debugger Bookmarklets Generator - Marklets | PhpStorm</a></li>
+</ul>
+<h3 id="project-setup">Project Setup</h3>
+<p>I’m not going to run through project setup here but I did a post recently on setting Xdebug up in PhpStorm on a Trellis VM.</p>
+<p><a href="https://smutek.net/trellis-xdebug-phpstorm/">https://smutek.net/trellis-xdebug-phpstorm/</a></p>
+<p>The principles are the same on any environment, the only variable being the IDE Key. To find out what the IDE key is for your server just setup a <code>phpinfo()</code> file on your server , visit the page, and searxh for <code>xdebug</code>. This process is also covered in the link above.</p>
+<p>Note - if you get zero hits when searching <code>xdebug</code> then Xdebug is not installed or configured correctly on your server.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1">Example 1</h3>
+<p>I was tasked with making a Gravity Form send different emails depending on whether a file was attached or not.</p>
+<p>For some reason (as of this writing) Gravity Forms does not include file uploads in conditional logic options.</p>
+<p>I used Gravity Forms pre submission filter to accomplish this. Xdebug helped by allowing me to stop code execution and see what sort of variables were available with the <code>$form</code> object before it was submitted to the database.</p>
+<p>I found the <code>$_FILES</code> super global, which allowed me to determine whether or not a file was attached.</p>
+<p>From there I was able to set up and manipulate a hidden field in my form which could then be targeted by Gravity Forms conditional logic.</p>
+<p><strong>The code gist is here:</strong>
+<a href="https://gist.github.com/smutek/af22f55fbc35cdb27cac25a86d0808b5">checkResume.php · GitHub</a></p>
+<p><strong>Info about <code>$_FILES</code> &amp; upload post method.</strong>
+<a href="http://php.net/manual/en/reserved.variables.files.php">http://php.net/manual/en/reserved.variables.files.php</a>
+<a href="http://php.net/manual/en/features.file-upload.post-method.php">http://php.net/manual/en/features.file-upload.post-method.php</a></p>
+<p><strong>Gravity Forms pre submission filter:</strong>
+<a href="https://docs.gravityforms.com/gform_pre_submission/">gform_pre_submission – Gravity Forms Documentation</a></p>
+<h3 id="example-2">Example 2</h3>
+<p>Example 2 was less specific, and simple by intent, but I hoped to illustrate how Xdebug can help to keep track of what’s going on while building complex data structures.</p>
+<h3 id="closing">Closing</h3>
+<p>Truthfully, Xdebug has helped me out in so many different ways that it’s nearly impossible to pick which examples to show.</p>
+<p>The best thing I can suggest is to give it a try. I’ve found it to be an absolutely indispensable tool and using it has helped me get better at my job.</p>
+<p>I hope this has been helpful!</p>
+<p>Thanks again to everyone at WordCamp Baltimore. Extra special thanks to my good friend Andrew Adcock for everything you&rsquo;ve done for me during my journey as a developer.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Open Home Office</title>
+            <link>https://smutek.net/open-home-office/</link>
+            <pubDate>Wed, 21 Jun 2017 22:49:37 +0000</pubDate>
+            
+            <guid>https://smutek.net/open-home-office/</guid>
+            <description>Man, it&amp;rsquo;s been many moons since my last blog post. I&amp;rsquo;m going to break that dry spell and start posting regularly again, and I thought I&amp;rsquo;d kick off with a quick one.
+Here&amp;rsquo;s a link that&amp;rsquo;s just too good not to share.
+Open Home Office (YC S17) Raises $7M To Bring Office Distractions To Remote Workers Nationwide
+Highlights:
+ Enjoy working from home, but yearn for the interminable stimulation and irritation of an open office?</description>
+            <content type="html"><![CDATA[<p>Man, it&rsquo;s been many moons since my last blog post. I&rsquo;m going to break that dry spell and start posting regularly again, and I thought I&rsquo;d kick off with a quick one.</p>
+<p>Here&rsquo;s a link that&rsquo;s just too good not to share.</p>
+<p><a href="https://alwaystrending.io/articles/open-home-office-raises-7m-to-bring-office-distractions-to-remote-workers-nationwide">Open Home Office (YC S17) Raises $7M To Bring Office Distractions To Remote Workers Nationwide</a></p>
+<p>Highlights:</p>
+<blockquote>
+<p>Enjoy working from home, but yearn for the interminable stimulation and irritation of an open office? There&rsquo;s an app
+for that&hellip;.
+&hellip;Available as a web app or on Apple and Android devices, Open Home Office runs in the background and uses sporadic audio, video, push notifications, and vibration to offer a shockingly realistic simulation of an open office&hellip;
+&hellip;It utilizes a Perlin noise algorithm to generate unique and realistic constellations of hacking coughs, wet sneezes, open mouth chewing, bags of Sunchips being opened, an absent coworker&rsquo;s phone alarm going off on their desk that nobody nearby is volunteering to silence, distant toilet flushes, and soda cans being opened, among thousands of other sound options&hellip;</p>
+</blockquote>
+<p>-via Hacker news</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Filtering the WordPress Custom Logo</title>
+            <link>https://smutek.net/filtering-the-wordpress-custom-logo/</link>
+            <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+            
+            <guid>https://smutek.net/filtering-the-wordpress-custom-logo/</guid>
+            <description>WordPress 4.5 added the custom logo feature. It&amp;rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&amp;rsquo;t always what I&amp;rsquo;m looking for. Fortunately there&amp;rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&amp;rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want.</description>
+            <content type="html"><![CDATA[<p>WordPress 4.5 added the <a href="https://make.wordpress.org/core/2016/03/10/custom-logo/">custom logo feature</a>. It&rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by <code>get_custom_logo()</code> isn&rsquo;t always what I&rsquo;m looking for. Fortunately there&rsquo;s <a href="https://core.trac.wordpress.org/browser/tags/4.7/src/wp-includes/general-template.php#L920">a filter included</a> just for this.</p>
+<p>I build my sites with <a href="https://roots.io/sage">Sage</a>, most of them using <a href="http://getbootstrap.com/">Bootstrap</a> for the front end. Here&rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want.</p>
+<h2 id="the-goal">The Goal</h2>
+<p>So, here&rsquo;s what I&rsquo;m trying to achieve. The default custom logo gives us markup that looks like this -</p>
+<pre><code>&lt;a href=&quot;some-link&quot; class=&quot;custom-logo-link&quot; rel=&quot;home&quot; itemprop=&quot;url&quot;&gt;
+    &lt;img src=&quot;some-logo&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+<p>Whereas I&rsquo;m generally lookng for something like this -</p>
+<pre><code>&lt;a class=&quot;navbar-brand&quot; href=&quot;some-link&quot;&gt;
+  &lt;span class=&quot;sr-only&quot;&gt;Some Site&lt;/span&gt;
+  &lt;img class=&quot;img-responsive&quot; src=&quot;some-logo&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+<p>I like to include the site title regardless, and just hide it with a screen-reader friendly class when a logo is present. I also like to bake the conditional logic right into my function as a way of keeping my templates a little cleaner. Every little bit helps!</p>
+<h2 id="the-stuff">The Stuff</h2>
+<p>For sarters, the first thing to do is enable custom-logo support. I use Sage, and in versions &lt; 9 I&rsquo;ll generally drop it in <code>lib/setup.php</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">    <span style="color:#75715e">// Enable custom logo support
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// https://codex.wordpress.org/Theme_Logo
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">add_theme_support</span>( <span style="color:#e6db74">&#39;custom-logo&#39;</span> );
+</code></pre></div><p>And here&rsquo;s the function I use to filter the markup.</p>
+<p><a href="https://gist.github.com/smutek/d0daef2e46db7521661db48214762c0f#file-brand-php">https://gist.github.com/smutek/d0daef2e46db7521661db48214762c0f#file-brand-php</a></p>
+<p>Everything is commented, but here&rsquo;s the run-down.</p>
+<ul>
+<li>The function is filtering the custom logo function, so it takes that html as its input.</li>
+<li>The first thing I do is grab the site name, since I like to always include it with my output.</li>
+<li>First I check to see if we&rsquo;re on the home page - if so I&rsquo;ll wrap the site title in an H1, otherwise I&rsquo;ll wrap it in a paragraph tag since those pages will use the H1&rsquo;s for their own titles. I&rsquo;ll stash that in a variable called <code>$title</code>.</li>
+<li>Now that I&rsquo;ve got the site title squared away I set up a variable containing the link to the home page, <code>$home</code> and a variable to hold my css classes, <code>$class</code>.</li>
+<li>Next I set up my <code>$content</code> variable, which serves as my fallback, and check to see if there&rsquo;s a custom logo.</li>
+</ul>
+<p>(I know, I&rsquo;m kind of variable happy - Here&rsquo;s why I stash the site title in a variable called <code>$content</code>. <code>$home</code>, <code>$title</code> and <code>$class</code> remain constant, but <code>$content</code> will get updated if a custom logo is present, otherwise it just gets passed along to the output as is. Make sense?)</p>
+<ul>
+<li>If <code>has_custom_logo()</code> returns true, I just mirror what&rsquo;s in the <a href="https://core.trac.wordpress.org/browser/tags/4.7/src/wp-includes/general-template.php#L890">native function</a>, with my own small tweaks. I update the content to include the src to the logo file, then append the title variable, wrapped in a span tag and hidden with Bootstraps sr-only class. Otherwise, the unaltered <code>$content</code> is passed along.</li>
+<li>Finally, the markup is put together using <a href="http://php.net/manual/en/function.sprintf.php">sprintf</a>, again, mirroring the native function, and returned to the template file.</li>
+</ul>
+<h2 id="output">Output</h2>
+<p>Since we&rsquo;re just filtering the existing custom logo function nothing special is required to use it. In a typical Sage 8 site, in my <code>header.php</code> template, I&rsquo;ll replace:</p>
+<pre><code>&lt;a class=&quot;navbar-brand&quot; href=&quot;&lt;?= esc_url(home_url('/')); ?&gt;&quot;&gt;&lt;?php bloginfo('name'); ?&gt;&lt;/a&gt;
+</code></pre>
+<p>With:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">    <span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#a6e22e">the_custom_logo</span>; <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>That&rsquo;s it!</p>
+<p>The resulting markup looks something like this:</p>
+<pre><code>&lt;a href=&quot;http://local.wordpress.dev/&quot; class=&quot;navbar-brand&quot; rel=&quot;home&quot; itemprop=&quot;url&quot;&gt;
+  &lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/wp-content/uploads/2013/03/image-alignment-150x150.jpg&quot; class=&quot;brand-logo img-responsive&quot; alt=&quot;Image Alignment 150x150&quot; itemprop=&quot;logo&quot;&gt;
+  &lt;span class=&quot;sr-only&quot;&gt;&lt;h1&gt;Local WordPress Dev&lt;/h1&gt;&lt;/span&gt;
+&lt;/a&gt;
+</code></pre>
+<p>And the fallback, without a logo added:</p>
+<pre><code>&lt;a href=&quot;http://local.wordpress.dev/&quot; class=&quot;navbar-brand&quot; rel=&quot;home&quot; itemprop=&quot;url&quot;&gt;
+  &lt;h1&gt;Local WordPress Dev&lt;/h1&gt;
+&lt;/a&gt;
+</code></pre>
+<p>That&rsquo;s it! A quick, nice fallback that leverages various native WordPress super powers. :) Pretty handy.</p>
+<p>How do you work with logos in WordPress?</p>
+<p>Resources</p>
+<ul>
+<li>Custom Logo (<a href="https://make.wordpress.org/core/2016/03/10/custom-logo/">codex</a>)</li>
+<li>Custom Logo (<a href="https://core.trac.wordpress.org/browser/tags/4.7/src/wp-includes/general-template.php#L878">trac</a>)</li>
+<li><a href="https://roots.io/sage">Sage</a></li>
+<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="https://gist.github.com/smutek/d0daef2e46db7521661db48214762c0f">GitHub Gist</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Shut the fuck up and go and build something</title>
+            <link>https://smutek.net/shut-the-fuck-up-and-go-and-build-something/</link>
+            <pubDate>Fri, 24 Feb 2017 01:46:38 +0000</pubDate>
+            
+            <guid>https://smutek.net/shut-the-fuck-up-and-go-and-build-something/</guid>
+            <description>Check out this interview with Ghost founder John O&amp;rsquo;Nolan. It was interesting to read about the history of the project, but I thought this was a fantastic takeaway -
+ What&amp;rsquo;s your advice for indie hackers who are just starting out?
+Honestly my single piece of advice would probably be to stop looking for so much advice.
+Shut the fuck up and go and build something.
+I see so many people devouring startup books and blog posts and talking about them incessantly.</description>
+            <content type="html"><![CDATA[<p>Check out this <a href="https://www.indiehackers.com/businesses/ghost">interview with Ghost founder John O&rsquo;Nolan</a>. It was interesting to read about the history of the project, but I thought this was a fantastic takeaway -</p>
+<blockquote>
+<p><strong>What&rsquo;s your advice for indie hackers who are just starting out?</strong></p>
+<p>Honestly my single piece of advice would  probably be to stop looking for so much advice.</p>
+<p>Shut the fuck up and go  and build something.</p>
+<p>I see so many people devouring startup books and blog posts and talking about them incessantly. They try to just
+endlessly research and talk about what works, because they&rsquo;re too afraid to actually jump in and
+do something.</p>
+<p>If you feel like you have no idea what you&rsquo;re doing, well, welcome to the club. None of us have any
+idea what the fuck we&rsquo;re doing, and anyone who says otherwise is lying. All of us are just guessing, experimenting, trying things. Not a single one of us was ever &ldquo;sure&rdquo; or &ldquo;ready&rdquo; or &ldquo;confident&rdquo; at any point. At a certain point you just have to jump.</p>
+<p>Stop reading. Start building.</p>
+</blockquote>
+<p>Stop reading, start building. No doubt! Well, I&rsquo;ll never stop reading, but I get the point. :)</p>
+<p>-via Hacker News</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Posters of your GitHub contributions</title>
+            <link>https://smutek.net/posters-of-your-github-contributions/</link>
+            <pubDate>Fri, 03 Feb 2017 03:11:45 +0000</pubDate>
+            
+            <guid>https://smutek.net/posters-of-your-github-contributions/</guid>
+            <description>One would have to be a pretty major geek to want to buy a poster of their GitHub contribution heat map&amp;hellip;
+Pretty cool, I think I&amp;rsquo;m going to get mine in blue! :)
+CommitPrint
+ via Hacker News  </description>
+            <content type="html"><![CDATA[<p>One would have to be a pretty major geek to want to buy a poster of their GitHub contribution heat map&hellip;</p>
+<p>Pretty cool, I think I&rsquo;m going to get mine in blue! :)</p>
+<p><a href="https://commitprint.com/">CommitPrint</a></p>
+<p><img src="/img/2019/06/smutek.jpg" alt="github heatmap"></p>
+<ul>
+<li>via Hacker News</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Rich Semantic Titles in WordPress with ACF</title>
+            <link>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</link>
+            <pubDate>Sat, 07 Jan 2017 17:18:36 +0000</pubDate>
+            
+            <guid>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</guid>
+            <description>Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&amp;rsquo;d suggest exploring his GitHub further as it looks like he&amp;rsquo;s working on lot&amp;rsquo;s of cool ideas like this.</description>
+            <content type="html"><![CDATA[<p>Last night while browsing the <a href="https://discourse.roots.io/">Roots Discourse</a> I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.</p>
+<p>User MWDelaney writes -</p>
+<!-- raw HTML omitted -->
+<p>So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. <a href="https://discourse.roots.io/t/advanced-custom-fields-complex-titles/8481">The post is here</a>, and <a href="https://github.com/MWDelaney/acf-complex-titles">you can check his plugin out here</a>. I&rsquo;d suggest exploring his GitHub further as it looks like he&rsquo;s working on lot&rsquo;s of cool ideas like this.</p>
+<p>Anyway, I&rsquo;m reading his post and it reminded me of a solution I&rsquo;ve been using <a href="https://ainsleyagency.com">at work</a> to help make descriptive titles a bit more semantic.</p>
+<p>Imagine we&rsquo;re building a new site for &ldquo;Bob&rsquo;s Hermit Crab Sanctuary&rdquo;. Like most sites it has an About page. In the site map and wireframes the page is labeled &ldquo;About&rdquo; which is appropriate because it&rsquo;s a page about the business. At the same time, &ldquo;About&rdquo; is maybe a bit boring and not as descriptive as it could be, so in the design &ldquo;About&rdquo; becomes:  &ldquo;A Safe Haven for Hermit Crabs Since 1861&rdquo;.</p>
+<p>Much nicer, but maybe a little long for the top nav, and in the comp the top nav is still labled as &ldquo;About&rdquo;. I know I can change the menu text via the WordPress menu editor, but I want to step it up a little, and &ldquo;About&rdquo; still remains the shortest, most releavant keyword for the page.</p>
+<p><a href="https://moz.com/learn/seo/title-tag">Moz says</a> that:</p>
+<!-- raw HTML omitted -->
+<p>According to Moz, the optimal format when constructing a title is:
+Primary Keyword | Secondary Keyword</p>
+<p>The Moz article references <a href="https://www.w3.org/QA/Tips/good-titles">this quality assurance tip</a> from the W3 Consortium which states:</p>
+<!-- raw HTML omitted -->
+<p>I got the idea for how to handle this from Bootstrap&rsquo;s headings with &ldquo;<a href="http://getbootstrap.com/css/#type-headings">lighter secondary text</a>&rdquo; example:</p>
+<p><em><!-- raw HTML omitted -->h1. Bootstrap heading <!-- raw HTML omitted -->Secondary text<!-- raw HTML omitted --><!-- raw HTML omitted --></em></p>
+<p>I like this execution because semantically, <em><!-- raw HTML omitted --></em> is used to represent small runs of secondary, or side text. This makes it great for displaying headers with sub-text, which is essentially what I am trying to do here. The difference in my case is that I want to hide the first portion of the title from viewers, but still have it as part of the document. Span tags have no semantic meaning, so I can extend the Bootstrap example by wrapping a <em><!-- raw HTML omitted --></em> around the first portion of the title to control its visibility. More on that below.</p>
+<p>So for the backend, what I&rsquo;ve started doing is setting up an ACF field group called something like &ldquo;Title Override&rdquo;. I&rsquo;ll set the display settings to &ldquo;High (Below the Title)&rdquo; on the back end, and give it 2 fields - a true/false (checkbox) to toggle it on and off, and a text field for the description. I use the checkbox to hide and show the field on the backend, and to filter the output on the front end.</p>
+<p>To the end user it looks something like this -</p>
+<p><img src="/img/2017/01/example.gif" alt="Animated gif showing ACF back end"></p>
+<p>The logic is simple and can go right in the template file, but I prefer to drop it in a function. It just needs to get the page title, check if we are doing an override, generate the appropriate markup if so, and return the results to the template.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">/**
+</span><span style="color:#e6db74"> * Title override
+</span><span style="color:#e6db74"> * @return string - title
+</span><span style="color:#e6db74"> */</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">overrideTitle</span>()
+{
+  <span style="color:#75715e">// true/false 
+</span><span style="color:#75715e"></span>  $override <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_field</span>(<span style="color:#e6db74">&#39;title_override&#39;</span>);
+  $title    <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_the_title</span>();
+  <span style="color:#66d9ef">if</span> ($override) {
+    <span style="color:#75715e">// If using the override, get the title description
+</span><span style="color:#75715e"></span>    $description <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_field</span>(<span style="color:#e6db74">&#39;title_description&#39;</span>);
+    <span style="color:#75715e">// Setup the modified markup
+</span><span style="color:#75715e"></span>    $output <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;span class=&#34;sr-only&#34;&gt;&#39;</span> <span style="color:#f92672">.</span> $title <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;: &lt;/span&gt;&lt;small class=&#34;title-description&#34;&gt;&#39;</span> <span style="color:#f92672">.</span> $description <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;/small&gt;&#39;</span>;
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#75715e">// Not doing an override, use the regular title
+</span><span style="color:#75715e"></span>    $output <span style="color:#f92672">=</span> $title;
+  }
+
+  <span style="color:#75715e">// return the output to the template
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> $output;
+}
+</code></pre></div>
+<p>Note the sr-only class; We use a lot of <a href="http://getbootstrap.com/">Bootstrap</a>, and in this case I&rsquo;m using Bootstraps sr-only class to hide the &ldquo;About:&rdquo; keyword portion of the title. This way it doesn&rsquo;t display in the browser, but it&rsquo;s still visible to screen-readers and bots. Aside from that, the description is still wrapped in a <em><!-- raw HTML omitted --></em> tag which, aside from the semantic meaning it provides, also has the effect of making our text smaller. So it needs to be styled to match its parent. This is simple using the <em>@extend</em> directive in Sass.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#f92672">h1</span> <span style="color:#a6e22e">.override-title</span> {
+  <span style="color:#66d9ef">@extend</span> <span style="color:#f92672">h1</span>;
+}</code></pre></div>
+<p>Then in my template I call the title like this -</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;&lt;?=</span> <span style="color:#a6e22e">overrideTitle</span>(); <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">&lt;/h1&gt;
+</span></code></pre></div>
+<p>Now if there&rsquo;s no override the browser gets the regular title, but if override returns true the browser gets -</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h1</span>&gt;&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sr-only&#34;</span>&gt;About: &lt;/<span style="color:#f92672">span</span>&gt;&lt;<span style="color:#f92672">small</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;override-title&#34;</span>&gt;A Safe Haven for Hermit Crabs Since 1861&lt;/<span style="color:#f92672">small</span>&gt;&lt;/<span style="color:#f92672">h1</span>&gt;</code></pre></div>
+<p>Which, in terms of intent, reads as -
+About: A Safe Haven for Hermit Crabs Since 1861</p>
+<p>That&rsquo;s it, screen readers and search-bots get rich, valid, semantic, and fully descriptive markup, and our client, content creators and designers have the control they need over the display.</p>
+<p>Good stuff!</p>
+<hr>
+<p>Resources -</p>
+<ul>
+<li><a href="https://www.advancedcustomfields.com/pro/">ACF</a></li>
+<li><a href="https://roots.io">Roots</a></li>
+<li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="https://wordpress.org/">WordPress</a></li>
+<li><a href="https://moz.com/">Moz</a></li>
+<li><a href="https://www.w3.org/">W3C</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>On Getting Old(er) In Tech</title>
+            <link>https://smutek.net/on-getting-older-in-tech/</link>
+            <pubDate>Fri, 09 Dec 2016 12:58:21 +0000</pubDate>
+            
+            <guid>https://smutek.net/on-getting-older-in-tech/</guid>
+            <description>This was a great read, full of sage advice for kids of all ages (and professions). :)
+My main takeaways - Keep learning, keep growing, stay healthy, be yourself.
+On Getting Old(er) in Tech, by Don Denoncourt
+-via Hacker News</description>
+            <content type="html"><![CDATA[<p>This was a great read, full of sage advice for kids of all ages (and professions). :)</p>
+<p>My main takeaways - Keep learning, keep growing, stay healthy, be yourself.</p>
+<p><a href="http://corgibytes.com/blog/2016/12/06/getting-old-er-in-tech/">On Getting Old(er) in Tech, by Don Denoncourt</a></p>
+<p>-via Hacker News</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>GitHub Audio</title>
+            <link>https://smutek.net/github-audio/</link>
+            <pubDate>Tue, 04 Oct 2016 17:15:13 +0000</pubDate>
+            
+            <guid>https://smutek.net/github-audio/</guid>
+            <description> Listen to music generated by events happening across GitHub
+ :) Awesome!
+github.audio
+ via hacker news  </description>
+            <content type="html"><![CDATA[<blockquote>
+<p>Listen to music generated by events happening across GitHub</p>
+</blockquote>
+<p>:) Awesome!</p>
+<p><a href="https://github.audio">github.audio</a></p>
+<ul>
+<li>via hacker news</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>On DRY and the cost of wrongful abstractions</title>
+            <link>https://smutek.net/on-dry-and-the-costs-of-wrongful-abstractions/</link>
+            <pubDate>Mon, 19 Sep 2016 00:22:11 +0000</pubDate>
+            
+            <guid>https://smutek.net/on-dry-and-the-costs-of-wrongful-abstractions/</guid>
+            <description>How DRY for the sake of DRY can sometimes lead you down a rabbit hole of madness.
+Via hacker news</description>
+            <content type="html"><![CDATA[<p><a href="http://thereignn.ghost.io/on-dry-and-the-cost-of-wrongful-abstractions/">How DRY for the sake of DRY can sometimes lead you down a rabbit hole of madness.</a></p>
+<p>Via hacker news</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>A little function for oEmbed &#43; ACF</title>
+            <link>https://smutek.net/a-little-function-for-oembed-acf/</link>
+            <pubDate>Sat, 10 Sep 2016 02:18:39 +0000</pubDate>
+            
+            <guid>https://smutek.net/a-little-function-for-oembed-acf/</guid>
+            <description>We&amp;rsquo;ve been doing a lot of videos on our sites lately. Well, we&amp;rsquo;ve always done a lot of videos on our sites. The model is usually an on-page embed, either directly in page or via a modal, and we set the back-end up to use the oEmbed field in Advanced Custom Fields Pro. It gives a great back-end experience - and why use WordPress if it&amp;rsquo;s not going to be user configurable, right?</description>
+            <content type="html"><![CDATA[<p>We&rsquo;ve been doing a lot of videos on our sites lately. Well, we&rsquo;ve always done a lot of videos on our sites. The model is usually an on-page embed, either directly in page or via a modal, and we set the back-end up to use the oEmbed field in Advanced Custom Fields Pro. It gives a great back-end experience - and why use WordPress if it&rsquo;s not going to be user configurable, right?</p>
+<p>Anyway, in almost every case we need to disable the display of related videos. The <a href="https://www.advancedcustomfields.com/resources/oembed/">problem has already been solved</a>, but I&rsquo;m doing this often enough that I wrote this simple, but handy little function to take care of it. Configure the parameters in the function itself, and just pass it your field name. Outputs the URL and everything in the <em>$params</em> array gets passed in on the tail end as a query string.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">/**
+</span><span style="color:#e6db74"> * oEmbed Attributes
+</span><span style="color:#e6db74"> *
+</span><span style="color:#e6db74"> * Add parameters to oEmbed query string. Useful for
+</span><span style="color:#e6db74"> * turning off related videos and such.
+</span><span style="color:#e6db74"> *
+</span><span style="color:#e6db74"> * Basic field use: $video = videoLink(&#39;your_field_name&#39;);
+</span><span style="color:#e6db74"> * Add second param if in a repeater: $video - videoLink(&#39;your_subfield_name&#39;, true);
+</span><span style="color:#e6db74"> *
+</span><span style="color:#e6db74"> * @see https://www.advancedcustomfields.com/resources/oembed/
+</span><span style="color:#e6db74"> *
+</span><span style="color:#e6db74"> * @param $field
+</span><span style="color:#e6db74"> * @param bool $repeater defaults to false / true if repeater
+</span><span style="color:#e6db74"> * @return mixed  embed HTML
+</span><span style="color:#e6db74"> */</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">videoLink</span>($field, $repeater <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>) {
+
+  <span style="color:#66d9ef">global</span> $post;
+
+  <span style="color:#75715e">// get current post ID
+</span><span style="color:#75715e"></span>  $id <span style="color:#f92672">=</span> $post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">ID</span>;
+
+  <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>$repeater) {
+    <span style="color:#75715e">// get the field
+</span><span style="color:#75715e"></span>    $videoFrame  <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_field</span>( $field, $id );
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#75715e">// if we are in a repeater
+</span><span style="color:#75715e"></span>    $videoFrame  <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_sub_field</span>( $field, $id );
+  }
+
+  <span style="color:#75715e">// use preg_match to find iframe src
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/src=&#34;(.+?)&#34;/&#39;</span>, $videoFrame, $matches);
+  $src <span style="color:#f92672">=</span> $matches[<span style="color:#ae81ff">1</span>];
+
+  <span style="color:#75715e">// add extra params to iframe src
+</span><span style="color:#75715e"></span>  $params <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+    <span style="color:#e6db74">&#39;rel&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>
+  );
+
+  $new_src <span style="color:#f92672">=</span> <span style="color:#a6e22e">add_query_arg</span>($params, $src);
+  $videoLink <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_replace</span>($src, $new_src, $videoFrame);
+
+  <span style="color:#66d9ef">return</span> $videoLink;
+
+}
+</code></pre></div>
+<p>To use it somewhere just pass it your field name. So, if your ACF field is <em>my_video</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">videoLink</span>(<span style="color:#e6db74">&#39;my_video&#39;</span>);
+</code></pre></div>
+<p>If you&rsquo;re rolling with a repeater, just set the second parameter to true.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">videoLink</span>(<span style="color:#e6db74">&#39;my_video&#39;</span>, <span style="color:#66d9ef">true</span>);
+</code></pre></div>
+<p><a href="https://gist.github.com/smutek/f11531a44327761c9cb7b660a9a78b95">GitHub Gist</a></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Trellis &#43; Xdebug &#43; PhpStorm</title>
+            <link>https://smutek.net/trellis-xdebug-phpstorm/</link>
+            <pubDate>Tue, 30 Aug 2016 03:03:21 +0000</pubDate>
+            
+            <guid>https://smutek.net/trellis-xdebug-phpstorm/</guid>
+            <description>I love running Xdebug through PhpStorm&amp;rsquo;s built in debugger but have had the hardest time getting it to work with Trellis. I have no problem getting it going with VVV but have never been able to get my path mappings correct in Trellis.
+Well, turns out it&amp;rsquo;s really simple with PhpStorm&amp;rsquo;s Zero-Configuration debugging. Here&amp;rsquo;s the JetBrains documentation on that - but the short of it is:
+  Install a bookmarklet or browser extension.</description>
+            <content type="html"><![CDATA[
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/180681909" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>I love running Xdebug through PhpStorm&rsquo;s built in debugger but have had the hardest time getting it to work with Trellis. I have no problem getting it going with VVV but have never been able to get my path mappings correct in Trellis.</p>
+<p>Well, turns out it&rsquo;s really simple with PhpStorm&rsquo;s Zero-Configuration debugging. Here&rsquo;s the <a href="https://www.jetbrains.com/help/phpstorm/2016.2/zero-configuration-debugging.html">JetBrains documentation</a> on that - but the short of it is:</p>
+<ul>
+<li>
+<p>Install a bookmarklet or browser extension. I use The easiest Xdebug on Firefox, and Xdebug Helper on Chrome.</p>
+</li>
+<li>
+<p>On your browser extension, set the IDE key to <em>XDEBUG</em></p>
+</li>
+<li>
+<p>Set a breakpoint somewhere</p>
+</li>
+<li>
+<p>Tell PhpStorm to start listening for connections</p>
+</li>
+<li>
+<p>Start the debugger on your browser and refresh the page</p>
+</li>
+</ul>
+<p>The first time you run the debugger PhpStorm will pop up a window showing the path mappings it has detected. These are fine to select as defaults.</p>
+<p>Also, I&rsquo;ve found that eventually the browser will time out, however this does not seem to effect the debugger as I&rsquo;m still able to step through code and use the debugger normally. So, I&rsquo;ve been able to live with that.</p>
+<p>Links -</p>
+<ul>
+<li>
+<p><a href="https://www.jetbrains.com/help/phpstorm/2016.2/zero-configuration-debugging.html">PhpStorm Zero-Configuration Debugging</a></p>
+</li>
+<li>
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/">Easiest Xdebug (Firefox)</a></p>
+</li>
+<li>
+<p><a href="https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en">Xdebug Helper (Chrome)</a></p>
+</li>
+<li>
+<p><a href="https://roots.io/trellis/">Trellis </a></p>
+</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Why You Should Learn Python</title>
+            <link>https://smutek.net/why-you-should-learn-python/</link>
+            <pubDate>Wed, 24 Aug 2016 17:32:25 +0000</pubDate>
+            
+            <guid>https://smutek.net/why-you-should-learn-python/</guid>
+            <description>Why You Should Learn Python, via Hacker News.</description>
+            <content type="html"><![CDATA[<p><a href="https://iluxonchik.github.io/why-you-should-learn-python/">Why You Should Learn Python</a>, via Hacker News.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Maintaining the Roots Stack</title>
+            <link>https://smutek.net/maintaining-the-roots-stack/</link>
+            <pubDate>Sat, 25 Jun 2016 17:23:22 +0000</pubDate>
+            
+            <guid>https://smutek.net/maintaining-the-roots-stack/</guid>
+            <description>Here&amp;rsquo;s a short screen cast showing how to maintain the Roots stack once it&amp;rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&amp;rsquo;ll see that everything goes smoothly and it&amp;rsquo;s a super easy process.
+It&amp;rsquo;s as easy as:
+ Update version numbers as needed in /site/composer.</description>
+            <content type="html"><![CDATA[
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/172232346" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>Here&rsquo;s a short screen cast showing how to maintain the Roots stack once it&rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&rsquo;ll see that everything goes smoothly and it&rsquo;s a super easy process.</p>
+<p>It&rsquo;s as easy as:</p>
+<ul>
+<li>Update version numbers as needed in /site/composer.json</li>
+<li>Run <em>composer update</em></li>
+<li>Make sure everything works.</li>
+<li>Add &amp; commit to VC <em>git add all</em> &amp; <em>git commit</em></li>
+<li>Push to your master repo, in my case <em>git push origin master</em></li>
+<li>CD to your trellis directory and deploy to your target environment, for me: <em>./deploy.sh production smutek.net</em></li>
+</ul>
+<p>If you haven&rsquo;t seen my other videos, I recently did a 3 part series on moving a WordPress website from shared hosting to a Roots stack running on a Digital Ocean droplet. Check them out here -</p>
+<ul>
+<li><a href="/migrating-to-trellis-1/">Part 1: Setting up Trellis &amp; Bedrock</a></li>
+<li><a href="/migrating-to-trellis-2/">Part 2: Install plugins &amp; import data</a></li>
+<li><a href="/shared-hosting-to-roots-stack-part-3/">Part 3: Set up Digital Ocean &amp; deploy</a></li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="http://roots.io/trellis/">roots.io/trellis/</a></li>
+<li><a href="http://roots.io/bedrock/">roots.io/bedrock/</a></li>
+<li><a href="http://roots.io/sage/">roots.io/sage/</a></li>
+<li><a href="https://getcomposer.org/">getcomposer.org/</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Shared hosting to Roots stack: Part 3</title>
+            <link>https://smutek.net/shared-hosting-to-roots-stack-part-3/</link>
+            <pubDate>Wed, 08 Jun 2016 02:43:32 +0000</pubDate>
+            
+            <guid>https://smutek.net/shared-hosting-to-roots-stack-part-3/</guid>
+            <description>This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+Correction: The video opens with: &amp;hellip;this is part four of a three part series&amp;hellip; Sorry, It was late. :)
+I didn&amp;rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project.</description>
+            <content type="html"><![CDATA[
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/169790105" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&rsquo;s Encrypt.</p>
+<p>Correction: The video opens with: <em>&hellip;this is part four of a three part series&hellip;</em> Sorry, It was late. :)</p>
+<p>I didn&rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project.</p>
+<p>In the <a href="/migrating-to-trellis-1/">first screen-cast</a> I setup Trellis &amp; Bedrock.</p>
+<p>In the <a href="/migrating-to-trellis-2/">second screen-cast</a> I used Composer to get my theme &amp; plugins installed, dealt with a couple of premium plugins, and migrated my data into my development environment.</p>
+<p>In this screencast I setup my Digital Ocean droplet, prepare my project, provision the server and deploy the site. Yay! Thoughts and such below.</p>
+<h2 id="suggestions">Suggestions</h2>
+<h3 id="read-the-docs-carefully">Read the docs carefully.</h3>
+<p>This is the best suggestion I have to offer. I read the docs carefuly and when my first deploy failed I realized I hadn&rsquo;t read the docs carefully enough. The documentation is comprehensive, it&rsquo;s your friend.</p>
+<h3 id="make-sure-site-keys-have-been-added-correctly">Make sure site keys have been added correctly</h3>
+<p>This tripped me up a couple of times but sure enough upon closer inspection of each failed deploy there was a stray &lsquo;example.com&rsquo; in place of &lsquo;smutek.net&rsquo;. Generally if provisioning fails early on a missed site key is likely the culprit.</p>
+<h3 id="do-a-couple-dry-runs-with-a-spare-domain">Do a couple dry runs with a spare domain</h3>
+<p>Unless you&rsquo;re super comfortable with this I wouldn&rsquo;t suggest your first deploy be on a mission critical or time sensitive site. It pays to be patient, not get frustrated, and go through it a couple of times until the process and concepts sink in. If things aren&rsquo;t working out just destroy the DO box and try again. I&rsquo;d say that I&rsquo;ve done 5 or 6 deploys over the course of recording this screen-cast and at this point I&rsquo;m comfortable enough with the process.</p>
+<h2 id="notes">Notes</h2>
+<p>Here&rsquo;s the order I did things:</p>
+<h3 id="digital-ocean-setup">Digital Ocean Setup</h3>
+<ul>
+<li>Point DNS to DO</li>
+<li>Choose droplet : Ubuntu 14.0.4</li>
+<li>Add SSH Keys</li>
+<li>Create droplet</li>
+<li>Add domain to droplet (regular &amp; www)</li>
+</ul>
+<h3 id="provision--deploy">Provision &amp; Deploy</h3>
+<p>If setting up SSL with letsencrypt, be sure to have added www subdomain when adding domain to droplet</p>
+<ul>
+<li>Make sure the project is added to github</li>
+<li>Set up variables in <em>group_vars/production/wordpress_sites.yml</em></li>
+<li>Add the necessary settings for remote servers to <em>group_vars/production/vault.yml</em>
+<ul>
+<li>Generate password for <em>vault_mysql_root_password</em></li>
+<li>Generate crypted password for <em>vault_sudoer_passwords</em></li>
+<li>Generate <em>db_password</em></li>
+<li>Generate salts (be sure to use the Yaml, if using Trellis)</li>
+<li>Generate password for <em>group_vars/all/vault.yml</em>
+<ul>
+<li>Set variables in group_vars/all/mail</li>
+<li>Set &lsquo;sshd_permit_root_login: false&rsquo; in_group_vars/all/security.yml_</li>
+<li>Create a file called <em>.vault_pass</em> in /trellis. Generate a random password and save it in this file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This is your vault password. Make sure it&rsquo;s being git-ignored (it is, but double check .gitignore anyway)
+* Inform Ansible of the vault password by adding <em>vault_password_file = .vault_pass</em> to <em>trellis/ansible.cfg</em>
+* Encrypt vault.yml files. Use as needed, or encrypt all with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ansible-vault encrypt group_vars/all/vault.yml group_vars/development/vault.yml group_vars/staging/vault.yml group_vars/production/vault.yml</code></pre></div>
+<ul>
+<li>Add server hostname to <em>hosts/production</em></li>
+<li>Add public SSH keys for web &amp; admin_user groups in <em>group_vars/all/users.yml</em></li>
+</ul>
+<p>Note, make sure your public key has been added to github, or wherever. In the case of github,
+_<a href="https://github.com/username.keys_">https://github.com/username.keys_</a></p>
+<ul>
+<li>If using deploy hooks, uncomment the buildhooks in &lsquo;deploy-hooks/build-before.ym&rsquo; and replace &lsquo;sage&rsquo; with the name of your theme directory</li>
+<li>Turn on caching if using it</li>
+<li>Verify you can ssh to your box</li>
+<li>Make sure all changes have been saved, committed, and pushed to VC</li>
+<li>Run:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ansible-playbook sever.yml -e env<span style="color:#f92672">=</span>production</code></pre></div></li>
+<li>Run:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./deploy.sh production yoursite.com</code></pre></div></li>
+<li>Go to your site &amp; run through the WP Installer.</li>
+<li>Migrate database (I used DB Migrate Pro)</li>
+<li>Rejoice</li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="http://roots.io/trellis/">roots.io/trellis/</a></li>
+<li><a href="http://roots.io/bedrock/">roots.io/bedrock/</a></li>
+<li><a href="http://roots.io/sage/">roots.io/sage/</a></li>
+<li><a href="https://www.digitalocean.com/">https://www.digitalocean.com/</a></li>
+<li><a href="https://letsencrypt.org/">https://letsencrypt.org/</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Shared hosting to Roots stack: Part 2</title>
+            <link>https://smutek.net/migrating-to-trellis-2/</link>
+            <pubDate>Wed, 01 Jun 2016 02:48:45 +0000</pubDate>
+            
+            <guid>https://smutek.net/migrating-to-trellis-2/</guid>
+            <description>Pt. 2 - Install plugins via Composer, migrate data   This is the second in a series of screen-casts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+In the first screen-cast I setup Trellis &amp;amp; Bedrock.
+In this screen-cast I&amp;rsquo;ll get my theme &amp;amp; plugins installed, deal with a couple of premium plugins, and migrate my data into my development environment.</description>
+            <content type="html"><![CDATA[<h3 id="pt-2---install-plugins-via-composer-migrate-data">Pt. 2 - Install plugins via Composer, migrate data</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/168877537" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>This is the second in a series of screen-casts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&rsquo;s Encrypt.</p>
+<p><a href="/migrating-to-trellis-1/">In the first screen-cast</a> I setup Trellis &amp; Bedrock.</p>
+<p>In this screen-cast I&rsquo;ll get my theme &amp; plugins installed, deal with a couple of premium plugins, and migrate my data into my development environment.</p>
+<p><a href="/shared-hosting-to-roots-stack-part-3/">In part 3</a>  I setup my Digital Ocean droplet, prepare my project, provision the server and deploy the site.</p>
+<p>Links:</p>
+<ul>
+<li><a href="http://roots.io/trellis/">roots.io/trellis/</a></li>
+<li><a href="http://roots.io/bedrock/">roots.io/bedrock/</a></li>
+<li><a href="http://roots.io/sage/">roots.io/sage/</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Shared hosting to Roots stack: Part 1</title>
+            <link>https://smutek.net/migrating-to-trellis-1/</link>
+            <pubDate>Wed, 25 May 2016 04:51:13 +0000</pubDate>
+            
+            <guid>https://smutek.net/migrating-to-trellis-1/</guid>
+            <description>Pt. 1 - Setting up Trellis &amp;amp; Bedrock locally   This is the first in a series of screencasts that will document the process of moving a WordPress website (this website) from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+In this screencast I&amp;rsquo;ll get my local development environment setup with Trellis &amp;amp; Bedrock.
+In part 2 I get my theme and plugins installed, and migrate my data into my development environment.</description>
+            <content type="html"><![CDATA[<h3 id="pt-1---setting-up-trellis--bedrock-locally">Pt. 1 - Setting up Trellis &amp; Bedrock locally</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/167991973" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>This is the first in a series of screencasts that will document the process of moving a WordPress website (this website) from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&rsquo;s Encrypt.</p>
+<p>In this screencast I&rsquo;ll get my local development environment setup with Trellis &amp; Bedrock.</p>
+<p><a href="/migrating-to-trellis-2/">In part 2</a> I get my theme and plugins installed, and migrate my data into my development environment.</p>
+<p><a href="/shared-hosting-to-roots-stack-part-3/">In part 3</a>  I setup my Digital Ocean droplet, prepare my project, provision the server and deploy the site.</p>
+<p>Links:</p>
+<ul>
+<li><a href="https://roots.io/trellis/">Trellis</a></li>
+<li><a href="https://roots.io/bedrock/">Bedrock</a></li>
+<li><a href="https://roots.io/sage/">Sage</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Setting up VVV for WordPress Development</title>
+            <link>https://smutek.net/setting-up-vvv-for-wordpress-development/</link>
+            <pubDate>Sun, 17 Apr 2016 17:27:14 +0000</pubDate>
+            
+            <guid>https://smutek.net/setting-up-vvv-for-wordpress-development/</guid>
+            <description>This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp;amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.
+It&amp;rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&amp;rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack.</description>
+            <content type="html"><![CDATA[
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/163160322" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.</p>
+<p>It&rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack.</p>
+<p>Also, once you&rsquo;re comfortable with Vagrant it&rsquo;s possible to start exploring some of the other boxes out there, such as Trellis or Scotch, for example, and it becomes possible to setup the development stack to match the production stack exactly, for perfect parity between development and production environments.</p>
+<p>Short of it is, it&rsquo;s pretty straight forward to set up and, in my case, taking the time to learn this has helped me to up my skill set.</p>
+<p>Links -</p>
+<ul>
+<li>
+<p><strong>Virtual Box</strong>
+<a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
+</li>
+<li>
+<p><strong>Vagrant</strong>
+<a href="https://www.vagrantup.com/">https://www.vagrantup.com/</a></p>
+</li>
+<li>
+<p><strong>VVV</strong>
+<a href="https://github.com/Varying-Vagrant-Vagrants/VVV">https://github.com/Varying-Vagrant-Vagrants/VVV</a></p>
+</li>
+<li>
+<p><strong>Homebrew</strong> (optional)
+<a href="http://brew.sh/">http://brew.sh/</a></p>
+</li>
+<li>
+<p><strong>Variable VVV</strong>
+<a href="https://github.com/bradp/vv">https://github.com/bradp/vv</a></p>
+</li>
+<li>
+<p><strong>VVV Provision Flipper</strong>
+<a href="https://github.com/bradp/vvv-provision-flipper">https://github.com/bradp/vvv-provision-flipper</a></p>
+</li>
+<li>
+<p><strong>topdown</strong>
+<a href="https://github.com/topdown/VVV-Dashboard">https://github.com/topdown/VVV-Dashboard</a></p>
+</li>
+</ul>
+<p>If you prefer reading over watching, Brad Parbs wrote <a href="https://webdevstudios.com/2015/01/14/getting-started-vagrant-vvv-local-development/">an excellent walk-through</a> on the WebDevStudios blog.</p>
+<p>Note - around the 14 minute mark I ran into an issue with Varying VVV not remembering the path to my VVV installation folder. The fix was pretty easy.</p>
+<p>In my case, VVV is in a folder called vvv, so just open the .vvv-config file in vim, or nano, or whatever.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/.vvv-config</code></pre></div>
+<p>Then update the path and save the file. In my case my install is located in my <code>home-directory/sites/vvv</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/Users/jimmysmutek/sites/vagrant-local&#34;</span>
+}</code></pre></div>
+<p>changes to -</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/Users/jimmysmutek/sites/vvv&#34;</span>
+}</code></pre></div>
+<p>The next <code>vv-create</code> ran without issue.</p>
+<p>Hope this post is helpful to someone!</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Function for Post Format Icons</title>
+            <link>https://smutek.net/function-for-post-format-icons/</link>
+            <pubDate>Tue, 15 Mar 2016 04:54:39 +0000</pubDate>
+            
+            <guid>https://smutek.net/function-for-post-format-icons/</guid>
+            <description>/** * Output Post Format icons * * Outputs an icon for each post format. Set up to use Fontawesome, * but can be used with anything, or you can just use CSS. * * @return string */ function post_format_icon() { global $post; // get current post ID  $id = $post-&amp;gt;ID; // get post format  $format = get_post_format( $id ); // array of icons as $format =&amp;gt; $icon key/value pairs  $icons = [ &amp;#39;standard&amp;#39; =&amp;gt; &amp;#39;fa-pencil&amp;#39;, &amp;#39;aside&amp;#39; =&amp;gt; &amp;#39;fa-sticky-note&amp;#39;, &amp;#39;chat&amp;#39; =&amp;gt; &amp;#39;fa-comments&amp;#39;, &amp;#39;gallery&amp;#39; =&amp;gt; &amp;#39;fa-picture-o&amp;#39;, &amp;#39;link&amp;#39; =&amp;gt; &amp;#39;fa-external-link&amp;#39;, &amp;#39;image&amp;#39; =&amp;gt; &amp;#39;fa-camera&amp;#39;, &amp;#39;quote&amp;#39; =&amp;gt; &amp;#39;fa-quote-left&amp;#39;, &amp;#39;status&amp;#39; =&amp;gt; &amp;#39;fa-commenting&amp;#39;, &amp;#39;video&amp;#39; =&amp;gt; &amp;#39;fa-video-camera&amp;#39; ]; // format will return false if no format is set.</description>
+            <content type="html"><![CDATA[<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * Output Post Format icons
+</span><span style="color:#e6db74">     * 
+</span><span style="color:#e6db74">     * Outputs an icon for each post format. Set up to use Fontawesome,
+</span><span style="color:#e6db74">     * but can be used with anything, or you can just use CSS.
+</span><span style="color:#e6db74">     *
+</span><span style="color:#e6db74">     * @return string
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">post_format_icon</span>() {
+      <span style="color:#66d9ef">global</span> $post;
+      <span style="color:#75715e">// get current post ID
+</span><span style="color:#75715e"></span>      $id     <span style="color:#f92672">=</span> $post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">ID</span>;
+      <span style="color:#75715e">// get post format
+</span><span style="color:#75715e"></span>      $format <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_post_format</span>( $id );
+      <span style="color:#75715e">// array of icons as $format =&gt; $icon key/value pairs
+</span><span style="color:#75715e"></span>      $icons <span style="color:#f92672">=</span> [
+        <span style="color:#e6db74">&#39;standard&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fa-pencil&#39;</span>,
+        <span style="color:#e6db74">&#39;aside&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fa-sticky-note&#39;</span>,
+        <span style="color:#e6db74">&#39;chat&#39;</span>     <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fa-comments&#39;</span>,
+        <span style="color:#e6db74">&#39;gallery&#39;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fa-picture-o&#39;</span>,
+        <span style="color:#e6db74">&#39;link&#39;</span>     <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fa-external-link&#39;</span>,
+        <span style="color:#e6db74">&#39;image&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fa-camera&#39;</span>,
+        <span style="color:#e6db74">&#39;quote&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fa-quote-left&#39;</span>,
+        <span style="color:#e6db74">&#39;status&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fa-commenting&#39;</span>,
+        <span style="color:#e6db74">&#39;video&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fa-video-camera&#39;</span>
+      ];
+      <span style="color:#75715e">// format will return false if no format is set. So, evaluate against this..
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// if format = false then $icon = standard, else icon = selected format
+</span><span style="color:#75715e"></span>      $format <span style="color:#f92672">==</span> ( <span style="color:#66d9ef">false</span> ) <span style="color:#f92672">?</span> $icon <span style="color:#f92672">=</span> $icons[<span style="color:#e6db74">&#39;standard&#39;</span>] <span style="color:#f92672">:</span> $icon <span style="color:#f92672">=</span> $icons[ $format ];
+      
+      <span style="color:#75715e">// string to be output
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// echo a full line of html or just drop the output in as a class
+</span><span style="color:#75715e"></span>      $output <span style="color:#f92672">=</span> $icon;
+      <span style="color:#75715e">// return the output
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> $output;
+    }
+    
+</code></pre></div>
+<p><a href="https://gist.github.com/smutek/f15e7723db1e5e84c23b">Github Gist</a></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>WC Lancaster 2016</title>
+            <link>https://smutek.net/wc-lancaster-2016/</link>
+            <pubDate>Sat, 05 Mar 2016 18:47:45 +0000</pubDate>
+            
+            <guid>https://smutek.net/wc-lancaster-2016/</guid>
+            <description>I was super honored to speak at WordCamp Lancaster today! My topic was WordPress workflows with PHPStorm. Here&amp;rsquo;s a link to my slides -
+slides.com/smutek/lancaster-2016/
+Here&amp;rsquo;s some resources that I&amp;rsquo;ve found helpful -
+  Jeffery Way&amp;rsquo;s PHPStorm series on Laracasts
+  Good article on the Delicious Brains blog
+  PHP Storm color schemes, by Dayle Rees (demos here)
+  Using xDebug &amp;amp; PHPStorm, by Aaron Holbrook (YouTube)</description>
+            <content type="html"><![CDATA[<p>I was super honored to speak at WordCamp Lancaster today! My topic was WordPress workflows with PHPStorm. Here&rsquo;s a link to my slides -</p>
+<p><a href="http://slides.com/smutek/lancaster-2016/">slides.com/smutek/lancaster-2016/</a></p>
+<p>Here&rsquo;s some resources that I&rsquo;ve found helpful -</p>
+<ul>
+<li>
+<p><a href="https://laracasts.com/series/how-to-be-awesome-in-phpstorm">Jeffery Way&rsquo;s PHPStorm series on Laracasts</a></p>
+</li>
+<li>
+<p><a href="https://deliciousbrains.com/how-we-use-phpstorm-wordpress-development/">Good article on the Delicious Brains blog</a></p>
+</li>
+<li>
+<p><a href="https://github.com/daylerees/colour-schemes/tree/master/jetbrains">PHP Storm color schemes, by Dayle Rees</a> (<a href="http://daylerees.github.io/">demos
+here</a>)</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=jkv0dzW3IM4">Using xDebug &amp; PHPStorm, by Aaron Holbrook</a> (YouTube)</p>
+</li>
+</ul>
+<p><img src="/img/2016/03/wc-lanc.jpg" alt="Photo of me speaking at WordCamp Lancaster">
+Geek city! :) Photo by my friend Solomon Scott</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Getting set up with dploy.io</title>
+            <link>https://smutek.net/getting-set-up-with-dploy-io/</link>
+            <pubDate>Wed, 17 Jun 2015 03:03:40 +0000</pubDate>
+            
+            <guid>https://smutek.net/getting-set-up-with-dploy-io/</guid>
+            <description>Code deployments with dploy.io are truly a wonderful thing, here&amp;rsquo;s a quick video walk-through showing how to get dploy up and running on a project.
+For this demo I&amp;rsquo;m working with a WordPress theme, but the same concepts should apply to pretty much any project. I cover both automatic and manual deployments.
+Hopefully you&amp;rsquo;ll find this video somewhat helpful.
+If you&amp;rsquo;re still living under the tyranny of FTP, do yourself a favor and check out dploy.</description>
+            <content type="html"><![CDATA[
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/128280461" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>Code deployments with dploy.io are truly a wonderful thing, here&rsquo;s a quick video walk-through showing how to get dploy up and running on a project.</p>
+<p>For this demo I&rsquo;m working with a WordPress theme, but the same concepts should apply to pretty much any project. I cover both automatic and manual deployments.</p>
+<p>Hopefully you&rsquo;ll find this video somewhat helpful.</p>
+<p>If you&rsquo;re still living under the tyranny of FTP, do yourself a favor and check out dploy.io or a similar service.</p>
+<p>Tools used -</p>
+<ul>
+<li>dploy - <a href="http://dploy.io/">dploy.io/</a></li>
+<li>Tower - <a href="http://git-tower.com/">git-tower.com/</a></li>
+<li>Sage - <a href="http://roots.io/sage/">roots.io/sage/</a></li>
+<li>Sublime - <a href="http://sublimetext.com/">sublimetext.com/</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>How to restore the Bootstrap nav in Sage 8.2</title>
+            <link>https://smutek.net/how-to-restore-the-bootstrap-nav-in-sage-8-2/</link>
+            <pubDate>Tue, 05 May 2015 17:23:27 +0000</pubDate>
+            
+            <guid>https://smutek.net/how-to-restore-the-bootstrap-nav-in-sage-8-2/</guid>
+            <description>As of Sage 8.2 the Bootstrap navigation has been removed. This is part of Sage&amp;rsquo;s move towards framework agnosticism. There&amp;rsquo;s good discussion here, on the GitHub pull request.
+As of now, adding the navigation back is super easy, and Ben Word links to everything you&amp;rsquo;ll need to do this at the bottom of the same discussion, here.
+Adding the nav back is so easy that it doesn&amp;rsquo;t really warrant a video, but I like making videos, so here&amp;rsquo;s a quick walk through.</description>
+            <content type="html"><![CDATA[
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/126609067" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>As of Sage 8.2 the Bootstrap navigation has been removed. This is part of Sage&rsquo;s move towards framework agnosticism. There&rsquo;s good discussion here, <a href="https://github.com/roots/sage/pull/1427">on the GitHub pull request</a>.</p>
+<p>As of now, adding the navigation back is super easy, and Ben Word links to everything you&rsquo;ll need to do this at the bottom of the same discussion, <a href="https://github.com/roots/sage/pull/1427#issuecomment-97305637">here</a>.</p>
+<p>Adding the nav back is so easy that it doesn&rsquo;t really warrant a video, but I like making videos, so here&rsquo;s a quick walk through. :)</p>
+<p>I had a small glitch at the 2:30 mark as I didn&rsquo;t add the path correctly in the includes, so sorry about that, but I recover quickly. Hopefully someone will find this video helpful.</p>
+<p>Thanks a ton to the Roots team for the amazing work.</p>
+<p>Links / Credits:</p>
+<ul>
+<li><a href="https://roots.io/">Roots</a></li>
+<li><a href="https://discourse.roots.io/">Roots Discourse</a></li>
+<li><a href="https://github.com/roots/sage">Sage Theme</a></li>
+<li><a href="https://github.com/twittem/wp-bootstrap-navwalker">Bootstrap nav walker</a></li>
+<li><a href="https://gist.github.com/retlehs/1b49f6c00d5140962d56">Sage header template for Bootstrap nav</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Migrating Your WordPress Site Back To Your Web Server</title>
+            <link>https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/</link>
+            <pubDate>Wed, 15 Apr 2015 13:46:47 +0000</pubDate>
+            
+            <guid>https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/</guid>
+            <description>In my last post I covered how to get a copy of your WordPress site running on your computer, in this post I will cover migrating your WordPress site back to your web server.
+Overview There&amp;rsquo;s 2 ways to go about this, the easy way and the really easy way. The easy way will show how to move your site back using the same free tools that we used to set up our local site.</description>
+            <content type="html"><![CDATA[<p>In my last post I covered <a href="/running-your-wordpress-site-from-your-computer/">how to get a copy of your WordPress site running on your computer</a>, in this post I will cover migrating your WordPress site back to your web server.</p>
+<!-- raw HTML omitted -->
+<h2 id="overview">Overview</h2>
+<p>There&rsquo;s 2 ways to go about this, the easy way and the really easy way. The easy way will show how to move your site back using the same free tools that we used to set up our local site. You&rsquo;ll need FTP access to your web server and access to phpMyadmin for this method.</p>
+<p>The really easy way uses the premium version of DB Migrate. Aside from a copy of DB Migrate Pro, you&rsquo;ll just need FTP access to your site. Aside from that, the really easy way is as easy as clicking a button.  Let&rsquo;s go ahead and get started.</p>
+<h2 id="the-easy-way">The Easy Way</h2>
+<p>Here&rsquo;s a screen shot of my remote site, out on the internet, that I&rsquo;ve cloned and set up to run on my computer&hellip;</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214826/live-site_rrbmke.jpg" alt="Image of a WordPress site running on a remote server"></p>
+<p>&hellip;and here&rsquo;s a shot of my redesigned, modified, local, running on my computer site that I&rsquo;m going to clone back to the web&hellip;</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214825/local-site-to-migrate_xiswws.jpg" alt="local-site-to-migrate"></p>
+<p>I&rsquo;m going to point out that this site is strictly for example. Obviously the minor changes I&rsquo;ve made here don&rsquo;t require setting up a cloned site, but the assumption is that you&rsquo;ll have made some pretty major changes to your site.</p>
+<h3 id="getting-started">Getting Started</h3>
+<p>If you haven&rsquo;t checked out my last post, How To Get WordPress running on your computer, I would suggest doing that now. Basically what we are doing here is everything we did in the last post, in reverse. I don&rsquo;t mean the steps are in reverse, rather the data will be flowing in reverse, from our local site back up to our live site.</p>
+<h3 id="copy-paths-from-live-site--export-local-database">Copy Paths from Live Site &amp; Export Local Database</h3>
+<p>The first thing we need to do is to export a copy of our local database. We&rsquo;re going to use DB Migrate to do this. If you followed along with my last post you should have DB Migrate installed on both the local site and the live site.</p>
+<p>The first thing we need to do is to copy the settings from DB Migrate on our live site, and paste them in to our local site. Here&rsquo;s a screen shot of the settings that I need to grab on my live site -</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214825/migrate-db-settings-1_r2zdy4.jpg" alt="Migrate DB Settings on Live Site"></p>
+<p>I&rsquo;m going to copy the contents of both find fields from my live site, then I&rsquo;m going to switch over to my local site and paste these settings into the replace fields on my local site. Here&rsquo;s an image of DB Migrate on my local site, once I&rsquo;ve pasted the settings.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214824/migrate-settings-copied-to-local_c7wqyx.jpg" alt="Image of Migrate DB settings copied to the local install"></p>
+<p>What we are doing here is telling DB Migrate on our local site to make a copy of the new, modified, local database - but to make this copy using the file paths from the remote site. Once you&rsquo;ve pasted the info from the live site as shown above, click migrate. DB Migrate will now export a copy of the modified local database to your downloads folder. This is the database with all our changes, we&rsquo;ll be using it to replace the database in our live site.</p>
+<p><strong>Important:</strong> Make A Copy of your live database before continuing!</p>
+<p>I cannot stress enough, <em>before you do anything else make a copy of your remote database</em>. Making a copy of your live database ensures that if something does go wrong you can quickly roll back and recover your site. If something goes wrong and you do not have a backup copy of your live database your site may not be recoverable.</p>
+<p><strong>Make a copy of your live database!</strong></p>
+<h3 id="live-database-backup">Live Database Backup</h3>
+<p>To make a backup of your live database log in to your web hosting control panel and go to phpMyadmin. If you&rsquo;re not sure how to access phpMyAdmin get in touch with your web host.</p>
+<p>Once you&rsquo;re logged in to phpMyAdmin, select your database in the column on the left.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214824/php-my-admin-1_lc6xk0.jpg" alt="Image of phpMyAdmin screen"></p>
+<p>With your database selected, choose &ldquo;Export&rdquo; from the top menu, and click the custom button, under &ldquo;export method&rdquo;. Make sure all tables are selected, in the Tables section. They should be selected by default, but make sure just incase. They will be highlighted in grey, as shown in the screenshot below.  Click &ldquo;Save Output to a file&rdquo; if it is not already selected&hellip;</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214823/php-my-admin-export_nlrvf5.jpg" alt="php-my-admin-export"></p>
+<p>Leave all of the other settings as they are, then scroll to the bottom of the page and click &ldquo;Go&rdquo;. A copy of your live database will download to your computer. Make sure it does, then put it somewhere where you&rsquo;ll be able to find it if you need it. I like to put it in its own folder, called Backup DB.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214823/live-db-backed-up_ojlm8f.jpg" alt="Image of live database downloaded and secured"></p>
+<h3 id="install-plugins-and-themes">Install Plugins, and Themes</h3>
+<p>The next step is pretty straight forward. We just need to make sure that any themes, plugins, and media files from our modified local site are also installed on our live site.</p>
+<p>In my case, I am using the Rams theme by Anders Noren on my local site. I&rsquo;ve also set up a new contact form, using Gravity Forms. I&rsquo;ll need to make sure that the Rams theme and Gravity Forms are both installed on my live website before proceeding. You&rsquo;ll want to do the same with any new plugins and themes that you might have installed.</p>
+<h3 id="upload-media-files">Upload Media Files</h3>
+<p>I&rsquo;ve also added some new images to my site, so I&rsquo;ll need to make sure that these are uploaded as well. This is where FTP comes into play. If you haven&rsquo;t added new images or media to your site you can skip this step.</p>
+<p>When I refer to media I mean anything that you&rsquo;ve uploaded to your site using the WordPress media uploader. By default, WordPress keeps all the media that you add to your site in a folder called uploads, which lives in another folder called wp-content. Inside of the uploads folder media files are organized in subfolders by year, which in turn hold folders that are organized by month.</p>
+<p>If that sounds complicated, don&rsquo;t worry, it&rsquo;s not. As an example, media files that I&rsquo;ve uploaded in April are stored in a folder titled &ldquo;04&rdquo;, which is sorted in a folder called &ldquo;2015&rdquo;, which is stored in a folder called &ldquo;uploads&rdquo;. Here&rsquo;s a screen shot of the 2015 folder on my live site.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214822/wp-uploads-folder_hfjhdu.jpg" alt="Image of WordPress uploads folder structure"></p>
+<p>Figuring out which files to upload is easy. I&rsquo;ve done all of my work in March of 2015 so the media files I need to upload will be in the folder at wp-content/uploads/2015/03</p>
+<h3 id="swap-databases">Swap Databases</h3>
+<p>Now, with our theme, plugins, and media files uploaded to our live site, we are ready to swap out the databases. Working with your sites database can be scary, and it&rsquo;s good to be cautious here since your database is arguably the single most important part of your WordPress website. It contains all your posts, pages, text content, and settings. <strong>This is why we made a backup of our live database before moving forward</strong>.</p>
+<p>The first thing we&rsquo;ll want to do is to go back to phpMyAdmin on the live site. Make sure your live database is still selected in the column to the left, and click the import button on the top row.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214822/php-my-admin-import-button_flba0d.jpg" alt="Import button in phpMyAdmin"></p>
+<p>Once you&rsquo;ve done this you&rsquo;ll see the import screen. Leave all of the settings as is and click the choose file button.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214821/php-my-admin-import-screen_qwzxpu.jpg" alt="phpMyAdmin import screen"></p>
+<p>Browse to, and select the database file that you exported from your local site with DB Migrate.</p>
+<p>Make sure you are importing the database file that you exported from DB Migrate, not your backup database.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214820/importing-db_x7h5ax.jpg" alt="Importing the database"></p>
+<p>Once you&rsquo;ve selected your database, click Go. Once the database has imported you should see a screen that looks like this -</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214820/importing-db-success_u32cys.jpg" alt="Import database success screen"></p>
+<p>Once you&rsquo;ve imported the database switch back to your live WordPress site and navigate to settings/permalinks and click save. Most likely you will have to log back in.</p>
+<p>After saving the permalinks visit the font page of your site and, if all went well, you should see your modified site running on your live server!</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214819/site-migrated_huscoi.jpg" alt="Image of live site after successful migration"></p>
+<h3 id="finished">Finished!</h3>
+<p>That&rsquo;s it, you&rsquo;ve successfully moved your WordPress site from your computer back to your live server. Congratulations!</p>
+<h2 id="in-case-of-disaster">In case of disaster&hellip;</h2>
+<p>If something goes wrong, don&rsquo;t panic. This is why we made the backup of our database. Getting your site back up and running is as simple as going back to phpMyAdmin on your live site, dropping the tables you just imported, and then import you backup database. Once you&rsquo;ve done this your site will be back to normal.</p>
+<p>Jump to the 9 minute mark of my video for a walkthrough on what to do if you mess up.</p>
+<h2 id="the-really-really-easy-way">The Really Really Easy Way</h2>
+<p>I completely understand that everything above may seem complicated and if you&rsquo;ve read this far you are truly my hero and I think you&rsquo;re awesome. :)</p>
+<p>I want to point out that I intentionally try to be as wordy as possible because I want to make sure that anyone reading has a solid understanding of the process before trying it themselves. Once you understand the process it really is quite easy. I&rsquo;m able to move a site in about 5 minutes. In my work I clone sites back and forth dozens of times every week.</p>
+<p>With that said, if this moving databases business is not for you then you may want to check out DB Migrate Pro. Migrating your WordPress site back to your web server could not be easier than it is with this plugin.</p>
+<h3 id="enter-db-migrate-pro">Enter DB Migrate Pro</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214819/delicious-brains-website_af9lzo.jpg" alt="Delicious Brains home page"></p>
+<p>I&rsquo;ll be honest with you, DB Migrate Pro is what I use. I can tell you that as a professional working in the self hosted WordPress space, DB Migrate Pro has saved me more time, more money, and more frustration than any other plugin I&rsquo;ve ever used. Hands down. If you are migrating a lot of databases in your day to day work then this is definitely the way to go. Or, if you have one site that you want to make a local copy of, and you just don&rsquo;t want to deal with phpMyAdmin and importing databases, then this is the plugin for you.</p>
+<p>A developers license is $199, and a personal license is $90. If you click the link at the bottom of this post you can get 20% off of your purchase.</p>
+<p>Moving your site with Db Migrate Pro is as easy as clicking a button. Seriously. You&rsquo;ll still have to make sure your themes and plugins are installed, and that your media files are uploaded (unless you have a developers license, in which case you can use the media files add on), but there&rsquo;s no fiddling about with phpMyAdmin and databases.</p>
+<p>Once you&rsquo;ve made sure that your themes, plugins, and media files have been uploaded, you just copy a special URL from your live site, paste it into the DB Migrate Pro settings page on your local site, and click migrate.</p>
+<p>I cover moving a site with Db Migrate Pro in my video starting at around the 16 minute mark. If you&rsquo;re interested in grabbing a copy of DB Migrate Pro, use the banner below to get 20% off of your purchase. The coupon will be applied automatically and you&rsquo;ll see the discount at checkout once you&rsquo;ve added a product to your cart.</p>
+<p><a href="http://t.deliciousbrains.com/aff_c?offer_id=2&amp;aff_id=1272&amp;file_id=20&amp;coupon=SUPER20">Click Here for 20% Off DB Migrate Pro</a></p>
+<p>I hope this post has been helpful. If you have any questions feel free to leave me a comment or send me an email. Thanks for reading!</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Running Your WordPress Site From Your Computer</title>
+            <link>https://smutek.net/running-your-wordpress-site-from-your-computer/</link>
+            <pubDate>Fri, 13 Mar 2015 19:33:20 +0000</pubDate>
+            
+            <guid>https://smutek.net/running-your-wordpress-site-from-your-computer/</guid>
+            <description>Put your full site backups to good use. Part of a series of posts from my days of self employment.
+In last weeks post I covered how to set up a WordPress backup plugin and how to have your backups sync to your Dropbox account. This week I&amp;rsquo;m going to cover how to take one of those full site backups and get a copy of your WordPress website running on your computer.</description>
+            <content type="html"><![CDATA[<h2 id="put-your-full-site-backups-to-good-use">Put your full site backups to good use.</h2>
+<p>Part of a series of posts from my days of self employment.</p>
+<p>In last weeks post I covered <a href="/how-to-set-up-a-wordpress-backup-plugin/">how to set up a WordPress backup plugin</a> and how to have your backups sync to your Dropbox account. This week I&rsquo;m going to cover how to take one of those full site backups and get a copy of your WordPress website running on your computer.</p>
+<h2 id="why-would-i-want-to-do-something-like-this">Why would I want to do something like this?</h2>
+<p>You might be wondering, why on earth would I want to do something like this. Well, one benefit is that running your WordPress site from your computer gives you a perfect laboratory to experiment with. You can test new themes, test new plugins, and do anything else that you might not want to do with your live site.</p>
+<h2 id="okay-but-is-running-wordpress-from-your-computer-hard">Okay, but is running WordPress from your computer hard?</h2>
+<p>This is actually a really easy thing to get set up. The process is broken down into the following steps:</p>
+<ol>
+<li>Get a web server running on our computer.</li>
+<li>Install WordPress on our computer.</li>
+<li>Make sure our database prefixes match.</li>
+<li>Get a copy of our WP Content folder.</li>
+<li>Export the database from our live site.</li>
+<li>Import the database into our testing site.</li>
+<li>Replace WP Content in our testing site with the WP Content from our live site.</li>
+</ol>
+<p>Some of that stuff, like the server and database stuff, might sound kind of complex (and it is) but you don&rsquo;t need to be any sort of expert to get this going. We&rsquo;ll be using one free piece of software, and 2 free plugins to do all the heavy lifting. Let&rsquo;s get started!</p>
+<h2 id="terminology">Terminology</h2>
+<p>There&rsquo;s not really any fancy technical stuff in the article, but for the sake of clarity I want to cover two terms. When I write &ldquo;remote&rdquo; or &ldquo;live&rdquo;, I&rsquo;m referring to your real website that&rsquo;s living out there on the internet somewhere. When I write &ldquo;local&rdquo; I am referring to the website that is running on your computer.</p>
+<h2 id="step-1-the-web-server">Step 1, the web server.</h2>
+<p>The first thing that we have to do is install a web server. For this we will be using free software called Desktop Server, from a company called ServerPress. Desktop Server runs on Mac &amp; Windows and comes in 2 flavors, free and premium. I own the premium version but everything I&rsquo;m going to show in this blog post can be done with the free version.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214851/serverpess-products-page_sqzw8m.jpg" alt="Server Press Product Page"></p>
+<p>To download Desktop Server <a href="http://serverpress.com/downloads/">follow this link</a> and select the installer for your operating system.</p>
+<p>There&rsquo;s 2 download links for each installer. If your download is going really slow just cancel the download and try the other download link. When writing this post I found that download site 1 was running at a snails pace, but download site 2 was pretty fast.</p>
+<h3 id="installation">Installation</h3>
+<p>Once the application has finished downloading go ahead and install it. I&rsquo;m not going to cover installation, but it is pretty straight forward, just follow the prompts. The people at Server Press have <a href="http://serverpress.com/support/installing-desktopserver/">written a walkthrough here</a> that you can check out if you&rsquo;d like.</p>
+<p>Once the software has installed go ahead and launch the app.</p>
+<h2 id="step-2-configure-the-server-install-wordpress">Step 2, configure the server, install WordPress</h2>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214850/desktop-server-launch-page_twyt8u.jpg" alt="Desktop Server launch page"></p>
+<p>When you first launch Desktop Server you&rsquo;ll see a screen like this. Leave &ldquo;Yes&rdquo; selected and click &ldquo;Next&rdquo;. The app is going to quit and restart with administrative privileges.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214850/os-asking-for-admin_dzlq5z.jpg" alt="OS Dialog asking for admin priivleges"></p>
+<p>If you are on a Mac you&rsquo;ll probably see this window. Desktop Server is asking, hey, is it okay if I run as an admin? You&rsquo;ll need to enter your admin password to continue.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214849/desktop-server-start-services_ziydpo.jpg" alt="Desktop Server starting web services"></p>
+<p>Next you&rsquo;ll see a window that looks like this. Desktop Server is asking if you&rsquo;d like it to go ahead and start the web services. We do.  Leave &ldquo;Yes&rdquo; selected and click next.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214849/desktop-server-incoming-connections_gksuzh.jpg" alt="Desktop Server incoming connections dialog"></p>
+<p>Again, if you are on a Mac, and if you have your firewall running (which you should) you may see this screen. If you are on a trusted network, such as your password protected home network (your home network is password protected, right?) go ahead and click allow. If you are on an insecure network, like the wifi at the local coffee shop, click deny. Desktop Server will work either way.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214848/desktop-server-services-running_a0tzsp.jpg" alt="Web services started on Desktop Server"></p>
+<p>Now you&rsquo;ll see this screen. You&rsquo;ve got a web server running on your computer, yay! Go ahead and click &ldquo;Next&rdquo;.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214847/desktop-server-create-new-site_cowzhz.jpg" alt="Desktop Server Create a new site"></p>
+<p>Next you&rsquo;ll see this scree, with some options. The options on your screen may look different if you are using the free version. If so, that&rsquo;s okay. We just need to select the &ldquo;Create a new development website&rdquo; option, and click &ldquo;Next&rdquo;.</p>
+<h3 id="configuration-stuff">Configuration Stuff</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214847/desktop-server-site-options_lhhymd.jpg" alt="Desktop Server site options "></p>
+<p>This page contains 3 options. Desktop Server is going to do all the fancy database configuration stuff for you so that you can install WordPress.</p>
+<h4 id="site-name">Site Name</h4>
+<p>Enter the name of your site here. This is the address you&rsquo;ll use to navigate to your local (on your computer) site in your web  browser. If your live (on the internet) site is named photoninja.com it&rsquo;s probably a good idea to enter www.photoninja here. Keep the www. part, leave off the .com - Desktop Server will handle the rest.</p>
+<h4 id="blueprint">Blueprint</h4>
+<p>Leave this at whatever the default is. For the curious; the blueprint is the WordPress configuration that Desktop Server is going to install.</p>
+<h4 id="site-root">Site Root</h4>
+<p>This is the location on your computer where Desktop Server is going to put all the files that make up your local website. Unless you have a reason to change this, it&rsquo;s fine to leave it set to the default.</p>
+<p>Make note of this location, we&rsquo;ll need it later. Mine is in documents/websites</p>
+<p>Go ahead and click create.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214846/desktop-server-done_hdibzm.jpg" alt="Desktop Server, site set up done."></p>
+<p>Once desktop server does its thing you&rsquo;ll see this screen. Click Next.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214844/desktop-server-local-url_nux5p9.jpg" alt="Desktop Server configuration complete"></p>
+<p>Next you&rsquo;ll see this screen, it should show the local URL of your site. Go ahead and click the URL, your browser will open the WordPress install page.</p>
+<h3 id="install-wordpress">Install WordPress</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214844/install-WordPress-language_lsasby.jpg" alt="Install WordPress, language screen"></p>
+<p>Next you&rsquo;ll see this screen, select your native tongue and click continue.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214843/install-WordPress-options_shhkws.jpg" alt="Install WordPress site options"></p>
+<p>Go ahead and enter the requested information. You can use the same info from your live site if you&rsquo;d like. It really doesn&rsquo;t matter what you enter here because all this information is going to be overwritten when we import the database from the live site.</p>
+<p>Once you&rsquo;ve filled this out, click install WordPress.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214842/install-WordPress-success_ueo38z.jpg" alt="Install WordPress success screen"></p>
+<!-- raw HTML omitted -->
+<p>WordPress is now installed and running on your computer, click the login button and you&rsquo;ll see the familiar WordPress login screen.  Go ahead and log in to your site and take a look around.</p>
+<p>If you have any update notifications, go ahead and run all updates now.</p>
+<h2 id="step-3-check-database-prefixes">Step 3 Check Database Prefixes</h2>
+<p>Before we go any further we need to make sure that the database table prefix on our local site matches what is already on our live site.</p>
+<p>If you are wondering what a database prefix is, don&rsquo;t worry. We can handle this with a plugin. If you are curious, the database prefix is a string of characters prepended to the name of a database. It lets your server know which database tables to use for your installation of WordPress.</p>
+<p>Most WordPress installs will use wp_ by default. Some hosts change this database prefix as a security precaution. I&rsquo;m not going to get into that here, but if you want to learn more about why you should change your database prefix, <a href="http://digwp.com/2010/10/change-database-prefix/">check out this article by Jeff Starr</a>.</p>
+<h3 id="check-prefix-on-your-live-site">Check prefix on your live site</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214840/change-db-prefix-plugin_k9gwtm.jpg" alt="Change DB Prefix plugin install page"></p>
+<p>To check your database table prefix go ahead and log in to your live site and go to your install new plugins page. Search for &ldquo;Change DB Prefix&rdquo;. Install the Change DB Prefix plugin and activate it.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214840/change-db-prefix-prefix-different_ijzms9.jpg" alt="Change DB Prefix plugin, prefix is different"></p>
+<p>Once you&rsquo;ve done this go to settings/Change DB Prefix. If the value in the Existing Prefix field is wp_ then you are done and can uninstall the plugin and move to the next step. If your prefix is something else, like the image above, read on.</p>
+<h3 id="change-prefix-on-local-site">Change prefix on local site.</h3>
+<p>My live prefix is d4x2_ so I need the prefix on my local site to be the same. Fortunately this change is super easy. Install and activate the Change DB Prefix plugin on your local site.</p>
+<p>Once the plugin is installed and activated, go to the plugin settings page (settings/Change DB Prefix).</p>
+<p>Switch back over to your live site (I like to keep two browser tabs open for this, one with my live site, and one with my local site). Copy the existing prefix from your live site, and switch back over to your local site.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214839/change-db-prefix-filled-correctly_x21rzt.jpg" alt="Fields correctly filled out inChange DB Prefix plugin">
+Here&rsquo;s the fields filled out correctly on my Local site!</p>
+<p>Now, on your local site, and with the table prefix copied, paste the value into the New Prefix field, as shown, and click save.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214839/change-db-prefix-finished_jscwcj.jpg" alt="Change DB Prefix plugin, process complete"></p>
+<p>It&rsquo;s going to look like nothing happened, but you should see these two messages, in blue -</p>
+<pre><code>All tables have been successfully updated with prefix (your prefix)_ !
+The wp-config file has been successfully updated with prefix (your prefix)_!
+</code></pre>
+<p>You may see a PHP warning at the top of the page, don&rsquo;t worry about this. At this point we are done with the table prefixes and you can go ahead and uninstall Change DB Prefix from both sites if you&rsquo;d like.</p>
+<h2 id="step-4-get-a-copy-of-your-content">Step 4 Get a copy of your content.</h2>
+<p>This is relatively straightforward if you have already setup a backup and synced it to Dropbox, like I covered in last weeks post. If so, go ahead to your dropbox folder (either on your computer or from the dropbox interface) and copy your most recent full site backup file to your computer.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214838/backup-archive-file_buihyy.jpg" alt="Image of uncompressed archive file."></p>
+<p>Your backup file is in an archive, most likely with the file extension .gz</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214837/backup-wp-content_rxzd9l.jpg" alt="Image of backup up wp-content folder">
+This backup of the wp-content folder is what we need.</p>
+<p>Once you&rsquo;ve copied the archive to your computer go ahead and double click it to open it. Inside of this folder you&rsquo;ll see a subfolder called wp-content - this folder contains all your media, themes, and plugins.</p>
+<p>This is what we want. Leave this folder open and easily accessible.</p>
+<p>If you don&rsquo;t have an easily accessible backup, you can also get this content by FTPing into your web hosting account and downloading your wp-content folder to your computer.</p>
+<h2 id="step-5-export-your-live-database">Step 5 Export your live database.</h2>
+<p>Still with me? Good, because we are just about finished. Now that we have a copy of the content we need to grab a copy of our live database.</p>
+<h3 id="install-wp-migrate-db">Install WP Migrate DB</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214837/wp-migrate-db-plugin-install-page_uo2fj2.jpg" alt="WP Migrate DB Plugin install page"></p>
+<p>On both the local and the live site, install the free WP Migrate DB plugin, by the good folks at Delicious Brains. From the install plugins page, just search for WP Migrate DB, it should be the first option, as shown above. Install this plugin and activate it on both sites.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214836/wp-migrate-db-plugin-migrate-page_q70ytq.jpg" alt="WP Migrate DB Plugin migrate page">
+Here&rsquo;s the plugin running on my local site.</p>
+<p>On both sites, with the WP Migrate DB plugin activated, go to tools/Migrate DB</p>
+<h3 id="copy-paths-from-local-site">Copy paths from local site</h3>
+<p>On your local site, from the Migrate DB page, you&rsquo;ll see  Find and Replace section, each with 2 fields. What we want to do is to copy the Find values from our local site, and paste them into the Replace values on our live site.</p>
+<p>On your local site, go ahead and copy the first value from the Find fields. This is the URL. Switch to your live site, and paste this value into the first Replace field (new URL) on your live site.</p>
+<p>Next, switch back to your local site, copy the second value from the find fields, this is the file path. With the value copied, switch to your live site and paste the value into the second Replace field (new file path) on your live site.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214836/wp-migrate-db-plugin-fields-filled_c42ebx.jpg" alt="Migrate DB Plugin with all fields filled">
+Here&rsquo;s what the plugin looks like on my Live site once I&rsquo;ve filled in all of the fields.</p>
+<p>When you&rsquo;re done, it should look something like the image above.</p>
+<p><strong>Running this plugin on your live site is perfectly safe</strong>. It is just going to make a <strong>copy</strong> of your database. Don&rsquo;t worry, it will only make the changes to the copy, not to your live site.</p>
+<p>With the information entered on your live site, go ahead and click the &ldquo;Migrate&rdquo; button. Migrate DB is now going to make a copy of your database. The copy will include the necessary changes to make the database run on your local server.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214835/wp-migrate-db-plugin-migration-complete_pjoiv7.jpg" alt="Migrate DB plugin, migration complete dialog"></p>
+<p>Once Migrate DB has finished doing its thing you should see a screen like above, and Migrate DB will download the database copy to your computer.</p>
+<p>Remember where your computer put that file. It&rsquo;s probably in your downloads folder. It&rsquo;s probably going to be an archive file, like a .gz - There&rsquo;s no need to unzip this one, just leave it as it is.</p>
+<p>You can go ahead and close your live site, we&rsquo;re finished with it.</p>
+<h2 id="step-6-import-the-database-to-your-local-site">Step 6 Import the database to your local site.</h2>
+<p>We&rsquo;re in the home stretch here. No, really, I promise! Now that you&rsquo;ve downloaded the database we have to import it into our local site. Switch back to your Desktop Server program.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214844/desktop-server-local-url_nux5p9.jpg" alt="Desktop Server configuration complete">
+Here&rsquo;s where we left off with Desktop Server</p>
+<p>If your Desktop Server app still looks like this, just click the next button.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214847/desktop-server-create-new-site_cowzhz.jpg" alt="Desktop Server Create a new site">
+Back to the start page. Click that button in the lower left, that says &ldquo;Sites&rdquo;</p>
+<p>Now we are back to the start page. In the lower left hand corner of the Desktop Server window, click the button that is labeled &ldquo;Sites&rdquo;. Your browser should open a page that looks something like the image below.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214834/desktop-server-sites-page_fg8jsu.jpg" alt="Desktop Server, sites page"></p>
+<p>Click the first link titled &ldquo;MySQL Administration - phpMyAdmin&rdquo;. You&rsquo;ll see a page like this&hellip;.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214834/phpmyadmin_hcyx7g.jpg" alt="phpMyAdmin page"></p>
+<p>This page is a program called phpMyAdmin. It manages all your databases. Mine probably has a lot more stuff in it, but that&rsquo;s okay. It should make it easier for you to find your local database. :)</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214833/phpmyadmin-enlarged_ctbday.jpg" alt="PHPMyAdmin enlarged.">
+Here&rsquo;s a blow up. My test site is called photoninja.dev, my database name starts with photonin</p>
+<p>Your local sites database name will be prepended with the first few letters of your site name. Here&rsquo;s mine. My local site is called <a href="http://www.photoninja.dev">www.photoninja.dev</a>, and the name of my local database starts with &ldquo;photonin&rdquo;. Click the name of your database and you&rsquo;ll see another screen.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214833/phpmyadmin-site-tables_eyfa72.jpg" alt="PHP MyAdmin site tables">
+Click import!</p>
+<p>This is all of the tables from your local database. Click the import button, as shown.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214832/phpmyadmin-import-page_v9qo0d.jpg" alt="PHPMyAdmin import page"></p>
+<p>Click the browse button&hellip;.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214832/phpmyadmin-browse-for-db_eaj9rz.jpg" alt="PHPMyAdmin browsing for the DB">
+Find your database file that was downloaded by WP Migrate DB and click Open</p>
+<p>Locate your downloaded database, and click &ldquo;Open&rdquo;.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214831/phpmyadmin-click-go_hsd9f0.jpg" alt="phpMyAdmin, importing the databse">
+Click Go!</p>
+<p>Scroll down to the bottom the page, and click &ldquo;Go&rdquo;.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214830/phpmyadmin-success_rtt1et.jpg" alt="phpMyAdmin success page"></p>
+<p>Once you&rsquo;re done you should see a success message that says something like &ldquo;Import has been successfully finished&hellip;&rdquo; with the number of queries that were executed. Close out phpMyAdmin, we&rsquo;re finished with it.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214830/WordPress-login_harzjj.jpg" alt="WordPress login screen">
+Just what we want! Don&rsquo;t log in or go to the front page yet.</p>
+<p>Now, you&rsquo;ll probably notice that you&rsquo;ve been logged out of your local site, as shown above. This is good! This means that all of the database tables, and users, from our local site have been replaced with the info from our live site.</p>
+<p>Go ahead and leave this window open, <strong>but don&rsquo;t log in just yet, and don&rsquo;t try to visit your local site yet either</strong>. You won&rsquo;t break anything, but the site isn&rsquo;t going to work properly yet. We still have to move the content over.</p>
+<h2 id="step-7-final-step-move-the-content">Step 7 Final step, move the content</h2>
+<p>Go ahead and find your local site installation. Mine is located at documents/websites/www.photoninja.dev
+Also, open the window with your full site backup, that we copied to your computer back in step 4.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214829/replace-files_je86ar.jpg" alt="Swapping wp-content folders">
+Do not put the wp-content folder in the other. Replace the other one!</p>
+<p>Position these two windows side by side and drag the wp-content folder from your backup into your local site folder as shown. We&rsquo;re just replacing the wp-content folder in our local site with the wp-content folder from our backup file.</p>
+<p>Don&rsquo;t put the wp-content folder inside of the other one. We want to replace the local site&rsquo;s folder with this one.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214829/replace-warning-dialog_kffyyx.jpg" alt="Replace warning dialog">
+Yes, replace all the things.</p>
+<p>You&rsquo;ll probably see a warning, like this. It&rsquo;s okay, just click &ldquo;Replace&rdquo; and, believe it or not, you&rsquo;re done, mostly. :-p</p>
+<p>You can go ahead and delete the rest of the <em>backup</em> site that you saved to your computer as you won&rsquo;t be needing it anymore. Go ahead and go back to your web browser and login with the credentials that you would normally use on your live site.</p>
+<h3 id="flush-permalinks">Flush Permalinks</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214828/WordPress-permalinks_dhljp8.jpg" alt="WordPress permalinks page"></p>
+<p>Before you do anything else, go to settings/permalinks, scroll to the bottom of the page, and click save. No need to change any settings. Just hit save. This will flush out any random weirdness that sometimes creeps up after a migration.</p>
+<p>That&rsquo;s it, you&rsquo;re done. Go ahead and visit the front page of your local site. You now have a copy of your live site running on your computer!</p>
+<h2 id="thanks-for-reading">Thanks for reading!</h2>
+<p>Thanks for reading. I hope this was helpful and as always, if you have any comments or suggestions leave a comment or drop me a line via my <a href="/contact/">contact page</a>.</p>
+<p>Next week I&rsquo;ll be showing you how to take any changes that you&rsquo;ve made to your local site, and move them back to your live site using WP Migrate DB Pro, the premium version of WP Migrate DB.</p>
+<h3 id="a-note-about-desktop-server">A Note about Desktop Server</h3>
+<p>When you are finished with Desktop Server make sure to shut the web services down before quitting the app. Just go to the Desktop Server home page, choose Stop or restart the web and database services, and follow the prompts. If you just quit the app without doing this, the web services will still be running on your computer.</p>
+<p>Once you&rsquo;ve stopped the services go ahead and quit the app. When you want to work with your local site again, just launch Desktop Server and start the web services back up.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>How to set up a WordPress Backup Plugin</title>
+            <link>https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/</link>
+            <pubDate>Fri, 06 Mar 2015 15:50:10 +0000</pubDate>
+            
+            <guid>https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/</guid>
+            <description>Backups are so important Part of a series of posts from my days of self employment.
+This week I&amp;rsquo;m going to cover how to set up a WordPress backup plugin. Think of this as a form of disaster insurance. Nobody knows more than you just how important your website is to the health of your business. It&amp;rsquo;s just super important to make sure that you have a proper backup of your WordPress website; not just your files, but your database as well.</description>
+            <content type="html"><![CDATA[<h2 id="backups-are-so-important">Backups are so important</h2>
+<p>Part of a series of posts from my days of self employment.</p>
+<p>This week I&rsquo;m going to cover how to set up a WordPress backup plugin. Think of this as a form of disaster insurance. Nobody knows more than you just how important your website is to the health of your business. It&rsquo;s just super important to make sure that you have a proper backup of your WordPress website; not just your files, but your database as well.</p>
+<h3 id="meet-backwpup">Meet BackWPup</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214859/backup-plugin-page_arhtj3.jpg" alt="Image of backwpup plugin on the plugin directory"></p>
+<p>Luckily this is a super easy thing to get going. There are tons of great options on the market. The one that I am going to cover today is called BackWPup, a free plugin from MarketPress. <a href="https://wordpress.org/plugins/backwpup/">You can find the plugin here</a> on the WordPress plugin directory. For this post I will be using the free version, but MarketPress also offers a <a href="https://marketpress.com/product/backwpup-pro/">premium version</a> of the plugin that does lots of extra cool stuff.</p>
+<h3 id="installation">Installation</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214858/backup-plugin-in-admin_e8u3pc.jpg" alt="Backwpup plugin from the wp admin plugin browser"></p>
+<p>Installation is super easy. Just go to your WP Admin page, select plugins, and add new. Search for BackWPup and the plugin will be the first in the list. Check out those stats, the plugin has 4 stars, with 240 reviews and at the time of this writing nearly 1.7 million downloads! That&rsquo;s pretty impressive.</p>
+<h3 id="configure-backup-jobs">Configure Backup Jobs</h3>
+<p>Once you&rsquo;ve installed and activated the plugin you&rsquo;ll be directed to the landing page for the plugin. You will also notice that a new menu item for BackWPup has been added to your WordPress admin menu. The next thing that we want to do is to configure some backup tasks to run. Each backup task is called a job, in this blog post we are going to configure 2 jobs. We are going to configure a weekly full site back up, and a daily database backup.</p>
+<h4 id="weekly-backup-vs-daily-backup">Weekly Backup vs. Daily Backup</h4>
+<p>The weekly full site backup will be an all inclusive backup of our entire site. All our site files, themes, plugins, and database will be included in this back up. I run this task weekly because it generates a larger backup and takes more server resources to run. I find that the database backup is the most critical thing to keep backed up regularly. The database is also a much smaller file and it takes less resources to run the task. That&rsquo;s why I am going to configure the database to backup daily.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214857/backup-plugin-adding-a-job_qq6cgt.jpg" alt="Adding a job to BackWPup"></p>
+<p>The next thing to do it to add a new job. In the general tab of the BackWPup plugin, type in the name of your job as shown. I&rsquo;ve named mine &ldquo;Weekly Full Site Backup&rdquo;.  All of the default settings are fine for this page. The default settings are pretty robust and unless you have a specific need they should work pretty well for you.</p>
+<h4 id="job-destination">Job Destination</h4>
+<p>[caption id=&ldquo;attachment_834&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1349&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214857/backup-to-dropbox-option-selected_gizwq3.jpg" alt="Backup to dropbox option in BackWPup">
+The backup to Dropbox option selected[/caption]</p>
+<p>One thing that I am going to change on the general page is the Job Destination settings. I&rsquo;m going to use the backup to Dropbox feature for this post but it&rsquo;s just as easy to backup to Amazon S3. The option for &ldquo;Backup to folder&rdquo; will store the backups on your server. I don&rsquo;t recommend this for the simple fact that your backups are now stored in the same location as your website. If something happens with your web host and the server is wiped out, you&rsquo;ve now lost your sit and your backups.</p>
+<p>It&rsquo;s kind of like having a backup hard drive attached to your computer at home. It&rsquo;s great to have backups, if something happens to your computer you are covered. But, what is there&rsquo;s a fire and you lose the computer and the hard drives?</p>
+<p><strong>It&rsquo;s a good idea to keep your backups in a separate location!</strong></p>
+<p>Go ahead and click save, then click on the schedule job tab. This is where we will tell the plugin when to run our back up job. The default is manual, which means you&rsquo;ll need to remember to come here and run backups. We don&rsquo;t want to do this, we want to set this up, let WordPress take care of it for us, and not have to worry about it.</p>
+<p>[caption id=&ldquo;attachment_836&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1349&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214856/backup-schedule-page-manually_oagyv0.jpg" alt="The default backup schedule tab">
+The default backup schedule tab[/caption]</p>
+<p>If you click on the WP Cron radio button you&rsquo;ll be able to set up a time for the job to run. I&rsquo;m leaving mine at the default, which is 3:00 am on Sundays. I suggest choosing a time where you have minimal traffic on your site. Once you&rsquo;ve set up your schedule, click save.</p>
+<p>[caption id=&ldquo;attachment_839&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1140&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214855/backup-schedule-page-weekly_lyt1ca.jpg" alt="The weekly backup task configured">
+The backup task set to run weekly[/caption]</p>
+<h4 id="connect-to-dropbox">Connect to Dropbox</h4>
+<p>The next thing to do is to configure the Dropbox settings. This is super easy. Go ahead and click on the &ldquo;To:Dropbox&rdquo; tab.</p>
+<p>[caption id=&ldquo;attachment_840&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1349&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214854/dropbox-settings-blank_vtwswb.jpg" alt="The dropbox settings page un-configured.">
+The Dropbox settings page[/caption]</p>
+<p>If you don&rsquo;t have a Dropbox account head over to Dropbox.com and sign up for a free account. The free account offers 2GB of storage for free, which will be more than enough to back up most basic sites. If you&rsquo;re a photographer you likely will have a much larger site, and will need more space. Dropbox offers 1 Terabyte of storage for around $10 per month, and unlimited storage for $15 dollars a month.</p>
+<p>Once you have your Dropbox account set up go ahead and click on the &ldquo;Get Dropbox auth code&rdquo; button. You&rsquo;re going to be directed to a Dropbox page which is going to ask you if it is okay for WordPress to interact with it. Click allow here, and use your mouse to copy the code that appears once you&rsquo;ve clicked allow.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214854/dropbox-handshake_nasdcy.jpg" alt="the dropbox handshake"></p>
+<p>Head back over to your WordPress site and paste the Dropbox code into the auth field, as shown.</p>
+<p>[caption id=&ldquo;attachment_842&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1140&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214853/dropbox-settings-success_dqtodq.jpg" alt="Dropbox successfully authenticated!">
+Dropbox successfully authenticated![/caption]</p>
+<p>Next, click save. If you&rsquo;ve done everything correctly you should now see a success message as shown.</p>
+<h4 id="how-many-backups-to-keep">How many backups to keep?</h4>
+<p>Now we&rsquo;re going to change the file deletion settings. All this is saying is, &ldquo;Hey, how many copies of this backup do you want to keep?&rdquo;. I&rsquo;m going got set mine to 5, which will give me access to 5 weeks of backups. This means that, should disaster strike, I can roll my site back to any of the backs that were taken over the past 5 weeks. You can set this however you&rsquo;d like, but realize that the more backups you keep, the more space you need. Go ahead and click save again.</p>
+<p>[caption id=&ldquo;attachment_843&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1140&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214853/dropbox-settings-file-deletion_suc904.jpg" alt="File deletion settings">
+I set my file deletion setting to 5[/caption]</p>
+<h4 id="run-the-backup">Run the backup!</h4>
+<p>With these settings configured I&rsquo;m going to go ahead and run the back up. You can run the job by going to the Jobs section of the plugin or, there should be a link titled &ldquo;Run Now&rdquo; that appears on the page after you click save. Either one is fine.</p>
+<p>Depending on the size of your site, this may take quite a while. It&rsquo;s important to make sure that you have enough space at your destination to hold your back up. If your site is 3GB and you are trying to backup to a 2GB Dropbox account, the backup will fail.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214852/dropbox-process-complete_u4tqho.jpg" alt="Backup job completed"></p>
+<p>Looks like the backup task ran successfully! Now it&rsquo;s time to configure the daily database backup. I run database backups daily because the database file is just a fraction of the size of a full site backup. This task uses less server resources to run and requires less space to store.</p>
+<h3 id="protect-that-database">Protect that database!</h3>
+<p>The database is also, arguably, the most important thing to keep backed up. It&rsquo;s sort of like the brain of your site. It contains all your posts, all your pages, and all your configurations. When a visitor comes to your WordPress site, it&rsquo;s the database that tells WordPress what content to put together for them as they browse through your site. If you lose your database, it&rsquo;s kind of game over. This is why it&rsquo;s super important to keep the database backed up, and protected.</p>
+<h4 id="configure-the-job">Configure the job</h4>
+<p>The process for setting this task up is the same as the full site backup. The exceptions being that we will configure the general tab to just backup the database. Give the task a name, I&rsquo;m using &ldquo;Daily Database Backup&rdquo; for mine.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214851/daily-db-backup-configured_ygczml.jpg" alt="Daily database settings"></p>
+<p>In the Job Tasks section, uncheck everything but &ldquo;Database Backup&rdquo;, like shown. I&rsquo;m going to choose to send my database backups to Dropbox as well, but in most cases you can also have the database backups sent to your email. If you&rsquo;d like to do this go ahead and click the &ldquo;Backup sent via email&rdquo; checkbox, along with the Dropbox checkbox. Next, click save.</p>
+<h4 id="schedule-the-job">Schedule the job</h4>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214851/daily-db-backup-scheduled_emadcm.jpg" alt="Database daily backup scheduled"></p>
+<p>Next click the Schedule tab and schedule your database back up to run daily. I&rsquo;ve set mine up to run every day at 2am. Once you&rsquo;ve configured the schedule, click save.</p>
+<h4 id="authenticate-with-dropbox-again">Authenticate with Dropbox again</h4>
+<p>If you are sending your database to Dropbox, head over to the Dropbox tab next. We need to authenticate with Dropbox for each backup job that we set up, so just follow the same steps that we went thorough earlier, when we authenticated our weekly backup.</p>
+<p>Once you&rsquo;ve done that, click save.</p>
+<h3 id="youre-done">You&rsquo;re done.</h3>
+<p>That&rsquo;s it. If you&rsquo;ve followed along you now not only know how to Install and configure a WordPress backup plugin, but you&rsquo;ve also got 2 backup jobs setup to backup your entire site once a week, and your database once a day.</p>
+<p>Important: Check with your host about their backup policies.</p>
+<p>It&rsquo;s important to mention that it might be a good idea to check with your web host about their backup policies. Running backups puts additional strain on a server. Also, if you do opt to keep your backups on your server then you&rsquo;ll want to make sure you are mindful of your space. Even &ldquo;unlimited&rdquo; storage isn&rsquo;t really unlimited, as your host will likely remind you if you&rsquo;ve got 15 copies of a 10 gig website sitting on a shared hosting account.</p>
+<p>I suggest reading this article, <a href="http://wpandlegalstuff.com/beware-shared-wordpress-hosting-storing-backups/">Beware of shared hosting and the storage of backups</a>, by Richard Best. Richard runs a site called <a href="http://wpandlegalstuff.com/">WP and Legal Stuff</a> that covers, you guessed it, legal issues relevant to business owners running their own websites. It&rsquo;s definitely a site to bookmark and follow.</p>
+<h3 id="thanks-for-reading">Thanks for reading!</h3>
+<p>That does it for this week. I hope this walk through was helpful. As always, if you have any questions or suggestions please feel free to drop me a line or leave a comment.</p>
+<p>Next week I&rsquo;ll be covering how to take one of these backups and get a copy of your WordPress website running on your computer. This is a great way to safely test out new themes and plugins without having to change your live site.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Change the way WordPress inserts images</title>
+            <link>https://smutek.net/change-the-way-wordpress-inserts-images/</link>
+            <pubDate>Fri, 27 Feb 2015 23:40:00 +0000</pubDate>
+            
+            <guid>https://smutek.net/change-the-way-wordpress-inserts-images/</guid>
+            <description>What&amp;rsquo;s the deal here? Part of a series of posts from my days of self employment.
+This week I want to do a quick tip to show you how to change the way that WordPress inserts images. What I mean by this is that, by default, every time you insert an image into one of your WordPress posts, WordPress will default to linking to the image.
+This is the default setting.</description>
+            <content type="html"><![CDATA[<h2 id="whats-the-deal-here">What&rsquo;s the deal here?</h2>
+<p>Part of a series of posts from my days of self employment.</p>
+<p>This week I want to do a quick tip to show you how to change the way that WordPress inserts images. What I mean by this is that, by default, every time you insert an image into one of your WordPress posts, WordPress will default to linking to the image.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214861/ScreenShot-MediaFile_wqgs3x.jpg" alt="Image of the default insert media settings.">
+This is the default setting.</p>
+<p>This is fine if this is the way you like your WordPress site to run. If you don&rsquo;t, and if you&rsquo;re like me, then you will find yourself changing this setting to none every time you insert an image into one of your posts.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214861/ScreenShot-NoLink_olhcq3.jpg" alt="Image of the insert media settings set to none.">
+This is what I want, by default, every time.</p>
+<p>Also, if you are like me then you probably have been driving yourself crazy because you forget to change this setting. The result, for me, is that every time I insert an image I have to delete it, reset the option, and reinsert the image. Every. Single. Time. Almost&hellip;</p>
+<p>This drives me a bit crazy.</p>
+<p>I don&rsquo;t usually link to my image files. It&rsquo;s like my mind is already on to the next task and I&rsquo;m constantly forgetting to change this. Every single time. Almost.</p>
+<p>Okay, maybe you don&rsquo;t forget, but you&rsquo;d just like to change this setting. If so, check out the short video, or read on.</p>
+<h2 id="just-change-the-settings">Just Change The Settings&hellip;</h2>
+<p>I looked around and there&rsquo;s no obvious way to change this in the WordPress settings. Well, luckily there is a super secret settings screen that we can access to change this functionality. It&rsquo;s not exactly super secret, but for some reason this setting is not publicly accessible to the user. Shout out to <a href="http://blog.aizatto.com/2010/05/04/changing-default-wordpress-media-link-url/">Aizat Faiz</a> for the tip!</p>
+<p>Just log in to your WP Admin screen and point your browser at this url -</p>
+<pre><code>https://your-site.whatever/wp-admin/options.php
+</code></pre>
+<p>Replace the &ldquo;example.com&rdquo; part with your site address. Once you are there, you&rsquo;ll see this screen.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214860/ScreenShot-SettingsPage_cvigfh.jpg" alt="Image of the hidden settings page."></p>
+<p>Scroll down until you see the section labeled &ldquo;image_default_type_link&rdquo;</p>
+<p>The settings here set the default for what&rsquo;s shown when you insert media into one of your posts.</p>
+<p>This field has a few options, with the default being &ldquo;file&rdquo;.</p>
+<ul>
+<li>file - links directly to the attached file</li>
+<li>post - links to the media post for the attached file</li>
+<li>none - nothing, does not add an HTML link. What I want</li>
+</ul>
+<p>Just delete the word file, and type in the word none, just like this.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214860/ScreenShot-ChangedSettings_ruayeq.jpg" alt="Image of image link type changed to none">
+Just type in none, as shown</p>
+<p>Scroll down to the bottom of the page, click &ldquo;save settings&rdquo;, and that&rsquo;s it.</p>
+<p>Important - make sure that you <strong>do not change any of the other settings</strong> on this page.</p>
+<p>To change this back to the default just return to this page and change &ldquo;none&rdquo; to &ldquo;file&rdquo;.</p>
+<p>If you are curious as to what these options do, take a look at <a href="http://codex.wordpress.org/Option_Reference">this entry</a> on the <a href="http://codex.wordpress.org">WordPress Codex</a>.</p>
+<p>That&rsquo;s it for this weeks quick tip. This simple change makes my life much easier. I hope it helps you as well.</p>
+<p>If you have any WordPress stuff that makes you crazy, let me know in the comments or drop me a line through my contact form.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>I launched my new site today!</title>
+            <link>https://smutek.net/i-launched-my-new-site-today/</link>
+            <pubDate>Fri, 27 Feb 2015 23:38:25 +0000</pubDate>
+            
+            <guid>https://smutek.net/i-launched-my-new-site-today/</guid>
+            <description>I am super excited to announce that I launched my new site today! I thought it would be a good idea to make a post about my plans. Who I seek to serve, what I plan to do, why I am doing it, and where I&amp;rsquo;ve found inspiration.
+Who I want to serve. The audience I seek to serve is small business owners who would like help with their web presence.</description>
+            <content type="html"><![CDATA[<p>I am super excited to announce that I launched my new site today! I thought it would be a good idea to make a post about my plans. Who I seek to serve, what I plan to do, why I am doing it, and where I&rsquo;ve found inspiration.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214859/LaunchAnnoucementFeaturedImage_zmu8fc.jpg" alt="Mockup image of the new smutek.net website"></p>
+<h2 id="who-i-want-to-serve">Who I want to serve.</h2>
+<p>The audience I seek to serve is small business owners who would like help with their web presence. I specialize in WordPress and I offer a variety of services related to that platform. I&rsquo;m especially interested in working with professionals in the wedding industry. Photographers, DJ&rsquo;s, caterers, event planners, officiates, etc.</p>
+<h2 id="what-i-plan-to-do">What I plan to do.</h2>
+<p>My goal is to provide value to, and build relationships with anyone who is running a business and who has a web presence. I&rsquo;ll be posting weekly blog posts, on Friday afternoons, with various WordPress and web design related tips and tricks. I plan to cover everything from basic day to day stuff, like this weeks post, to super geeky coding tutorials.</p>
+<p>I have a large list of ideas for posts but if you have an idea for something you&rsquo;d like me to cover please hit my
+<a href="/contact/">contact form</a> and send a suggestion.</p>
+<h2 id="why-i-am-doing-this">Why I am doing this.</h2>
+<p>I&rsquo;ve been working as a professional designer since 2003. My background is in print design and I used to do lot of
+posters, logos, brochures, small websites and just about everything else under the sun. I love technology and I&rsquo;ve
+always been an avid self teacher, so eventually I moved from print design to web design. You can read more in my
+<a href="/about-me/">about</a> section, but the main point is that I was laid off from my job doing WordPress work back in
+August of 2013 and I&rsquo;ve been self employed ever since.</p>
+<h3 id="self-employment-is-different">Self employment is&hellip; different.</h3>
+<p>The first year and a half was a big change of pace for me and a lot to wrap my head around. I&rsquo;ve always worked for someone else, working for myself has been a huge change. One thing that became apparent was that I needed to focus my efforts.</p>
+<h3 id="my-old-site">My old site.</h3>
+<p>My previous site was designed with one thing in mind; to land me a job as a web designer. I built the site in December of 2013 and by February of 2013 I had landed a job as a junior front end developer at a small agency in Towson. Mission accomplished! My previous site was great, but it didn&rsquo;t reflect my current goals. Once I worked out what my current goals actually are, I designed new branding and started work on this site.</p>
+<h3 id="my-new-site">My new site.</h3>
+<p>This site, and my new branding, represents my focus and commitment to web design and web development. It also represents my commitment to share the things that I know and the things that I am learning, with others. Please have a look around and let me know your thoughts. If you see anything that doesn&rsquo;t look quite right please be sure to let me know as well, either in the comments or <a href="https://smutek.net/contact/">via email</a>.</p>
+<h2 id="inspiration">Inspiration</h2>
+<p>Inspiration comes in a lot of forms. I just want to give a shout out to some people in the creative community who have inspired me in a business sense.</p>
+<h3 id="curtis-mchale">Curtis McHale</h3>
+<p>First and foremost is Curtis McHale. Curtis&rsquo;s tagline is &ldquo;Helping you answer the hard questions about your business&rdquo;. His posts and the interaction I&rsquo;ve had with him have been a huge motivation for me to get my butt in gear and focus on my business.</p>
+<p><a href="http://curtismchale.ca/">Check out his site.</a></p>
+<h3 id="sean-mccabe-and-ben-toalson">Sean McCabe and Ben Toalson</h3>
+<p>Sean and Ben are the hosts of the seanwes podcast. It&rsquo;s a podcast focused on helping people earn a living by pursuing their passion. Sounds cliche, but it&rsquo;s a must-listen. It&rsquo;s like, self-help meets business advice and I am inspired by every episode that I listen to.</p>
+<p><a href="http://seanwes.com/podcast/">Check out the podcast.</a></p>
+<h3 id="also">Also&hellip;</h3>
+<p>I also want to mention:</p>
+<p><a href="http://chrislema.com/">Chris Lema</a>, whose blog has been an inspiration to me since I started on my own.</p>
+<p>Matt Medieros, whose <a href="https://mattreport.com/">Matt Report podcast</a> provides consistent, ongoing value.</p>
+<p><a href="https://www.garyvaynerchuk.com/">Gary Vaynerchuk</a>, whose level of hustle is amazing.</p>
+<p>All the people that I listed above do great work. They are all successful entrepreneurs, and they&rsquo;ve all provided value and inspiration to me.</p>
+<p>I hope to do the same.</p>
+<p>I&rsquo;m super excited for this launch, and for what the future holds!</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Local WordPress with MAMP!</title>
+            <link>https://smutek.net/mamp-awesome/</link>
+            <pubDate>Sun, 14 Apr 2013 15:43:26 +0000</pubDate>
+            
+            <guid>https://smutek.net/mamp-awesome/</guid>
+            <description>I no longer use MAMP, I suggest checking out something like VVV, or Trellis.
+This quick post will explain how to quickly and easily get a local development environment up and running on your Mac, using a free tool called MAMP. With MAMP, you’ll be able to work on WordPress, or Drupal, or Joomla (hark!), or any similar software from the comfort of your own computer, no web host needed.</description>
+            <content type="html"><![CDATA[<p>I no longer use MAMP, I suggest checking out something like <a href="/setting-up-vvv-for-wordpress-development/">VVV</a>, or
+<a href="/migrating-to-trellis-1/">Trellis</a>.</p>
+<p>This quick post will explain how to quickly and easily get a local development environment up and running on your Mac, using a free tool called MAMP. With MAMP, you’ll be able to work on WordPress, or Drupal, or Joomla (hark!), or any similar software from the comfort of your own computer, no web host needed.</p>
+<h3 id="whats-this-wordpress-with-mamp-stuff-all-about-anyway">What&rsquo;s this WordPress with MAMP stuff all about, anyway?</h3>
+<p>This is the one and only post that I decided to leave from my old site. :)</p>
+<p>I’m on a Mac but, if you’re running a different operating system don’t fret, there’s equivalents to MAMP for your operating system as well.</p>
+<p>If you’re running Windows check out <a href="http://www.wampserver.com/en/">WAMP</a> or <a href="http://www.apachefriends.org/en/xampp.html">XAMP</a>, and if you’re on a Linux box&hellip; well, I doubt that you need me to tell you anything. Some of the specifics may vary between MAMP, WAMP &amp; XAMP, but the concepts are the same. I’ll be focusing solely on MAMP for this post.</p>
+<p>Okay, first, what is MAMP? MAMP stands for Mac, Apache, Mysql, PHP. The short of it is that MAMP is an application that will allow you to easily set up and run a web server on your Mac. For the long of it have a look at <a href="http://en.wikipedia.org/wiki/MAMP">this Wiki</a>.</p>
+<hr>
+<h3 id="tldr---the-video-version">tl;dr - The Video Version</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/64028966" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p><a href="https://vimeo.com/64028966">Here&rsquo;s the &ldquo;too long; didn&rsquo;t read&rdquo; video version</a>. Actually, the video is kind of long too. It seems that I just can&rsquo;t help being long winded at times. If there&rsquo;s something in the video that doesn&rsquo;t make sense just refer to the text below or drop me a comment or an email and I&rsquo;ll do my best to sort you out. Really, this is a pretty simple process. Once you&rsquo;ve done it once, it&rsquo;s a snap.</p>
+<hr>
+<h3 id="part-1---download--install-mamp">Part 1 - Download &amp; Install MAMP</h3>
+<p>In order to get up and running we’re going to need to download and install MAMP. Head on over to <a href="http://www.mamp.info/en/index.html">mamp.info</a> and click the big ‘ole download now button. This will download a .zip file, containing the MAMP installer, to your computer.</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215272/1_goGetMAMP-770x700_qmdzif.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215272/1_goGetMAMP-770x700_qmdzif.jpg" alt="1_goGetMAMP-770x700">
+</a></p>
+<p>Once the zip file has finished downloading, find it and double click it to unzip. You’ll end up with an install package on your desktop. Double click the install package to run the installer.</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215272/2_installMAMP_1-425x300_b4cy1s.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215272/2_installMAMP_1-425x300_b4cy1s.jpg" alt="2_installMAMP_1-425x300">
+</a></p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215271/2_installMAMP_2-425x300_h4azsj.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215271/2_installMAMP_2-425x300_h4azsj.jpg" alt="2_installMAMP_2-425x300">
+</a></p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215270/2_installMAMP_3-425x300_rmczqz.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215270/2_installMAMP_3-425x300_rmczqz.jpg" alt="2_installMAMP_3-425x300">
+</a></p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215268/2_installMAMP_5-425x301_bbji9g.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215268/2_installMAMP_5-425x301_bbji9g.jpg" alt="2_installMAMP_5-425x301">
+</a></p>
+<p>Installation is standard fare. You’ll go through a series of steps similar to what&rsquo;s shown above. When the actual install begins, the MAMP installer will ask you to authenticate with your admin user name and password. Go ahead and do that. Once the install has completed, MAMP and MAMP Pro will be installed in your applications directory.</p>
+<hr>
+<h4 id="a-quick-note-on-mamp-pro">A quick note on MAMP Pro</h4>
+<p>MAMP Pro offers a lot of cool advanced features and by default is installed along with MAMP. MAMP Pro is not free, but it wont cost you any money unless you decide to use it. For this post we will be using the free version of MAMP because&hellip;. it’s free, and it gets the job done. So, with that said, go ahead and navigate to applications/MAMP and double click on the MAMP app to launch it.</p>
+<hr>
+<h3 id="part-2---launching-mamp">Part 2 - Launching MAMP!</h3>
+<p>Once you launch MAMP two things are going to happen. First, the MAMP control panel is going to launch. It looks like this -</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215269/3_MAMP_cp_1_qbm4an.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215269/3_MAMP_cp_1_qbm4an.jpg" alt="3_MAMP_cp_1">
+</a></p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215270/3_mamp_cp_2_flkcca.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215270/3_mamp_cp_2_flkcca.jpg" alt="3_mamp_cp_2">
+</a></p>
+<p>On launch MAMP will boot the Apache server and the MySQL server and the status lights on the MAMP control panel should turn from red, as shown at left above, to green, as shown at right above. Once the servers are booted MAMP will open the MAMP start page in your default browser. I’m using Chrome, here’s what my start page looks like -</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215268/4_mamp_startpage-694x700_kwx3rd.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215268/4_mamp_startpage-694x700_kwx3rd.jpg" alt="4_mamp_startpage-694x700">
+</a></p>
+<p>Notice the URL! localhost!! YES!!! This means we’re up and running with our local server! Okay&hellip;.. now, the only thing left to do is to go ahead and install WordPress.</p>
+<hr>
+<h3 id="part-3--go-grab-wordpress">Part 3- Go Grab WordPress!</h3>
+<p>Let’s go ahead and jump over to <a href="http://wordpress.org/download/">wordpress.org/download</a> to download and install WordPress.</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215267/5_getWordPress-892x700_c6nshj.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215267/5_getWordPress-892x700_c6nshj.jpg" alt="5_getWordPress-892x700">
+</a></p>
+<p>Go ahead and download the latest version of WordPress. As of this writing the latest version is 3.5.1 Double click to open the zip file, and you’ll end up with a folder called Wordpress. Drag this folder to wherever you would like your local WordPress site to live. I like to keep mine in my Sites folder, at user/sites. You can change the name of the folder from “wordpress” to whatever you’d like your site to be called. I’m going to go ahead and leave mine as is.</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215267/6_place_WordPress-687x700_erf7bb.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215267/6_place_WordPress-687x700_erf7bb.jpg" alt="6_place_WordPress-687x700">
+</a></p>
+<hr>
+<h3 id="part-4--setting-up-the-database">Part 4- Setting up the Database</h3>
+<p>Next, and probably the most complex part of this entire endeavor, we’re going to need to set up a MySQL database for our Wordpress install. No worries though, it’s super simple. On the MAMP start page go ahead and click the top nav button titled “phpMyAdmin”.</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215266/7_makedb_1-425x286_j7tqhk.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215266/7_makedb_1-425x286_j7tqhk.jpg" alt="7_makedb_1-425x286">
+</a></p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215266/7_makedb_2-425x295_fdao4p.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215266/7_makedb_2-425x295_fdao4p.jpg" alt="7_makedb_2-425x295">
+</a></p>
+<p>Once in phpMyAdmin look for the input box that says “create new database”, as shown above, right. Enter the name of your database here. Don’t use any spaces in the name. I usually keep the database name relatively simple, lowercase and, when possible, one word. Choose a database name that reflects the name of your project. For example - “myproject” or “my_project” are both fine. For this post I’ve named my new database “awesome”. Once you’ve entered the name of your database click the create button. There’s no need to fiddle with any other settings.</p>
+<p>Now that our database is set up we need to point MAMP at our WordPress site. Hop over to the MAMP control panel and click the preferences button. Click the Apache Tab, then using the select button, navigate to and choose the folder where your local WordPress site lives. Click open, then click okay.</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215264/8_Mamp_prefs_1_q6qpik.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215264/8_Mamp_prefs_1_q6qpik.jpg" alt="8_Mamp_prefs_1">
+</a></p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215115/8_mamp_prefs_2_nind3p.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215115/8_mamp_prefs_2_nind3p.jpg" alt="8_mamp_prefs_2">
+</a></p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215115/8_mamp_prefs_3-425x265_uyayeg.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215115/8_mamp_prefs_3-425x265_uyayeg.jpg" alt="8_mamp_prefs_3-425x265">
+</a></p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215114/8_mamp_prefs_4_zmanot.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215114/8_mamp_prefs_4_zmanot.jpg" alt="8_mamp_prefs_4">
+</a></p>
+<p>Since we’ve changed the Apache settings the servers will reboot. Once the lights return to green on your MAMP control panel go ahead and open a new tab or window in your browser and enter the URL “localhost:8888” - and&hellip;. BAM!!! We can install WordPress!</p>
+<hr>
+<h3 id="part-4---install--configure-wordpress">Part 4 - Install &amp; Configure WordPress!!!</h3>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215113/9_install_wordpress_1-914x574_lqqugp.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215113/9_install_wordpress_1-914x574_lqqugp.jpg" alt="9_install_wordpress_1-914x574">
+</a></p>
+<p>Click the button to create a configuration file, then, on the next screen, click the “let’s go” button!</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215112/9_install_wordpress_2-914x619_c2wwpu.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215112/9_install_wordpress_2-914x619_c2wwpu.jpg" alt="9_install_wordpress_2-914x619">
+</a></p>
+<p>Now we will need to tell WordPress how to connect to our database. For “Database Name” enter the name of the database you created in phpMyAdmin - my database was named “awesome” so that’s what I’m going to enter.</p>
+<p><em><strong>Note</strong></em> that the next two fields, “User Name” and “Password” are referring to your MySQL database, not to your WordPress install. Don’t confuse this with your WordPress login, right now all we are doing is telling WordPress how to access the database we’ve set up for it. By default the MySQL settings in MAMP are “root” for both the user name and password, so go ahead and fill those in as shown below.</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215113/9_install_wordpress_3-914x693_s7omtc.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215113/9_install_wordpress_3-914x693_s7omtc.jpg" alt="9_install_wordpress_3-914x693">
+</a></p>
+<p>Database Host and Table Prefix are fine as is, so go on and click the submit button. Go on, you know you want to! Once you get to the next screen click to run the installer and&hellip;</p>
+<p><strong>BOOM!!!</strong> Fill out the site info that you’ll want to work with. One word of advice, <em>never, never, <strong>never, ever, never,</strong></em> use the username admin. <strong>Just don’t do it.</strong> &ldquo;admin&rdquo; is so commonly used that it’s become a security vulnerability. I could blather on about it but I’ve already written waaayyy more than I had planned to, but - if you’d like to know more, just google “wordpress, don’t use admin”, or take a quick gander at point number two of this article in <em><a href="http://www.netmagazine.com/features/20-common-wordpress-mistakes-myths-and-misgivings">.net magazine</a></em>. At any rate, here’s what my setup for this site looks like -</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215111/9_install_wordpress_4-667x700_txckl9.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215111/9_install_wordpress_4-667x700_txckl9.jpg" alt="9_install_wordpress_4-667x700">
+</a></p>
+<p>For my password I’ve just used “password”, mainly for ease of use. This is fine on a local site but make sure to use a secure password on any site that is deployed on the web! Go ahead and click the “install Wordpress” button -</p>
+<p>Next you’ll be prompted to log in.</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215111/10_login-914x583_udbdf0.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215111/10_login-914x583_udbdf0.jpg" alt="10_login-914x583">
+</a></p>
+<p>Go ahead and log in with the username and password that you set up for your WordPress site. And, the next thing you know&hellip;.</p>
+<p><a href="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215110/11_and_done-811x700_a9jz9i.jpg"><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448215110/11_and_done-811x700_a9jz9i.jpg" alt="11_and_done-811x700">
+</a></p>
+<hr>
+<h3 id="victory">Victory!</h3>
+<p>You now have a local, fully functioning WordPress site installed.</p>
+<p>That about does it. Go forth, go crazy, break things &amp; learn. I hope this post has been useful!</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

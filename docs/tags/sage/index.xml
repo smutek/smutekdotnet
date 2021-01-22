@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sage on smutek.net</title>
+    <link>https://smutek.net/tags/sage/</link>
+    <description>Recent content in sage on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 12 Mar 2017 19:10:15 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/sage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Filtering the WordPress Custom Logo</title>
+      <link>https://smutek.net/filtering-the-wordpress-custom-logo/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/filtering-the-wordpress-custom-logo/</guid>
+      <description>WordPress 4.5 added the custom logo feature. It&amp;rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&amp;rsquo;t always what I&amp;rsquo;m looking for. Fortunately there&amp;rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&amp;rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want.</description>
+    </item>
+    
+    <item>
+      <title>Shared hosting to Roots stack: Part 3</title>
+      <link>https://smutek.net/shared-hosting-to-roots-stack-part-3/</link>
+      <pubDate>Wed, 08 Jun 2016 02:43:32 +0000</pubDate>
+      
+      <guid>https://smutek.net/shared-hosting-to-roots-stack-part-3/</guid>
+      <description>This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+Correction: The video opens with: &amp;hellip;this is part four of a three part series&amp;hellip; Sorry, It was late. :)
+I didn&amp;rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project.</description>
+    </item>
+    
+    <item>
+      <title>Shared hosting to Roots stack: Part 2</title>
+      <link>https://smutek.net/migrating-to-trellis-2/</link>
+      <pubDate>Wed, 01 Jun 2016 02:48:45 +0000</pubDate>
+      
+      <guid>https://smutek.net/migrating-to-trellis-2/</guid>
+      <description>Pt. 2 - Install plugins via Composer, migrate data   This is the second in a series of screen-casts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+In the first screen-cast I setup Trellis &amp;amp; Bedrock.
+In this screen-cast I&amp;rsquo;ll get my theme &amp;amp; plugins installed, deal with a couple of premium plugins, and migrate my data into my development environment.</description>
+    </item>
+    
+    <item>
+      <title>Shared hosting to Roots stack: Part 1</title>
+      <link>https://smutek.net/migrating-to-trellis-1/</link>
+      <pubDate>Wed, 25 May 2016 04:51:13 +0000</pubDate>
+      
+      <guid>https://smutek.net/migrating-to-trellis-1/</guid>
+      <description>Pt. 1 - Setting up Trellis &amp;amp; Bedrock locally   This is the first in a series of screencasts that will document the process of moving a WordPress website (this website) from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+In this screencast I&amp;rsquo;ll get my local development environment setup with Trellis &amp;amp; Bedrock.
+In part 2 I get my theme and plugins installed, and migrate my data into my development environment.</description>
+    </item>
+    
+    <item>
+      <title>How to restore the Bootstrap nav in Sage 8.2</title>
+      <link>https://smutek.net/how-to-restore-the-bootstrap-nav-in-sage-8-2/</link>
+      <pubDate>Tue, 05 May 2015 17:23:27 +0000</pubDate>
+      
+      <guid>https://smutek.net/how-to-restore-the-bootstrap-nav-in-sage-8-2/</guid>
+      <description>As of Sage 8.2 the Bootstrap navigation has been removed. This is part of Sage&amp;rsquo;s move towards framework agnosticism. There&amp;rsquo;s good discussion here, on the GitHub pull request.
+As of now, adding the navigation back is super easy, and Ben Word links to everything you&amp;rsquo;ll need to do this at the bottom of the same discussion, here.
+Adding the nav back is so easy that it doesn&amp;rsquo;t really warrant a video, but I like making videos, so here&amp;rsquo;s a quick walk through.</description>
+    </item>
+    
+  </channel>
+</rss>

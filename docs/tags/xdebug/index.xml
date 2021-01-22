@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xdebug on smutek.net</title>
+    <link>https://smutek.net/tags/xdebug/</link>
+    <description>Recent content in Xdebug on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 07:25:56 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/xdebug/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xdebuggin at WordCamp Baltimore 2017</title>
+      <link>https://smutek.net/xdebug/</link>
+      <pubDate>Sun, 15 Oct 2017 07:25:56 +0000</pubDate>
+      
+      <guid>https://smutek.net/xdebug/</guid>
+      <description>Thanks Today I had the honor to speak at WordCamp Baltimore on the topic of using Xdebug to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.
+My slides are here: https://slides.com/smutek/xdebug/
+And notes on my presentation are below.
+What is Xdebug Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP.</description>
+    </item>
+    
+    <item>
+      <title>Trellis &#43; Xdebug &#43; PhpStorm</title>
+      <link>https://smutek.net/trellis-xdebug-phpstorm/</link>
+      <pubDate>Tue, 30 Aug 2016 03:03:21 +0000</pubDate>
+      
+      <guid>https://smutek.net/trellis-xdebug-phpstorm/</guid>
+      <description>I love running Xdebug through PhpStorm&amp;rsquo;s built in debugger but have had the hardest time getting it to work with Trellis. I have no problem getting it going with VVV but have never been able to get my path mappings correct in Trellis.
+Well, turns out it&amp;rsquo;s really simple with PhpStorm&amp;rsquo;s Zero-Configuration debugging. Here&amp;rsquo;s the JetBrains documentation on that - but the short of it is:
+  Install a bookmarklet or browser extension.</description>
+    </item>
+    
+  </channel>
+</rss>

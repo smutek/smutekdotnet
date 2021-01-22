@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="jimmy.smutek">
+<meta name="description" content="Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&amp;rsquo;d suggest exploring his GitHub further as it looks like he&amp;rsquo;s working on lot&amp;rsquo;s of cool ideas like this." />
+<meta name="keywords" content=", acf, bootstrap, php, quick-tips" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/" />
+
+
+    <title>
+        
+            Rich Semantic Titles in WordPress with ACF :: smutek.net  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://smutek.net/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://smutek.net/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://smutek.net/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://smutek.net/favicon-16x16.png">
+    <link rel="manifest" href="https://smutek.net/site.webmanifest">
+    <link rel="mask-icon" href="https://smutek.net/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://smutek.net/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Rich Semantic Titles in WordPress with ACF">
+<meta itemprop="description" content="Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&rsquo;d suggest exploring his GitHub further as it looks like he&rsquo;s working on lot&rsquo;s of cool ideas like this.">
+<meta itemprop="datePublished" content="2017-01-07T17:18:36+00:00" />
+<meta itemprop="dateModified" content="2017-01-07T17:18:36+00:00" />
+<meta itemprop="wordCount" content="810">
+<meta itemprop="image" content="https://smutek.net"/>
+
+
+
+<meta itemprop="keywords" content="acf,bootstrap,php,quick-tips," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://smutek.net"/>
+
+<meta name="twitter:title" content="Rich Semantic Titles in WordPress with ACF"/>
+<meta name="twitter:description" content="Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&rsquo;d suggest exploring his GitHub further as it looks like he&rsquo;s working on lot&rsquo;s of cool ideas like this."/>
+
+
+
+    <meta property="og:title" content="Rich Semantic Titles in WordPress with ACF" />
+<meta property="og:description" content="Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&rsquo;d suggest exploring his GitHub further as it looks like he&rsquo;s working on lot&rsquo;s of cool ideas like this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/" />
+<meta property="og:image" content="https://smutek.net"/>
+<meta property="article:published_time" content="2017-01-07T17:18:36+00:00" />
+<meta property="article:modified_time" content="2017-01-07T17:18:36+00:00" />
+
+
+
+
+    <meta property="article:section" content="WordPress" />
+
+
+
+    <meta property="article:published_time" content="2017-01-07 17:18:36 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://smutek.net/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">My Interwebs Blog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://smutek.net/about-me/">About</a></li><li><a href="https://smutek.net/contact/">Contact</a></li><li><a href="https://smutek.net/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/">Rich Semantic Titles in WordPress with ACF</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>Last night while browsing the <a href="https://discourse.roots.io/">Roots Discourse</a> I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.</p>
+<p>User MWDelaney writes -</p>
+<!-- raw HTML omitted -->
+<p>So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. <a href="https://discourse.roots.io/t/advanced-custom-fields-complex-titles/8481">The post is here</a>, and <a href="https://github.com/MWDelaney/acf-complex-titles">you can check his plugin out here</a>. I&rsquo;d suggest exploring his GitHub further as it looks like he&rsquo;s working on lot&rsquo;s of cool ideas like this.</p>
+<p>Anyway, I&rsquo;m reading his post and it reminded me of a solution I&rsquo;ve been using <a href="https://ainsleyagency.com">at work</a> to help make descriptive titles a bit more semantic.</p>
+<p>Imagine we&rsquo;re building a new site for &ldquo;Bob&rsquo;s Hermit Crab Sanctuary&rdquo;. Like most sites it has an About page. In the site map and wireframes the page is labeled &ldquo;About&rdquo; which is appropriate because it&rsquo;s a page about the business. At the same time, &ldquo;About&rdquo; is maybe a bit boring and not as descriptive as it could be, so in the design &ldquo;About&rdquo; becomes:  &ldquo;A Safe Haven for Hermit Crabs Since 1861&rdquo;.</p>
+<p>Much nicer, but maybe a little long for the top nav, and in the comp the top nav is still labled as &ldquo;About&rdquo;. I know I can change the menu text via the WordPress menu editor, but I want to step it up a little, and &ldquo;About&rdquo; still remains the shortest, most releavant keyword for the page.</p>
+<p><a href="https://moz.com/learn/seo/title-tag">Moz says</a> that:</p>
+<!-- raw HTML omitted -->
+<p>According to Moz, the optimal format when constructing a title is:
+Primary Keyword | Secondary Keyword</p>
+<p>The Moz article references <a href="https://www.w3.org/QA/Tips/good-titles">this quality assurance tip</a> from the W3 Consortium which states:</p>
+<!-- raw HTML omitted -->
+<p>I got the idea for how to handle this from Bootstrap&rsquo;s headings with &ldquo;<a href="http://getbootstrap.com/css/#type-headings">lighter secondary text</a>&rdquo; example:</p>
+<p><em><!-- raw HTML omitted -->h1. Bootstrap heading <!-- raw HTML omitted -->Secondary text<!-- raw HTML omitted --><!-- raw HTML omitted --></em></p>
+<p>I like this execution because semantically, <em><!-- raw HTML omitted --></em> is used to represent small runs of secondary, or side text. This makes it great for displaying headers with sub-text, which is essentially what I am trying to do here. The difference in my case is that I want to hide the first portion of the title from viewers, but still have it as part of the document. Span tags have no semantic meaning, so I can extend the Bootstrap example by wrapping a <em><!-- raw HTML omitted --></em> around the first portion of the title to control its visibility. More on that below.</p>
+<p>So for the backend, what I&rsquo;ve started doing is setting up an ACF field group called something like &ldquo;Title Override&rdquo;. I&rsquo;ll set the display settings to &ldquo;High (Below the Title)&rdquo; on the back end, and give it 2 fields - a true/false (checkbox) to toggle it on and off, and a text field for the description. I use the checkbox to hide and show the field on the backend, and to filter the output on the front end.</p>
+<p>To the end user it looks something like this -</p>
+<p><img src="https://smutek.net/img/2017/01/example.gif" alt="Animated gif showing ACF back end"></p>
+<p>The logic is simple and can go right in the template file, but I prefer to drop it in a function. It just needs to get the page title, check if we are doing an override, generate the appropriate markup if so, and return the results to the template.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">/**
+</span><span style="color:#e6db74"> * Title override
+</span><span style="color:#e6db74"> * @return string - title
+</span><span style="color:#e6db74"> */</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">overrideTitle</span>()
+{
+  <span style="color:#75715e">// true/false 
+</span><span style="color:#75715e"></span>  $override <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_field</span>(<span style="color:#e6db74">&#39;title_override&#39;</span>);
+  $title    <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_the_title</span>();
+  <span style="color:#66d9ef">if</span> ($override) {
+    <span style="color:#75715e">// If using the override, get the title description
+</span><span style="color:#75715e"></span>    $description <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_field</span>(<span style="color:#e6db74">&#39;title_description&#39;</span>);
+    <span style="color:#75715e">// Setup the modified markup
+</span><span style="color:#75715e"></span>    $output <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;span class=&#34;sr-only&#34;&gt;&#39;</span> <span style="color:#f92672">.</span> $title <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;: &lt;/span&gt;&lt;small class=&#34;title-description&#34;&gt;&#39;</span> <span style="color:#f92672">.</span> $description <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;/small&gt;&#39;</span>;
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#75715e">// Not doing an override, use the regular title
+</span><span style="color:#75715e"></span>    $output <span style="color:#f92672">=</span> $title;
+  }
+
+  <span style="color:#75715e">// return the output to the template
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> $output;
+}
+</code></pre></div>
+<p>Note the sr-only class; We use a lot of <a href="http://getbootstrap.com/">Bootstrap</a>, and in this case I&rsquo;m using Bootstraps sr-only class to hide the &ldquo;About:&rdquo; keyword portion of the title. This way it doesn&rsquo;t display in the browser, but it&rsquo;s still visible to screen-readers and bots. Aside from that, the description is still wrapped in a <em><!-- raw HTML omitted --></em> tag which, aside from the semantic meaning it provides, also has the effect of making our text smaller. So it needs to be styled to match its parent. This is simple using the <em>@extend</em> directive in Sass.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#f92672">h1</span> <span style="color:#a6e22e">.override-title</span> {
+  <span style="color:#66d9ef">@extend</span> <span style="color:#f92672">h1</span>;
+}</code></pre></div>
+<p>Then in my template I call the title like this -</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;&lt;?=</span> <span style="color:#a6e22e">overrideTitle</span>(); <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">&lt;/h1&gt;
+</span></code></pre></div>
+<p>Now if there&rsquo;s no override the browser gets the regular title, but if override returns true the browser gets -</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h1</span>&gt;&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sr-only&#34;</span>&gt;About: &lt;/<span style="color:#f92672">span</span>&gt;&lt;<span style="color:#f92672">small</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;override-title&#34;</span>&gt;A Safe Haven for Hermit Crabs Since 1861&lt;/<span style="color:#f92672">small</span>&gt;&lt;/<span style="color:#f92672">h1</span>&gt;</code></pre></div>
+<p>Which, in terms of intent, reads as -
+About: A Safe Haven for Hermit Crabs Since 1861</p>
+<p>That&rsquo;s it, screen readers and search-bots get rich, valid, semantic, and fully descriptive markup, and our client, content creators and designers have the control they need over the display.</p>
+<p>Good stuff!</p>
+<hr>
+<p>Resources -</p>
+<ul>
+<li><a href="https://www.advancedcustomfields.com/pro/">ACF</a></li>
+<li><a href="https://roots.io">Roots</a></li>
+<li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="https://wordpress.org/">WordPress</a></li>
+<li><a href="https://moz.com/">Moz</a></li>
+<li><a href="https://www.w3.org/">W3C</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://smutek.net/tags/acf">acf</a></span><span class="tag"><a href="https://smutek.net/tags/bootstrap">bootstrap</a></span><span class="tag"><a href="https://smutek.net/tags/php">php</a></span><span class="tag"><a href="https://smutek.net/tags/quick-tips">quick-tips</a></span>
+  				</p>
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://smutek.net">Jimmy Smutek</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://smutek.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://smutek.net/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

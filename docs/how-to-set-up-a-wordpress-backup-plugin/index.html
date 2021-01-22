@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="jimmy.smutek">
+<meta name="description" content="Backups are so important Part of a series of posts from my days of self employment.
+This week I&amp;rsquo;m going to cover how to set up a WordPress backup plugin. Think of this as a form of disaster insurance. Nobody knows more than you just how important your website is to the health of your business. It&amp;rsquo;s just super important to make sure that you have a proper backup of your WordPress website; not just your files, but your database as well." />
+<meta name="keywords" content=", backup, plugins, quick-tips" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/" />
+
+
+    <title>
+        
+            How to set up a WordPress Backup Plugin :: smutek.net  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://smutek.net/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://smutek.net/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://smutek.net/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://smutek.net/favicon-16x16.png">
+    <link rel="manifest" href="https://smutek.net/site.webmanifest">
+    <link rel="mask-icon" href="https://smutek.net/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://smutek.net/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="How to set up a WordPress Backup Plugin">
+<meta itemprop="description" content="Backups are so important Part of a series of posts from my days of self employment.
+This week I&rsquo;m going to cover how to set up a WordPress backup plugin. Think of this as a form of disaster insurance. Nobody knows more than you just how important your website is to the health of your business. It&rsquo;s just super important to make sure that you have a proper backup of your WordPress website; not just your files, but your database as well.">
+<meta itemprop="datePublished" content="2015-03-06T15:50:10+00:00" />
+<meta itemprop="dateModified" content="2015-03-06T15:50:10+00:00" />
+<meta itemprop="wordCount" content="1797">
+<meta itemprop="image" content="https://smutek.net"/>
+
+
+
+<meta itemprop="keywords" content="backup,plugins,quick-tips," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://smutek.net"/>
+
+<meta name="twitter:title" content="How to set up a WordPress Backup Plugin"/>
+<meta name="twitter:description" content="Backups are so important Part of a series of posts from my days of self employment.
+This week I&rsquo;m going to cover how to set up a WordPress backup plugin. Think of this as a form of disaster insurance. Nobody knows more than you just how important your website is to the health of your business. It&rsquo;s just super important to make sure that you have a proper backup of your WordPress website; not just your files, but your database as well."/>
+
+
+
+    <meta property="og:title" content="How to set up a WordPress Backup Plugin" />
+<meta property="og:description" content="Backups are so important Part of a series of posts from my days of self employment.
+This week I&rsquo;m going to cover how to set up a WordPress backup plugin. Think of this as a form of disaster insurance. Nobody knows more than you just how important your website is to the health of your business. It&rsquo;s just super important to make sure that you have a proper backup of your WordPress website; not just your files, but your database as well." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/" />
+<meta property="og:image" content="https://smutek.net"/>
+<meta property="article:published_time" content="2015-03-06T15:50:10+00:00" />
+<meta property="article:modified_time" content="2015-03-06T15:50:10+00:00" />
+
+
+
+
+    <meta property="article:section" content="WordPress" />
+
+
+
+    <meta property="article:published_time" content="2015-03-06 15:50:10 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://smutek.net/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">My Interwebs Blog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://smutek.net/about-me/">About</a></li><li><a href="https://smutek.net/contact/">Contact</a></li><li><a href="https://smutek.net/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/">How to set up a WordPress Backup Plugin</a></h2>
+
+            
+
+            <div class="post-content">
+                <h2 id="backups-are-so-important">Backups are so important</h2>
+<p>Part of a series of posts from my days of self employment.</p>
+<p>This week I&rsquo;m going to cover how to set up a WordPress backup plugin. Think of this as a form of disaster insurance. Nobody knows more than you just how important your website is to the health of your business. It&rsquo;s just super important to make sure that you have a proper backup of your WordPress website; not just your files, but your database as well.</p>
+<h3 id="meet-backwpup">Meet BackWPup</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214859/backup-plugin-page_arhtj3.jpg" alt="Image of backwpup plugin on the plugin directory"></p>
+<p>Luckily this is a super easy thing to get going. There are tons of great options on the market. The one that I am going to cover today is called BackWPup, a free plugin from MarketPress. <a href="https://wordpress.org/plugins/backwpup/">You can find the plugin here</a> on the WordPress plugin directory. For this post I will be using the free version, but MarketPress also offers a <a href="https://marketpress.com/product/backwpup-pro/">premium version</a> of the plugin that does lots of extra cool stuff.</p>
+<h3 id="installation">Installation</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214858/backup-plugin-in-admin_e8u3pc.jpg" alt="Backwpup plugin from the wp admin plugin browser"></p>
+<p>Installation is super easy. Just go to your WP Admin page, select plugins, and add new. Search for BackWPup and the plugin will be the first in the list. Check out those stats, the plugin has 4 stars, with 240 reviews and at the time of this writing nearly 1.7 million downloads! That&rsquo;s pretty impressive.</p>
+<h3 id="configure-backup-jobs">Configure Backup Jobs</h3>
+<p>Once you&rsquo;ve installed and activated the plugin you&rsquo;ll be directed to the landing page for the plugin. You will also notice that a new menu item for BackWPup has been added to your WordPress admin menu. The next thing that we want to do is to configure some backup tasks to run. Each backup task is called a job, in this blog post we are going to configure 2 jobs. We are going to configure a weekly full site back up, and a daily database backup.</p>
+<h4 id="weekly-backup-vs-daily-backup">Weekly Backup vs. Daily Backup</h4>
+<p>The weekly full site backup will be an all inclusive backup of our entire site. All our site files, themes, plugins, and database will be included in this back up. I run this task weekly because it generates a larger backup and takes more server resources to run. I find that the database backup is the most critical thing to keep backed up regularly. The database is also a much smaller file and it takes less resources to run the task. That&rsquo;s why I am going to configure the database to backup daily.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214857/backup-plugin-adding-a-job_qq6cgt.jpg" alt="Adding a job to BackWPup"></p>
+<p>The next thing to do it to add a new job. In the general tab of the BackWPup plugin, type in the name of your job as shown. I&rsquo;ve named mine &ldquo;Weekly Full Site Backup&rdquo;.  All of the default settings are fine for this page. The default settings are pretty robust and unless you have a specific need they should work pretty well for you.</p>
+<h4 id="job-destination">Job Destination</h4>
+<p>[caption id=&ldquo;attachment_834&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1349&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214857/backup-to-dropbox-option-selected_gizwq3.jpg" alt="Backup to dropbox option in BackWPup">
+The backup to Dropbox option selected[/caption]</p>
+<p>One thing that I am going to change on the general page is the Job Destination settings. I&rsquo;m going to use the backup to Dropbox feature for this post but it&rsquo;s just as easy to backup to Amazon S3. The option for &ldquo;Backup to folder&rdquo; will store the backups on your server. I don&rsquo;t recommend this for the simple fact that your backups are now stored in the same location as your website. If something happens with your web host and the server is wiped out, you&rsquo;ve now lost your sit and your backups.</p>
+<p>It&rsquo;s kind of like having a backup hard drive attached to your computer at home. It&rsquo;s great to have backups, if something happens to your computer you are covered. But, what is there&rsquo;s a fire and you lose the computer and the hard drives?</p>
+<p><strong>It&rsquo;s a good idea to keep your backups in a separate location!</strong></p>
+<p>Go ahead and click save, then click on the schedule job tab. This is where we will tell the plugin when to run our back up job. The default is manual, which means you&rsquo;ll need to remember to come here and run backups. We don&rsquo;t want to do this, we want to set this up, let WordPress take care of it for us, and not have to worry about it.</p>
+<p>[caption id=&ldquo;attachment_836&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1349&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214856/backup-schedule-page-manually_oagyv0.jpg" alt="The default backup schedule tab">
+The default backup schedule tab[/caption]</p>
+<p>If you click on the WP Cron radio button you&rsquo;ll be able to set up a time for the job to run. I&rsquo;m leaving mine at the default, which is 3:00 am on Sundays. I suggest choosing a time where you have minimal traffic on your site. Once you&rsquo;ve set up your schedule, click save.</p>
+<p>[caption id=&ldquo;attachment_839&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1140&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214855/backup-schedule-page-weekly_lyt1ca.jpg" alt="The weekly backup task configured">
+The backup task set to run weekly[/caption]</p>
+<h4 id="connect-to-dropbox">Connect to Dropbox</h4>
+<p>The next thing to do is to configure the Dropbox settings. This is super easy. Go ahead and click on the &ldquo;To:Dropbox&rdquo; tab.</p>
+<p>[caption id=&ldquo;attachment_840&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1349&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214854/dropbox-settings-blank_vtwswb.jpg" alt="The dropbox settings page un-configured.">
+The Dropbox settings page[/caption]</p>
+<p>If you don&rsquo;t have a Dropbox account head over to Dropbox.com and sign up for a free account. The free account offers 2GB of storage for free, which will be more than enough to back up most basic sites. If you&rsquo;re a photographer you likely will have a much larger site, and will need more space. Dropbox offers 1 Terabyte of storage for around $10 per month, and unlimited storage for $15 dollars a month.</p>
+<p>Once you have your Dropbox account set up go ahead and click on the &ldquo;Get Dropbox auth code&rdquo; button. You&rsquo;re going to be directed to a Dropbox page which is going to ask you if it is okay for WordPress to interact with it. Click allow here, and use your mouse to copy the code that appears once you&rsquo;ve clicked allow.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214854/dropbox-handshake_nasdcy.jpg" alt="the dropbox handshake"></p>
+<p>Head back over to your WordPress site and paste the Dropbox code into the auth field, as shown.</p>
+<p>[caption id=&ldquo;attachment_842&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1140&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214853/dropbox-settings-success_dqtodq.jpg" alt="Dropbox successfully authenticated!">
+Dropbox successfully authenticated![/caption]</p>
+<p>Next, click save. If you&rsquo;ve done everything correctly you should now see a success message as shown.</p>
+<h4 id="how-many-backups-to-keep">How many backups to keep?</h4>
+<p>Now we&rsquo;re going to change the file deletion settings. All this is saying is, &ldquo;Hey, how many copies of this backup do you want to keep?&rdquo;. I&rsquo;m going got set mine to 5, which will give me access to 5 weeks of backups. This means that, should disaster strike, I can roll my site back to any of the backs that were taken over the past 5 weeks. You can set this however you&rsquo;d like, but realize that the more backups you keep, the more space you need. Go ahead and click save again.</p>
+<p>[caption id=&ldquo;attachment_843&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1140&rdquo;]<img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214853/dropbox-settings-file-deletion_suc904.jpg" alt="File deletion settings">
+I set my file deletion setting to 5[/caption]</p>
+<h4 id="run-the-backup">Run the backup!</h4>
+<p>With these settings configured I&rsquo;m going to go ahead and run the back up. You can run the job by going to the Jobs section of the plugin or, there should be a link titled &ldquo;Run Now&rdquo; that appears on the page after you click save. Either one is fine.</p>
+<p>Depending on the size of your site, this may take quite a while. It&rsquo;s important to make sure that you have enough space at your destination to hold your back up. If your site is 3GB and you are trying to backup to a 2GB Dropbox account, the backup will fail.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214852/dropbox-process-complete_u4tqho.jpg" alt="Backup job completed"></p>
+<p>Looks like the backup task ran successfully! Now it&rsquo;s time to configure the daily database backup. I run database backups daily because the database file is just a fraction of the size of a full site backup. This task uses less server resources to run and requires less space to store.</p>
+<h3 id="protect-that-database">Protect that database!</h3>
+<p>The database is also, arguably, the most important thing to keep backed up. It&rsquo;s sort of like the brain of your site. It contains all your posts, all your pages, and all your configurations. When a visitor comes to your WordPress site, it&rsquo;s the database that tells WordPress what content to put together for them as they browse through your site. If you lose your database, it&rsquo;s kind of game over. This is why it&rsquo;s super important to keep the database backed up, and protected.</p>
+<h4 id="configure-the-job">Configure the job</h4>
+<p>The process for setting this task up is the same as the full site backup. The exceptions being that we will configure the general tab to just backup the database. Give the task a name, I&rsquo;m using &ldquo;Daily Database Backup&rdquo; for mine.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214851/daily-db-backup-configured_ygczml.jpg" alt="Daily database settings"></p>
+<p>In the Job Tasks section, uncheck everything but &ldquo;Database Backup&rdquo;, like shown. I&rsquo;m going to choose to send my database backups to Dropbox as well, but in most cases you can also have the database backups sent to your email. If you&rsquo;d like to do this go ahead and click the &ldquo;Backup sent via email&rdquo; checkbox, along with the Dropbox checkbox. Next, click save.</p>
+<h4 id="schedule-the-job">Schedule the job</h4>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214851/daily-db-backup-scheduled_emadcm.jpg" alt="Database daily backup scheduled"></p>
+<p>Next click the Schedule tab and schedule your database back up to run daily. I&rsquo;ve set mine up to run every day at 2am. Once you&rsquo;ve configured the schedule, click save.</p>
+<h4 id="authenticate-with-dropbox-again">Authenticate with Dropbox again</h4>
+<p>If you are sending your database to Dropbox, head over to the Dropbox tab next. We need to authenticate with Dropbox for each backup job that we set up, so just follow the same steps that we went thorough earlier, when we authenticated our weekly backup.</p>
+<p>Once you&rsquo;ve done that, click save.</p>
+<h3 id="youre-done">You&rsquo;re done.</h3>
+<p>That&rsquo;s it. If you&rsquo;ve followed along you now not only know how to Install and configure a WordPress backup plugin, but you&rsquo;ve also got 2 backup jobs setup to backup your entire site once a week, and your database once a day.</p>
+<p>Important: Check with your host about their backup policies.</p>
+<p>It&rsquo;s important to mention that it might be a good idea to check with your web host about their backup policies. Running backups puts additional strain on a server. Also, if you do opt to keep your backups on your server then you&rsquo;ll want to make sure you are mindful of your space. Even &ldquo;unlimited&rdquo; storage isn&rsquo;t really unlimited, as your host will likely remind you if you&rsquo;ve got 15 copies of a 10 gig website sitting on a shared hosting account.</p>
+<p>I suggest reading this article, <a href="http://wpandlegalstuff.com/beware-shared-wordpress-hosting-storing-backups/">Beware of shared hosting and the storage of backups</a>, by Richard Best. Richard runs a site called <a href="http://wpandlegalstuff.com/">WP and Legal Stuff</a> that covers, you guessed it, legal issues relevant to business owners running their own websites. It&rsquo;s definitely a site to bookmark and follow.</p>
+<h3 id="thanks-for-reading">Thanks for reading!</h3>
+<p>That does it for this week. I hope this walk through was helpful. As always, if you have any questions or suggestions please feel free to drop me a line or leave a comment.</p>
+<p>Next week I&rsquo;ll be covering how to take one of these backups and get a copy of your WordPress website running on your computer. This is a great way to safely test out new themes and plugins without having to change your live site.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://smutek.net/tags/backup">backup</a></span><span class="tag"><a href="https://smutek.net/tags/plugins">plugins</a></span><span class="tag"><a href="https://smutek.net/tags/quick-tips">quick-tips</a></span>
+  				</p>
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://smutek.net">Jimmy Smutek</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://smutek.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://smutek.net/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

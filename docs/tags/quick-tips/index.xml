@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>quick-tips on smutek.net</title>
+    <link>https://smutek.net/tags/quick-tips/</link>
+    <description>Recent content in quick-tips on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 07 Jan 2017 17:18:36 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/quick-tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rich Semantic Titles in WordPress with ACF</title>
+      <link>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</link>
+      <pubDate>Sat, 07 Jan 2017 17:18:36 +0000</pubDate>
+      
+      <guid>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</guid>
+      <description>Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&amp;rsquo;d suggest exploring his GitHub further as it looks like he&amp;rsquo;s working on lot&amp;rsquo;s of cool ideas like this.</description>
+    </item>
+    
+    <item>
+      <title>How to restore the Bootstrap nav in Sage 8.2</title>
+      <link>https://smutek.net/how-to-restore-the-bootstrap-nav-in-sage-8-2/</link>
+      <pubDate>Tue, 05 May 2015 17:23:27 +0000</pubDate>
+      
+      <guid>https://smutek.net/how-to-restore-the-bootstrap-nav-in-sage-8-2/</guid>
+      <description>As of Sage 8.2 the Bootstrap navigation has been removed. This is part of Sage&amp;rsquo;s move towards framework agnosticism. There&amp;rsquo;s good discussion here, on the GitHub pull request.
+As of now, adding the navigation back is super easy, and Ben Word links to everything you&amp;rsquo;ll need to do this at the bottom of the same discussion, here.
+Adding the nav back is so easy that it doesn&amp;rsquo;t really warrant a video, but I like making videos, so here&amp;rsquo;s a quick walk through.</description>
+    </item>
+    
+    <item>
+      <title>How to set up a WordPress Backup Plugin</title>
+      <link>https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/</link>
+      <pubDate>Fri, 06 Mar 2015 15:50:10 +0000</pubDate>
+      
+      <guid>https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/</guid>
+      <description>Backups are so important Part of a series of posts from my days of self employment.
+This week I&amp;rsquo;m going to cover how to set up a WordPress backup plugin. Think of this as a form of disaster insurance. Nobody knows more than you just how important your website is to the health of your business. It&amp;rsquo;s just super important to make sure that you have a proper backup of your WordPress website; not just your files, but your database as well.</description>
+    </item>
+    
+    <item>
+      <title>Change the way WordPress inserts images</title>
+      <link>https://smutek.net/change-the-way-wordpress-inserts-images/</link>
+      <pubDate>Fri, 27 Feb 2015 23:40:00 +0000</pubDate>
+      
+      <guid>https://smutek.net/change-the-way-wordpress-inserts-images/</guid>
+      <description>What&amp;rsquo;s the deal here? Part of a series of posts from my days of self employment.
+This week I want to do a quick tip to show you how to change the way that WordPress inserts images. What I mean by this is that, by default, every time you insert an image into one of your WordPress posts, WordPress will default to linking to the image.
+This is the default setting.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://smutek.net/categories/</loc>
+    <lastmod>2017-10-15T07:25:56+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://smutek.net/fr/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smutek.net/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/posts/</loc>
+    <lastmod>2017-10-15T07:25:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/</loc>
+    <lastmod>2017-10-15T07:25:56+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://smutek.net/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smutek.net/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/</loc>
+    <lastmod>2017-10-15T07:25:56+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://smutek.net/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smutek.net/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/wordcamp/</loc>
+    <lastmod>2017-10-15T07:25:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/categories/wordpress/</loc>
+    <lastmod>2017-10-15T07:25:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/xdebug/</loc>
+    <lastmod>2017-10-15T07:25:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/xdebug/</loc>
+    <lastmod>2017-10-15T07:25:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/categories/links/</loc>
+    <lastmod>2017-06-21T22:49:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/open-home-office/</loc>
+    <lastmod>2017-06-21T22:49:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/satire/</loc>
+    <lastmod>2017-06-21T22:49:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/bootstrap/</loc>
+    <lastmod>2017-03-12T19:10:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/filtering-the-wordpress-custom-logo/</loc>
+    <lastmod>2017-03-12T19:10:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/php/</loc>
+    <lastmod>2017-03-12T19:10:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/sage/</loc>
+    <lastmod>2017-03-12T19:10:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/snippets/</loc>
+    <lastmod>2017-03-12T19:10:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/tips/</loc>
+    <lastmod>2017-03-12T19:10:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/links/</loc>
+    <lastmod>2017-02-24T01:46:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/opinion/</loc>
+    <lastmod>2017-02-24T01:46:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/shut-the-fuck-up-and-go-and-build-something/</loc>
+    <lastmod>2017-02-24T01:46:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/posters-of-your-github-contributions/</loc>
+    <lastmod>2017-02-03T03:11:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/acf/</loc>
+    <lastmod>2017-01-07T17:18:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/quick-tips/</loc>
+    <lastmod>2017-01-07T17:18:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</loc>
+    <lastmod>2017-01-07T17:18:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/career/</loc>
+    <lastmod>2016-12-09T12:58:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/on-getting-older-in-tech/</loc>
+    <lastmod>2016-12-09T12:58:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/experimental/</loc>
+    <lastmod>2016-10-04T17:15:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/github-audio/</loc>
+    <lastmod>2016-10-04T17:15:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/categories/articles/</loc>
+    <lastmod>2016-09-19T00:22:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/on-dry-and-the-costs-of-wrongful-abstractions/</loc>
+    <lastmod>2016-09-19T00:22:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/a-little-function-for-oembed-acf/</loc>
+    <lastmod>2016-09-10T02:18:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/debugging/</loc>
+    <lastmod>2016-08-30T03:03:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/phpstorm/</loc>
+    <lastmod>2016-08-30T03:03:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/categories/tools/</loc>
+    <lastmod>2016-08-30T03:03:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/trellis/</loc>
+    <lastmod>2016-08-30T03:03:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/trellis-xdebug-phpstorm/</loc>
+    <lastmod>2016-08-30T03:03:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/learning/</loc>
+    <lastmod>2016-08-24T17:32:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/python/</loc>
+    <lastmod>2016-08-24T17:32:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/why-you-should-learn-python/</loc>
+    <lastmod>2016-08-24T17:32:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/bedrock/</loc>
+    <lastmod>2016-06-25T17:23:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/composer/</loc>
+    <lastmod>2016-06-25T17:23:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/deployment/</loc>
+    <lastmod>2016-06-25T17:23:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/maintaining-the-roots-stack/</loc>
+    <lastmod>2016-06-25T17:23:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/maintenance/</loc>
+    <lastmod>2016-06-25T17:23:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/plugins/</loc>
+    <lastmod>2016-06-25T17:23:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/migration/</loc>
+    <lastmod>2016-06-08T02:43:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/shared-hosting-to-roots-stack-part-3/</loc>
+    <lastmod>2016-06-08T02:43:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/migrating-to-trellis-2/</loc>
+    <lastmod>2016-06-01T02:48:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/local-server/</loc>
+    <lastmod>2016-05-25T04:51:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/migrating-to-trellis-1/</loc>
+    <lastmod>2016-05-25T04:51:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/setting-up-vvv-for-wordpress-development/</loc>
+    <lastmod>2016-04-17T17:27:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/vagrant/</loc>
+    <lastmod>2016-04-17T17:27:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/vvv/</loc>
+    <lastmod>2016-04-17T17:27:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/function-for-post-format-icons/</loc>
+    <lastmod>2016-03-15T04:54:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/speaking/</loc>
+    <lastmod>2016-03-05T18:47:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/wc-lancaster-2016/</loc>
+    <lastmod>2016-03-05T18:47:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/dploy/</loc>
+    <lastmod>2015-06-17T03:03:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/getting-set-up-with-dploy-io/</loc>
+    <lastmod>2015-06-17T03:03:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/how-to-restore-the-bootstrap-nav-in-sage-8-2/</loc>
+    <lastmod>2015-05-05T17:23:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/</loc>
+    <lastmod>2015-04-15T13:46:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/running-your-wordpress-site-from-your-computer/</loc>
+    <lastmod>2015-03-13T19:33:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/backup/</loc>
+    <lastmod>2015-03-06T15:50:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/</loc>
+    <lastmod>2015-03-06T15:50:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/change-the-way-wordpress-inserts-images/</loc>
+    <lastmod>2015-02-27T23:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/tags/post-editor/</loc>
+    <lastmod>2015-02-27T23:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/categories/announcements/</loc>
+    <lastmod>2015-02-27T23:38:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/i-launched-my-new-site-today/</loc>
+    <lastmod>2015-02-27T23:38:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/about-me/</loc>
+    <lastmod>2015-02-06T15:39:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/contact/</loc>
+    <lastmod>2014-09-25T05:49:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/blog/</loc>
+    <lastmod>2014-09-25T01:49:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/mamp-awesome/</loc>
+    <lastmod>2013-04-14T15:43:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/categories/web-design/</loc>
+    <lastmod>2013-04-14T15:43:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smutek.net/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://smutek.net/fr/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smutek.net/series/"
+                />
+  </url>
+  
+</urlset>

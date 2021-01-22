@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on smutek.net</title>
+    <link>https://smutek.net/tags/tips/</link>
+    <description>Recent content in Tips on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 12 Mar 2017 19:10:15 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Filtering the WordPress Custom Logo</title>
+      <link>https://smutek.net/filtering-the-wordpress-custom-logo/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/filtering-the-wordpress-custom-logo/</guid>
+      <description>WordPress 4.5 added the custom logo feature. It&amp;rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&amp;rsquo;t always what I&amp;rsquo;m looking for. Fortunately there&amp;rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&amp;rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want.</description>
+    </item>
+    
+    <item>
+      <title>Running Your WordPress Site From Your Computer</title>
+      <link>https://smutek.net/running-your-wordpress-site-from-your-computer/</link>
+      <pubDate>Fri, 13 Mar 2015 19:33:20 +0000</pubDate>
+      
+      <guid>https://smutek.net/running-your-wordpress-site-from-your-computer/</guid>
+      <description>Put your full site backups to good use. Part of a series of posts from my days of self employment.
+In last weeks post I covered how to set up a WordPress backup plugin and how to have your backups sync to your Dropbox account. This week I&amp;rsquo;m going to cover how to take one of those full site backups and get a copy of your WordPress website running on your computer.</description>
+    </item>
+    
+  </channel>
+</rss>

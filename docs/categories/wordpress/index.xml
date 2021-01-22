@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WordPress on smutek.net</title>
+    <link>https://smutek.net/categories/wordpress/</link>
+    <description>Recent content in WordPress on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 07:25:56 +0000</lastBuildDate><atom:link href="https://smutek.net/categories/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xdebuggin at WordCamp Baltimore 2017</title>
+      <link>https://smutek.net/xdebug/</link>
+      <pubDate>Sun, 15 Oct 2017 07:25:56 +0000</pubDate>
+      
+      <guid>https://smutek.net/xdebug/</guid>
+      <description>Thanks Today I had the honor to speak at WordCamp Baltimore on the topic of using Xdebug to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.
+My slides are here: https://slides.com/smutek/xdebug/
+And notes on my presentation are below.
+What is Xdebug Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP.</description>
+    </item>
+    
+    <item>
+      <title>Filtering the WordPress Custom Logo</title>
+      <link>https://smutek.net/filtering-the-wordpress-custom-logo/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/filtering-the-wordpress-custom-logo/</guid>
+      <description>WordPress 4.5 added the custom logo feature. It&amp;rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&amp;rsquo;t always what I&amp;rsquo;m looking for. Fortunately there&amp;rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&amp;rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want.</description>
+    </item>
+    
+    <item>
+      <title>Rich Semantic Titles in WordPress with ACF</title>
+      <link>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</link>
+      <pubDate>Sat, 07 Jan 2017 17:18:36 +0000</pubDate>
+      
+      <guid>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</guid>
+      <description>Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&amp;rsquo;d suggest exploring his GitHub further as it looks like he&amp;rsquo;s working on lot&amp;rsquo;s of cool ideas like this.</description>
+    </item>
+    
+    <item>
+      <title>A little function for oEmbed &#43; ACF</title>
+      <link>https://smutek.net/a-little-function-for-oembed-acf/</link>
+      <pubDate>Sat, 10 Sep 2016 02:18:39 +0000</pubDate>
+      
+      <guid>https://smutek.net/a-little-function-for-oembed-acf/</guid>
+      <description>We&amp;rsquo;ve been doing a lot of videos on our sites lately. Well, we&amp;rsquo;ve always done a lot of videos on our sites. The model is usually an on-page embed, either directly in page or via a modal, and we set the back-end up to use the oEmbed field in Advanced Custom Fields Pro. It gives a great back-end experience - and why use WordPress if it&amp;rsquo;s not going to be user configurable, right?</description>
+    </item>
+    
+    <item>
+      <title>Maintaining the Roots Stack</title>
+      <link>https://smutek.net/maintaining-the-roots-stack/</link>
+      <pubDate>Sat, 25 Jun 2016 17:23:22 +0000</pubDate>
+      
+      <guid>https://smutek.net/maintaining-the-roots-stack/</guid>
+      <description>Here&amp;rsquo;s a short screen cast showing how to maintain the Roots stack once it&amp;rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&amp;rsquo;ll see that everything goes smoothly and it&amp;rsquo;s a super easy process.
+It&amp;rsquo;s as easy as:
+ Update version numbers as needed in /site/composer.</description>
+    </item>
+    
+    <item>
+      <title>Shared hosting to Roots stack: Part 3</title>
+      <link>https://smutek.net/shared-hosting-to-roots-stack-part-3/</link>
+      <pubDate>Wed, 08 Jun 2016 02:43:32 +0000</pubDate>
+      
+      <guid>https://smutek.net/shared-hosting-to-roots-stack-part-3/</guid>
+      <description>This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+Correction: The video opens with: &amp;hellip;this is part four of a three part series&amp;hellip; Sorry, It was late. :)
+I didn&amp;rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project.</description>
+    </item>
+    
+    <item>
+      <title>Shared hosting to Roots stack: Part 2</title>
+      <link>https://smutek.net/migrating-to-trellis-2/</link>
+      <pubDate>Wed, 01 Jun 2016 02:48:45 +0000</pubDate>
+      
+      <guid>https://smutek.net/migrating-to-trellis-2/</guid>
+      <description>Pt. 2 - Install plugins via Composer, migrate data   This is the second in a series of screen-casts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+In the first screen-cast I setup Trellis &amp;amp; Bedrock.
+In this screen-cast I&amp;rsquo;ll get my theme &amp;amp; plugins installed, deal with a couple of premium plugins, and migrate my data into my development environment.</description>
+    </item>
+    
+    <item>
+      <title>Shared hosting to Roots stack: Part 1</title>
+      <link>https://smutek.net/migrating-to-trellis-1/</link>
+      <pubDate>Wed, 25 May 2016 04:51:13 +0000</pubDate>
+      
+      <guid>https://smutek.net/migrating-to-trellis-1/</guid>
+      <description>Pt. 1 - Setting up Trellis &amp;amp; Bedrock locally   This is the first in a series of screencasts that will document the process of moving a WordPress website (this website) from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+In this screencast I&amp;rsquo;ll get my local development environment setup with Trellis &amp;amp; Bedrock.
+In part 2 I get my theme and plugins installed, and migrate my data into my development environment.</description>
+    </item>
+    
+    <item>
+      <title>Function for Post Format Icons</title>
+      <link>https://smutek.net/function-for-post-format-icons/</link>
+      <pubDate>Tue, 15 Mar 2016 04:54:39 +0000</pubDate>
+      
+      <guid>https://smutek.net/function-for-post-format-icons/</guid>
+      <description>/** * Output Post Format icons * * Outputs an icon for each post format. Set up to use Fontawesome, * but can be used with anything, or you can just use CSS. * * @return string */ function post_format_icon() { global $post; // get current post ID  $id = $post-&amp;gt;ID; // get post format  $format = get_post_format( $id ); // array of icons as $format =&amp;gt; $icon key/value pairs  $icons = [ &amp;#39;standard&amp;#39; =&amp;gt; &amp;#39;fa-pencil&amp;#39;, &amp;#39;aside&amp;#39; =&amp;gt; &amp;#39;fa-sticky-note&amp;#39;, &amp;#39;chat&amp;#39; =&amp;gt; &amp;#39;fa-comments&amp;#39;, &amp;#39;gallery&amp;#39; =&amp;gt; &amp;#39;fa-picture-o&amp;#39;, &amp;#39;link&amp;#39; =&amp;gt; &amp;#39;fa-external-link&amp;#39;, &amp;#39;image&amp;#39; =&amp;gt; &amp;#39;fa-camera&amp;#39;, &amp;#39;quote&amp;#39; =&amp;gt; &amp;#39;fa-quote-left&amp;#39;, &amp;#39;status&amp;#39; =&amp;gt; &amp;#39;fa-commenting&amp;#39;, &amp;#39;video&amp;#39; =&amp;gt; &amp;#39;fa-video-camera&amp;#39; ]; // format will return false if no format is set.</description>
+    </item>
+    
+    <item>
+      <title>WC Lancaster 2016</title>
+      <link>https://smutek.net/wc-lancaster-2016/</link>
+      <pubDate>Sat, 05 Mar 2016 18:47:45 +0000</pubDate>
+      
+      <guid>https://smutek.net/wc-lancaster-2016/</guid>
+      <description>I was super honored to speak at WordCamp Lancaster today! My topic was WordPress workflows with PHPStorm. Here&amp;rsquo;s a link to my slides -
+slides.com/smutek/lancaster-2016/
+Here&amp;rsquo;s some resources that I&amp;rsquo;ve found helpful -
+  Jeffery Way&amp;rsquo;s PHPStorm series on Laracasts
+  Good article on the Delicious Brains blog
+  PHP Storm color schemes, by Dayle Rees (demos here)
+  Using xDebug &amp;amp; PHPStorm, by Aaron Holbrook (YouTube)</description>
+    </item>
+    
+  </channel>
+</rss>

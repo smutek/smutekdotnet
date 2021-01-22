@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles on smutek.net</title>
+    <link>https://smutek.net/categories/articles/</link>
+    <description>Recent content in Articles on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 19 Sep 2016 00:22:11 +0000</lastBuildDate><atom:link href="https://smutek.net/categories/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On DRY and the cost of wrongful abstractions</title>
+      <link>https://smutek.net/on-dry-and-the-costs-of-wrongful-abstractions/</link>
+      <pubDate>Mon, 19 Sep 2016 00:22:11 +0000</pubDate>
+      
+      <guid>https://smutek.net/on-dry-and-the-costs-of-wrongful-abstractions/</guid>
+      <description>How DRY for the sake of DRY can sometimes lead you down a rabbit hole of madness.
+Via hacker news</description>
+    </item>
+    
+  </channel>
+</rss>

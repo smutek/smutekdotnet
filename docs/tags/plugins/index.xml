@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plugins on smutek.net</title>
+    <link>https://smutek.net/tags/plugins/</link>
+    <description>Recent content in plugins on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 25 Jun 2016 17:23:22 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/plugins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maintaining the Roots Stack</title>
+      <link>https://smutek.net/maintaining-the-roots-stack/</link>
+      <pubDate>Sat, 25 Jun 2016 17:23:22 +0000</pubDate>
+      
+      <guid>https://smutek.net/maintaining-the-roots-stack/</guid>
+      <description>Here&amp;rsquo;s a short screen cast showing how to maintain the Roots stack once it&amp;rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&amp;rsquo;ll see that everything goes smoothly and it&amp;rsquo;s a super easy process.
+It&amp;rsquo;s as easy as:
+ Update version numbers as needed in /site/composer.</description>
+    </item>
+    
+    <item>
+      <title>Migrating Your WordPress Site Back To Your Web Server</title>
+      <link>https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/</link>
+      <pubDate>Wed, 15 Apr 2015 13:46:47 +0000</pubDate>
+      
+      <guid>https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/</guid>
+      <description>In my last post I covered how to get a copy of your WordPress site running on your computer, in this post I will cover migrating your WordPress site back to your web server.
+Overview There&amp;rsquo;s 2 ways to go about this, the easy way and the really easy way. The easy way will show how to move your site back using the same free tools that we used to set up our local site.</description>
+    </item>
+    
+    <item>
+      <title>Running Your WordPress Site From Your Computer</title>
+      <link>https://smutek.net/running-your-wordpress-site-from-your-computer/</link>
+      <pubDate>Fri, 13 Mar 2015 19:33:20 +0000</pubDate>
+      
+      <guid>https://smutek.net/running-your-wordpress-site-from-your-computer/</guid>
+      <description>Put your full site backups to good use. Part of a series of posts from my days of self employment.
+In last weeks post I covered how to set up a WordPress backup plugin and how to have your backups sync to your Dropbox account. This week I&amp;rsquo;m going to cover how to take one of those full site backups and get a copy of your WordPress website running on your computer.</description>
+    </item>
+    
+    <item>
+      <title>How to set up a WordPress Backup Plugin</title>
+      <link>https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/</link>
+      <pubDate>Fri, 06 Mar 2015 15:50:10 +0000</pubDate>
+      
+      <guid>https://smutek.net/how-to-set-up-a-wordpress-backup-plugin/</guid>
+      <description>Backups are so important Part of a series of posts from my days of self employment.
+This week I&amp;rsquo;m going to cover how to set up a WordPress backup plugin. Think of this as a form of disaster insurance. Nobody knows more than you just how important your website is to the health of your business. It&amp;rsquo;s just super important to make sure that you have a proper backup of your WordPress website; not just your files, but your database as well.</description>
+    </item>
+    
+  </channel>
+</rss>

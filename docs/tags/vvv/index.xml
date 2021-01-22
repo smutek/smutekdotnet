@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vvv on smutek.net</title>
+    <link>https://smutek.net/tags/vvv/</link>
+    <description>Recent content in vvv on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 17 Apr 2016 17:27:14 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/vvv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up VVV for WordPress Development</title>
+      <link>https://smutek.net/setting-up-vvv-for-wordpress-development/</link>
+      <pubDate>Sun, 17 Apr 2016 17:27:14 +0000</pubDate>
+      
+      <guid>https://smutek.net/setting-up-vvv-for-wordpress-development/</guid>
+      <description>This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp;amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.
+It&amp;rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&amp;rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>acf on smutek.net</title>
+    <link>https://smutek.net/tags/acf/</link>
+    <description>Recent content in acf on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 07 Jan 2017 17:18:36 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/acf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rich Semantic Titles in WordPress with ACF</title>
+      <link>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</link>
+      <pubDate>Sat, 07 Jan 2017 17:18:36 +0000</pubDate>
+      
+      <guid>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</guid>
+      <description>Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&amp;rsquo;d suggest exploring his GitHub further as it looks like he&amp;rsquo;s working on lot&amp;rsquo;s of cool ideas like this.</description>
+    </item>
+    
+    <item>
+      <title>A little function for oEmbed &#43; ACF</title>
+      <link>https://smutek.net/a-little-function-for-oembed-acf/</link>
+      <pubDate>Sat, 10 Sep 2016 02:18:39 +0000</pubDate>
+      
+      <guid>https://smutek.net/a-little-function-for-oembed-acf/</guid>
+      <description>We&amp;rsquo;ve been doing a lot of videos on our sites lately. Well, we&amp;rsquo;ve always done a lot of videos on our sites. The model is usually an on-page embed, either directly in page or via a modal, and we set the back-end up to use the oEmbed field in Advanced Custom Fields Pro. It gives a great back-end experience - and why use WordPress if it&amp;rsquo;s not going to be user configurable, right?</description>
+    </item>
+    
+  </channel>
+</rss>

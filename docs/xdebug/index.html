@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="jimmy.smutek">
+<meta name="description" content="Thanks Today I had the honor to speak at WordCamp Baltimore on the topic of using Xdebug to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.
+My slides are here: https://slides.com/smutek/xdebug/
+And notes on my presentation are below.
+What is Xdebug Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP." />
+<meta name="keywords" content=", WordCamp, Xdebug" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://smutek.net/xdebug/" />
+
+
+    <title>
+        
+            Xdebuggin at WordCamp Baltimore 2017 :: smutek.net  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://smutek.net/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://smutek.net/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://smutek.net/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://smutek.net/favicon-16x16.png">
+    <link rel="manifest" href="https://smutek.net/site.webmanifest">
+    <link rel="mask-icon" href="https://smutek.net/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://smutek.net/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Xdebuggin at WordCamp Baltimore 2017">
+<meta itemprop="description" content="Thanks Today I had the honor to speak at WordCamp Baltimore on the topic of using Xdebug to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.
+My slides are here: https://slides.com/smutek/xdebug/
+And notes on my presentation are below.
+What is Xdebug Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP.">
+<meta itemprop="datePublished" content="2017-10-15T07:25:56+00:00" />
+<meta itemprop="dateModified" content="2017-10-15T07:25:56+00:00" />
+<meta itemprop="wordCount" content="1013">
+<meta itemprop="image" content="https://smutek.net"/>
+
+
+
+<meta itemprop="keywords" content="WordCamp,Xdebug," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://smutek.net"/>
+
+<meta name="twitter:title" content="Xdebuggin at WordCamp Baltimore 2017"/>
+<meta name="twitter:description" content="Thanks Today I had the honor to speak at WordCamp Baltimore on the topic of using Xdebug to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.
+My slides are here: https://slides.com/smutek/xdebug/
+And notes on my presentation are below.
+What is Xdebug Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP."/>
+
+
+
+    <meta property="og:title" content="Xdebuggin at WordCamp Baltimore 2017" />
+<meta property="og:description" content="Thanks Today I had the honor to speak at WordCamp Baltimore on the topic of using Xdebug to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.
+My slides are here: https://slides.com/smutek/xdebug/
+And notes on my presentation are below.
+What is Xdebug Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://smutek.net/xdebug/" />
+<meta property="og:image" content="https://smutek.net"/>
+<meta property="article:published_time" content="2017-10-15T07:25:56+00:00" />
+<meta property="article:modified_time" content="2017-10-15T07:25:56+00:00" />
+
+
+
+
+    <meta property="article:section" content="WordPress" />
+
+
+
+    <meta property="article:published_time" content="2017-10-15 07:25:56 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://smutek.net/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">My Interwebs Blog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://smutek.net/about-me/">About</a></li><li><a href="https://smutek.net/contact/">Contact</a></li><li><a href="https://smutek.net/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://smutek.net/xdebug/">Xdebuggin at WordCamp Baltimore 2017</a></h2>
+
+            
+
+            <div class="post-content">
+                <h2 id="thanks">Thanks</h2>
+<p>Today I had the honor to speak at <a href="https://2017.baltimore.wordcamp.org">WordCamp Baltimore</a> on the topic of using <a href="https://xdebug.org">Xdebug</a> to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.</p>
+<p>My slides are here:
+<a href="https://slides.com/smutek/xdebug/">https://slides.com/smutek/xdebug/</a></p>
+<p>And notes on my presentation are below.</p>
+<h2 id="what-is-xdebug">What is Xdebug</h2>
+<p>Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP.</p>
+<p>Simply put, Xdebug is a tool to help us understand our PHP codes. It provides facilities for:</p>
+<ul>
+<li>Debugging (what went wrong?)</li>
+<li>Profiling (how efficient is my code?)</li>
+<li>Tracing (how were things executed?)</li>
+</ul>
+<h3 id="what-is-a-bug">What is a bug?</h3>
+<p><img src="https://smutek.net/img/2017/10/bug.jpg" alt=""></p>
+<p>We all know what a bug is, but a cool little historical tidbit follows.</p>
+<p>On September 9, 1947, engineers found a moth between the relays of the Harvard mark 2 computer they were working on.</p>
+<p>One of the engineers, Grace Hopper, taped the moth into the log book with the notation “First actual case of bug being found.” Grace Hopper had just literally debugged the computer.</p>
+<p>The logbook (and the bug) is part of the Smithsonian collection.</p>
+<p>The engineers did not coin the term “bug”, but it&rsquo;s widely accepted that it was this incident that made the term stick.</p>
+<p>Grade Hoper, by the way, did a lot of awesome things, including earning a PhD in Mathematics from Yale and attaining the rank of Rear Admiral in the US Navy. She was brilliant and amazing.</p>
+<p><a href="http://www.cs.yale.edu/homes/tap/Files/hopper-story.html">Grace Murray Hopper</a>
+<a href="http://americanhistory.si.edu/collections/search/object/nmah_334663">Log Book With Computer Bug | National Museum of American History</a></p>
+<h2 id="why-use-xdebug">Why use Xdebug?</h2>
+<p>Xdebug allows us to view, step through, and manipulate our code while it is being executed.</p>
+<p>At the end of the day, on the back end, most of what we are doing involves grabbing some bit of data and displaying it in some way.</p>
+<p>Xdebug helps with this by providing insight and clarity into what’s going on with our program as it happens. I sometimes find myself running my debugger when there’s no bugs to debug - I run it simply to see what data is available to me to use.</p>
+<h2 id="when-not-to-use-xdebug">When not to use Xdebug</h2>
+<p><strong>Don’t use Xdebug on a public facing server</strong>. It is processor intensive and can be a security risk.</p>
+<p>The work that Xdebug does is processor intensive and will impact the performance of your production site.</p>
+<p>More importantly, Xdebug requires no encryption or authentication by default and provides a ton of sensitive information that could be exploited by malicious users.</p>
+<p>It is strictly a development tool.</p>
+<h2 id="how-to-get-xdebug">How to get Xdebug?</h2>
+<p>If you use Vagrant, Xdebug comes preinstalled on Trellis, by the Roots team, and on VVV.</p>
+<p>You can spin up your own Vagrant box with Xdebug installed using something like PuPHPet.</p>
+<p>Xdebug is also preinstalled on Local, by Flywheel, which is available on OS X and Windows and looks to be a very nice tool.</p>
+<p>You can also install it yourself on MAMP, XAMP, etc. or wherever works best for you.</p>
+<ul>
+<li><a href="https://roots.io/trellis/">Trellis | WordPress LEMP Stack | Roots</a></li>
+<li><a href="https://varyingvagrantvagrants.org/">Varying Vagrant Vagrants</a></li>
+<li><a href="https://local.getflywheel.com/">Local by Flywheel | Local WordPress development made simple</a></li>
+<li><a href="https://puphpet.com/">PuPHPet - Online GUI configurator for Puppet &amp; Vagrant</a></li>
+<li><a href="https://xdebug.org/docs/install">Xdebug: Documentation</a></li>
+</ul>
+<h2 id="how-to-use">How to use?</h2>
+<p>There’s tons of ways to run Xdebug. My preference is PhpStorm, but Xdebug clients are also available for:</p>
+<ul>
+<li><strong>PhpStorm</strong> <a href="https://www.jetbrains.com/phpstorm/">PhpStorm: Lightning-Smart IDE for PHP Programming by JetBrains</a></li>
+<li><strong>Sublime Text:</strong> <a href="https://packagecontrol.io/packages/Xdebug">Xdebug - Packages - Package Control</a></li>
+<li><strong>Atom</strong> <a href="https://atom.io/packages/php-debug">php-debug</a></li>
+</ul>
+<p>See <a href="https://xdebug.org/docs/remote">Xdebug: Documentation</a> for a more comprehensive, but not complete, list of Xdebug clients.</p>
+<h3 id="browser-extensions">Browser extensions</h3>
+<p>I’ve found the following browser extensions to be super helpful, I prefer Xdebug helper.</p>
+<p><strong>Xdebug Helper</strong></p>
+<ul>
+<li>Firefox: [Xdebug Helper for Firefox :: Add-ons for Firefox](<a href="https://addons.mozilla.org/en-US/firefox/addon/xdebug">https://addons.mozilla.org/en-US/firefox/addon/xdebug</a>
+-helper-for-firefox/)</li>
+<li>Chrome: [Xdebug helper - Chrome Web Store](<a href="https://chrome.google.com/webstore/detail/xdebug-helper">https://chrome.google.com/webstore/detail/xdebug-helper</a>
+/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en)</li>
+</ul>
+<p><strong>The Easiest Xdebug</strong></p>
+<ul>
+<li>Firefox: [The easiest Xdebug :: Add-ons for Firefox](<a href="https://addons.mozilla.org/en-US/firefox/addon/the-easiest">https://addons.mozilla.org/en-US/firefox/addon/the-easiest</a>
+-xdebug/)</li>
+</ul>
+<p><strong>Jetbrains Browser Plugins</strong></p>
+<ul>
+<li><a href="https://www.jetbrains.com/phpstorm/marklets/">Xdebug &amp; Zend Debugger Bookmarklets Generator - Marklets | PhpStorm</a></li>
+</ul>
+<h3 id="project-setup">Project Setup</h3>
+<p>I’m not going to run through project setup here but I did a post recently on setting Xdebug up in PhpStorm on a Trellis VM.</p>
+<p><a href="https://smutek.net/trellis-xdebug-phpstorm/">https://smutek.net/trellis-xdebug-phpstorm/</a></p>
+<p>The principles are the same on any environment, the only variable being the IDE Key. To find out what the IDE key is for your server just setup a <code>phpinfo()</code> file on your server , visit the page, and searxh for <code>xdebug</code>. This process is also covered in the link above.</p>
+<p>Note - if you get zero hits when searching <code>xdebug</code> then Xdebug is not installed or configured correctly on your server.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1">Example 1</h3>
+<p>I was tasked with making a Gravity Form send different emails depending on whether a file was attached or not.</p>
+<p>For some reason (as of this writing) Gravity Forms does not include file uploads in conditional logic options.</p>
+<p>I used Gravity Forms pre submission filter to accomplish this. Xdebug helped by allowing me to stop code execution and see what sort of variables were available with the <code>$form</code> object before it was submitted to the database.</p>
+<p>I found the <code>$_FILES</code> super global, which allowed me to determine whether or not a file was attached.</p>
+<p>From there I was able to set up and manipulate a hidden field in my form which could then be targeted by Gravity Forms conditional logic.</p>
+<p><strong>The code gist is here:</strong>
+<a href="https://gist.github.com/smutek/af22f55fbc35cdb27cac25a86d0808b5">checkResume.php · GitHub</a></p>
+<p><strong>Info about <code>$_FILES</code> &amp; upload post method.</strong>
+<a href="http://php.net/manual/en/reserved.variables.files.php">http://php.net/manual/en/reserved.variables.files.php</a>
+<a href="http://php.net/manual/en/features.file-upload.post-method.php">http://php.net/manual/en/features.file-upload.post-method.php</a></p>
+<p><strong>Gravity Forms pre submission filter:</strong>
+<a href="https://docs.gravityforms.com/gform_pre_submission/">gform_pre_submission – Gravity Forms Documentation</a></p>
+<h3 id="example-2">Example 2</h3>
+<p>Example 2 was less specific, and simple by intent, but I hoped to illustrate how Xdebug can help to keep track of what’s going on while building complex data structures.</p>
+<h3 id="closing">Closing</h3>
+<p>Truthfully, Xdebug has helped me out in so many different ways that it’s nearly impossible to pick which examples to show.</p>
+<p>The best thing I can suggest is to give it a try. I’ve found it to be an absolutely indispensable tool and using it has helped me get better at my job.</p>
+<p>I hope this has been helpful!</p>
+<p>Thanks again to everyone at WordCamp Baltimore. Extra special thanks to my good friend Andrew Adcock for everything you&rsquo;ve done for me during my journey as a developer.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://smutek.net/tags/wordcamp">WordCamp</a></span><span class="tag"><a href="https://smutek.net/tags/xdebug">Xdebug</a></span>
+  				</p>
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://smutek.net">Jimmy Smutek</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://smutek.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://smutek.net/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="jimmy.smutek">
+<meta name="description" content="Here&amp;rsquo;s a short screen cast showing how to maintain the Roots stack once it&amp;rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&amp;rsquo;ll see that everything goes smoothly and it&amp;rsquo;s a super easy process.
+It&amp;rsquo;s as easy as:
+ Update version numbers as needed in /site/composer." />
+<meta name="keywords" content=", bedrock, composer, deployment, maintenance, plugins, trellis" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://smutek.net/maintaining-the-roots-stack/" />
+
+
+    <title>
+        
+            Maintaining the Roots Stack :: smutek.net  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://smutek.net/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://smutek.net/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://smutek.net/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://smutek.net/favicon-16x16.png">
+    <link rel="manifest" href="https://smutek.net/site.webmanifest">
+    <link rel="mask-icon" href="https://smutek.net/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://smutek.net/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Maintaining the Roots Stack">
+<meta itemprop="description" content="Here&rsquo;s a short screen cast showing how to maintain the Roots stack once it&rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&rsquo;ll see that everything goes smoothly and it&rsquo;s a super easy process.
+It&rsquo;s as easy as:
+ Update version numbers as needed in /site/composer.">
+<meta itemprop="datePublished" content="2016-06-25T17:23:22+00:00" />
+<meta itemprop="dateModified" content="2016-06-25T17:23:22+00:00" />
+<meta itemprop="wordCount" content="177">
+<meta itemprop="image" content="https://smutek.net"/>
+
+
+
+<meta itemprop="keywords" content="bedrock,composer,deployment,maintenance,plugins,trellis," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://smutek.net"/>
+
+<meta name="twitter:title" content="Maintaining the Roots Stack"/>
+<meta name="twitter:description" content="Here&rsquo;s a short screen cast showing how to maintain the Roots stack once it&rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&rsquo;ll see that everything goes smoothly and it&rsquo;s a super easy process.
+It&rsquo;s as easy as:
+ Update version numbers as needed in /site/composer."/>
+
+
+
+    <meta property="og:title" content="Maintaining the Roots Stack" />
+<meta property="og:description" content="Here&rsquo;s a short screen cast showing how to maintain the Roots stack once it&rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&rsquo;ll see that everything goes smoothly and it&rsquo;s a super easy process.
+It&rsquo;s as easy as:
+ Update version numbers as needed in /site/composer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://smutek.net/maintaining-the-roots-stack/" />
+<meta property="og:image" content="https://smutek.net"/>
+<meta property="article:published_time" content="2016-06-25T17:23:22+00:00" />
+<meta property="article:modified_time" content="2016-06-25T17:23:22+00:00" />
+
+
+
+
+    <meta property="article:section" content="WordPress" />
+
+
+
+    <meta property="article:published_time" content="2016-06-25 17:23:22 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://smutek.net/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">My Interwebs Blog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://smutek.net/about-me/">About</a></li><li><a href="https://smutek.net/contact/">Contact</a></li><li><a href="https://smutek.net/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://smutek.net/maintaining-the-roots-stack/">Maintaining the Roots Stack</a></h2>
+
+            
+
+            <div class="post-content">
+                
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/172232346" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>Here&rsquo;s a short screen cast showing how to maintain the Roots stack once it&rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&rsquo;ll see that everything goes smoothly and it&rsquo;s a super easy process.</p>
+<p>It&rsquo;s as easy as:</p>
+<ul>
+<li>Update version numbers as needed in /site/composer.json</li>
+<li>Run <em>composer update</em></li>
+<li>Make sure everything works.</li>
+<li>Add &amp; commit to VC <em>git add all</em> &amp; <em>git commit</em></li>
+<li>Push to your master repo, in my case <em>git push origin master</em></li>
+<li>CD to your trellis directory and deploy to your target environment, for me: <em>./deploy.sh production smutek.net</em></li>
+</ul>
+<p>If you haven&rsquo;t seen my other videos, I recently did a 3 part series on moving a WordPress website from shared hosting to a Roots stack running on a Digital Ocean droplet. Check them out here -</p>
+<ul>
+<li><a href="https://smutek.net/migrating-to-trellis-1/">Part 1: Setting up Trellis &amp; Bedrock</a></li>
+<li><a href="https://smutek.net/migrating-to-trellis-2/">Part 2: Install plugins &amp; import data</a></li>
+<li><a href="https://smutek.net/shared-hosting-to-roots-stack-part-3/">Part 3: Set up Digital Ocean &amp; deploy</a></li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="http://roots.io/trellis/">roots.io/trellis/</a></li>
+<li><a href="http://roots.io/bedrock/">roots.io/bedrock/</a></li>
+<li><a href="http://roots.io/sage/">roots.io/sage/</a></li>
+<li><a href="https://getcomposer.org/">getcomposer.org/</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://smutek.net/tags/bedrock">bedrock</a></span><span class="tag"><a href="https://smutek.net/tags/composer">composer</a></span><span class="tag"><a href="https://smutek.net/tags/deployment">deployment</a></span><span class="tag"><a href="https://smutek.net/tags/maintenance">maintenance</a></span><span class="tag"><a href="https://smutek.net/tags/plugins">plugins</a></span><span class="tag"><a href="https://smutek.net/tags/trellis">trellis</a></span>
+  				</p>
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://smutek.net">Jimmy Smutek</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://smutek.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://smutek.net/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

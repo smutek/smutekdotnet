@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on smutek.net</title>
+    <link>https://smutek.net/tags/</link>
+    <description>Recent content in Tags on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 07:25:56 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WordCamp</title>
+      <link>https://smutek.net/tags/wordcamp/</link>
+      <pubDate>Sun, 15 Oct 2017 07:25:56 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/wordcamp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xdebug</title>
+      <link>https://smutek.net/tags/xdebug/</link>
+      <pubDate>Sun, 15 Oct 2017 07:25:56 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/xdebug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>satire</title>
+      <link>https://smutek.net/tags/satire/</link>
+      <pubDate>Wed, 21 Jun 2017 22:49:37 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/satire/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bootstrap</title>
+      <link>https://smutek.net/tags/bootstrap/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/bootstrap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>https://smutek.net/tags/php/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sage</title>
+      <link>https://smutek.net/tags/sage/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/sage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>snippets</title>
+      <link>https://smutek.net/tags/snippets/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/snippets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>https://smutek.net/tags/tips/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>https://smutek.net/tags/links/</link>
+      <pubDate>Fri, 24 Feb 2017 01:46:38 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/links/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opinion</title>
+      <link>https://smutek.net/tags/opinion/</link>
+      <pubDate>Fri, 24 Feb 2017 01:46:38 +0000</pubDate>
+      
+      <guid>https://smutek.net/tags/opinion/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

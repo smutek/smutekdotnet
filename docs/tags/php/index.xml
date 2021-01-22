@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>php on smutek.net</title>
+    <link>https://smutek.net/tags/php/</link>
+    <description>Recent content in php on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 12 Mar 2017 19:10:15 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Filtering the WordPress Custom Logo</title>
+      <link>https://smutek.net/filtering-the-wordpress-custom-logo/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/filtering-the-wordpress-custom-logo/</guid>
+      <description>WordPress 4.5 added the custom logo feature. It&amp;rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&amp;rsquo;t always what I&amp;rsquo;m looking for. Fortunately there&amp;rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&amp;rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want.</description>
+    </item>
+    
+    <item>
+      <title>Rich Semantic Titles in WordPress with ACF</title>
+      <link>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</link>
+      <pubDate>Sat, 07 Jan 2017 17:18:36 +0000</pubDate>
+      
+      <guid>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</guid>
+      <description>Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&amp;rsquo;d suggest exploring his GitHub further as it looks like he&amp;rsquo;s working on lot&amp;rsquo;s of cool ideas like this.</description>
+    </item>
+    
+    <item>
+      <title>A little function for oEmbed &#43; ACF</title>
+      <link>https://smutek.net/a-little-function-for-oembed-acf/</link>
+      <pubDate>Sat, 10 Sep 2016 02:18:39 +0000</pubDate>
+      
+      <guid>https://smutek.net/a-little-function-for-oembed-acf/</guid>
+      <description>We&amp;rsquo;ve been doing a lot of videos on our sites lately. Well, we&amp;rsquo;ve always done a lot of videos on our sites. The model is usually an on-page embed, either directly in page or via a modal, and we set the back-end up to use the oEmbed field in Advanced Custom Fields Pro. It gives a great back-end experience - and why use WordPress if it&amp;rsquo;s not going to be user configurable, right?</description>
+    </item>
+    
+    <item>
+      <title>Function for Post Format Icons</title>
+      <link>https://smutek.net/function-for-post-format-icons/</link>
+      <pubDate>Tue, 15 Mar 2016 04:54:39 +0000</pubDate>
+      
+      <guid>https://smutek.net/function-for-post-format-icons/</guid>
+      <description>/** * Output Post Format icons * * Outputs an icon for each post format. Set up to use Fontawesome, * but can be used with anything, or you can just use CSS. * * @return string */ function post_format_icon() { global $post; // get current post ID  $id = $post-&amp;gt;ID; // get post format  $format = get_post_format( $id ); // array of icons as $format =&amp;gt; $icon key/value pairs  $icons = [ &amp;#39;standard&amp;#39; =&amp;gt; &amp;#39;fa-pencil&amp;#39;, &amp;#39;aside&amp;#39; =&amp;gt; &amp;#39;fa-sticky-note&amp;#39;, &amp;#39;chat&amp;#39; =&amp;gt; &amp;#39;fa-comments&amp;#39;, &amp;#39;gallery&amp;#39; =&amp;gt; &amp;#39;fa-picture-o&amp;#39;, &amp;#39;link&amp;#39; =&amp;gt; &amp;#39;fa-external-link&amp;#39;, &amp;#39;image&amp;#39; =&amp;gt; &amp;#39;fa-camera&amp;#39;, &amp;#39;quote&amp;#39; =&amp;gt; &amp;#39;fa-quote-left&amp;#39;, &amp;#39;status&amp;#39; =&amp;gt; &amp;#39;fa-commenting&amp;#39;, &amp;#39;video&amp;#39; =&amp;gt; &amp;#39;fa-video-camera&amp;#39; ]; // format will return false if no format is set.</description>
+    </item>
+    
+  </channel>
+</rss>

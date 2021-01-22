@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deployment on smutek.net</title>
+    <link>https://smutek.net/tags/deployment/</link>
+    <description>Recent content in deployment on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 25 Jun 2016 17:23:22 +0000</lastBuildDate><atom:link href="https://smutek.net/tags/deployment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maintaining the Roots Stack</title>
+      <link>https://smutek.net/maintaining-the-roots-stack/</link>
+      <pubDate>Sat, 25 Jun 2016 17:23:22 +0000</pubDate>
+      
+      <guid>https://smutek.net/maintaining-the-roots-stack/</guid>
+      <description>Here&amp;rsquo;s a short screen cast showing how to maintain the Roots stack once it&amp;rsquo;s been deployed. In this screen cast I update WordPress core, Jetpack, and the WordPress SEO Framework plugin. The SEO plugin is a little quirky with updating, but aside from that you&amp;rsquo;ll see that everything goes smoothly and it&amp;rsquo;s a super easy process.
+It&amp;rsquo;s as easy as:
+ Update version numbers as needed in /site/composer.</description>
+    </item>
+    
+    <item>
+      <title>Shared hosting to Roots stack: Part 3</title>
+      <link>https://smutek.net/shared-hosting-to-roots-stack-part-3/</link>
+      <pubDate>Wed, 08 Jun 2016 02:43:32 +0000</pubDate>
+      
+      <guid>https://smutek.net/shared-hosting-to-roots-stack-part-3/</guid>
+      <description>This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+Correction: The video opens with: &amp;hellip;this is part four of a three part series&amp;hellip; Sorry, It was late. :)
+I didn&amp;rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project.</description>
+    </item>
+    
+    <item>
+      <title>Getting set up with dploy.io</title>
+      <link>https://smutek.net/getting-set-up-with-dploy-io/</link>
+      <pubDate>Wed, 17 Jun 2015 03:03:40 +0000</pubDate>
+      
+      <guid>https://smutek.net/getting-set-up-with-dploy-io/</guid>
+      <description>Code deployments with dploy.io are truly a wonderful thing, here&amp;rsquo;s a quick video walk-through showing how to get dploy up and running on a project.
+For this demo I&amp;rsquo;m working with a WordPress theme, but the same concepts should apply to pretty much any project. I cover both automatic and manual deployments.
+Hopefully you&amp;rsquo;ll find this video somewhat helpful.
+If you&amp;rsquo;re still living under the tyranny of FTP, do yourself a favor and check out dploy.</description>
+    </item>
+    
+  </channel>
+</rss>

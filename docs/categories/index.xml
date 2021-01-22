@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on smutek.net</title>
+    <link>https://smutek.net/categories/</link>
+    <description>Recent content in Categories on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 07:25:56 +0000</lastBuildDate><atom:link href="https://smutek.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WordPress</title>
+      <link>https://smutek.net/categories/wordpress/</link>
+      <pubDate>Sun, 15 Oct 2017 07:25:56 +0000</pubDate>
+      
+      <guid>https://smutek.net/categories/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>https://smutek.net/categories/links/</link>
+      <pubDate>Wed, 21 Jun 2017 22:49:37 +0000</pubDate>
+      
+      <guid>https://smutek.net/categories/links/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Articles</title>
+      <link>https://smutek.net/categories/articles/</link>
+      <pubDate>Mon, 19 Sep 2016 00:22:11 +0000</pubDate>
+      
+      <guid>https://smutek.net/categories/articles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://smutek.net/categories/tools/</link>
+      <pubDate>Tue, 30 Aug 2016 03:03:21 +0000</pubDate>
+      
+      <guid>https://smutek.net/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Announcements</title>
+      <link>https://smutek.net/categories/announcements/</link>
+      <pubDate>Fri, 27 Feb 2015 23:38:25 +0000</pubDate>
+      
+      <guid>https://smutek.net/categories/announcements/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Design</title>
+      <link>https://smutek.net/categories/web-design/</link>
+      <pubDate>Sun, 14 Apr 2013 15:43:26 +0000</pubDate>
+      
+      <guid>https://smutek.net/categories/web-design/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

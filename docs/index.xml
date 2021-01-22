@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>smutek.net</title>
+    <link>https://smutek.net/</link>
+    <description>Recent content on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 07:25:56 +0000</lastBuildDate><atom:link href="https://smutek.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xdebuggin at WordCamp Baltimore 2017</title>
+      <link>https://smutek.net/xdebug/</link>
+      <pubDate>Sun, 15 Oct 2017 07:25:56 +0000</pubDate>
+      
+      <guid>https://smutek.net/xdebug/</guid>
+      <description>Thanks Today I had the honor to speak at WordCamp Baltimore on the topic of using Xdebug to write better PHP. Thanks so much to the organizers, volunteers, and attendees for having me. I hope I was able to provide some value.
+My slides are here: https://slides.com/smutek/xdebug/
+And notes on my presentation are below.
+What is Xdebug Xdebug is a PHP extension that provides expanded profiling and tracing capabilities beyond those provided natively by PHP.</description>
+    </item>
+    
+    <item>
+      <title>Open Home Office</title>
+      <link>https://smutek.net/open-home-office/</link>
+      <pubDate>Wed, 21 Jun 2017 22:49:37 +0000</pubDate>
+      
+      <guid>https://smutek.net/open-home-office/</guid>
+      <description>Man, it&amp;rsquo;s been many moons since my last blog post. I&amp;rsquo;m going to break that dry spell and start posting regularly again, and I thought I&amp;rsquo;d kick off with a quick one.
+Here&amp;rsquo;s a link that&amp;rsquo;s just too good not to share.
+Open Home Office (YC S17) Raises $7M To Bring Office Distractions To Remote Workers Nationwide
+Highlights:
+ Enjoy working from home, but yearn for the interminable stimulation and irritation of an open office?</description>
+    </item>
+    
+    <item>
+      <title>Filtering the WordPress Custom Logo</title>
+      <link>https://smutek.net/filtering-the-wordpress-custom-logo/</link>
+      <pubDate>Sun, 12 Mar 2017 19:10:15 +0000</pubDate>
+      
+      <guid>https://smutek.net/filtering-the-wordpress-custom-logo/</guid>
+      <description>WordPress 4.5 added the custom logo feature. It&amp;rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&amp;rsquo;t always what I&amp;rsquo;m looking for. Fortunately there&amp;rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&amp;rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want.</description>
+    </item>
+    
+    <item>
+      <title>Shut the fuck up and go and build something</title>
+      <link>https://smutek.net/shut-the-fuck-up-and-go-and-build-something/</link>
+      <pubDate>Fri, 24 Feb 2017 01:46:38 +0000</pubDate>
+      
+      <guid>https://smutek.net/shut-the-fuck-up-and-go-and-build-something/</guid>
+      <description>Check out this interview with Ghost founder John O&amp;rsquo;Nolan. It was interesting to read about the history of the project, but I thought this was a fantastic takeaway -
+ What&amp;rsquo;s your advice for indie hackers who are just starting out?
+Honestly my single piece of advice would probably be to stop looking for so much advice.
+Shut the fuck up and go and build something.
+I see so many people devouring startup books and blog posts and talking about them incessantly.</description>
+    </item>
+    
+    <item>
+      <title>Posters of your GitHub contributions</title>
+      <link>https://smutek.net/posters-of-your-github-contributions/</link>
+      <pubDate>Fri, 03 Feb 2017 03:11:45 +0000</pubDate>
+      
+      <guid>https://smutek.net/posters-of-your-github-contributions/</guid>
+      <description>One would have to be a pretty major geek to want to buy a poster of their GitHub contribution heat map&amp;hellip;
+Pretty cool, I think I&amp;rsquo;m going to get mine in blue! :)
+CommitPrint
+ via Hacker News  </description>
+    </item>
+    
+    <item>
+      <title>Rich Semantic Titles in WordPress with ACF</title>
+      <link>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</link>
+      <pubDate>Sat, 07 Jan 2017 17:18:36 +0000</pubDate>
+      
+      <guid>https://smutek.net/rich-semantic-titles-in-wordpress-with-acf/</guid>
+      <description>Last night while browsing the Roots Discourse I came across a cool share by a user who has written a little utility to handle a request he often gets from designers and content creators.
+User MWDelaney writes -
+So he wrote this cool little plugin that gives end users a set of fields to construct these complex titles. The post is here, and you can check his plugin out here. I&amp;rsquo;d suggest exploring his GitHub further as it looks like he&amp;rsquo;s working on lot&amp;rsquo;s of cool ideas like this.</description>
+    </item>
+    
+    <item>
+      <title>On Getting Old(er) In Tech</title>
+      <link>https://smutek.net/on-getting-older-in-tech/</link>
+      <pubDate>Fri, 09 Dec 2016 12:58:21 +0000</pubDate>
+      
+      <guid>https://smutek.net/on-getting-older-in-tech/</guid>
+      <description>This was a great read, full of sage advice for kids of all ages (and professions). :)
+My main takeaways - Keep learning, keep growing, stay healthy, be yourself.
+On Getting Old(er) in Tech, by Don Denoncourt
+-via Hacker News</description>
+    </item>
+    
+    <item>
+      <title>GitHub Audio</title>
+      <link>https://smutek.net/github-audio/</link>
+      <pubDate>Tue, 04 Oct 2016 17:15:13 +0000</pubDate>
+      
+      <guid>https://smutek.net/github-audio/</guid>
+      <description> Listen to music generated by events happening across GitHub
+ :) Awesome!
+github.audio
+ via hacker news  </description>
+    </item>
+    
+    <item>
+      <title>On DRY and the cost of wrongful abstractions</title>
+      <link>https://smutek.net/on-dry-and-the-costs-of-wrongful-abstractions/</link>
+      <pubDate>Mon, 19 Sep 2016 00:22:11 +0000</pubDate>
+      
+      <guid>https://smutek.net/on-dry-and-the-costs-of-wrongful-abstractions/</guid>
+      <description>How DRY for the sake of DRY can sometimes lead you down a rabbit hole of madness.
+Via hacker news</description>
+    </item>
+    
+    <item>
+      <title>A little function for oEmbed &#43; ACF</title>
+      <link>https://smutek.net/a-little-function-for-oembed-acf/</link>
+      <pubDate>Sat, 10 Sep 2016 02:18:39 +0000</pubDate>
+      
+      <guid>https://smutek.net/a-little-function-for-oembed-acf/</guid>
+      <description>We&amp;rsquo;ve been doing a lot of videos on our sites lately. Well, we&amp;rsquo;ve always done a lot of videos on our sites. The model is usually an on-page embed, either directly in page or via a modal, and we set the back-end up to use the oEmbed field in Advanced Custom Fields Pro. It gives a great back-end experience - and why use WordPress if it&amp;rsquo;s not going to be user configurable, right?</description>
+    </item>
+    
+  </channel>
+</rss>

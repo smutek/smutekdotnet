@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on smutek.net</title>
+    <link>https://smutek.net/categories/tools/</link>
+    <description>Recent content in Tools on smutek.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 30 Aug 2016 03:03:21 +0000</lastBuildDate><atom:link href="https://smutek.net/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trellis &#43; Xdebug &#43; PhpStorm</title>
+      <link>https://smutek.net/trellis-xdebug-phpstorm/</link>
+      <pubDate>Tue, 30 Aug 2016 03:03:21 +0000</pubDate>
+      
+      <guid>https://smutek.net/trellis-xdebug-phpstorm/</guid>
+      <description>I love running Xdebug through PhpStorm&amp;rsquo;s built in debugger but have had the hardest time getting it to work with Trellis. I have no problem getting it going with VVV but have never been able to get my path mappings correct in Trellis.
+Well, turns out it&amp;rsquo;s really simple with PhpStorm&amp;rsquo;s Zero-Configuration debugging. Here&amp;rsquo;s the JetBrains documentation on that - but the short of it is:
+  Install a bookmarklet or browser extension.</description>
+    </item>
+    
+    <item>
+      <title>Setting up VVV for WordPress Development</title>
+      <link>https://smutek.net/setting-up-vvv-for-wordpress-development/</link>
+      <pubDate>Sun, 17 Apr 2016 17:27:14 +0000</pubDate>
+      
+      <guid>https://smutek.net/setting-up-vvv-for-wordpress-development/</guid>
+      <description>This walkthrough video shows how to setup Varying Vagrant Vagrants for WordPress development on a Mac. Also covered is installation of Varying VVV site creation wizard &amp;amp; VVV Provision flipper, both by Brad Parbs, and how to install topdown VVV Dashboard by Jeff Behnke.
+It&amp;rsquo;s all pretty straight forward and, in my experience, working with Vagrant boxes is preferable over working with MAMP, or Desktop Server. Both of those are great products, for sure, but it&amp;rsquo;s nice to run the development server on the same stack as the production server - which in most cases is going to be a LAMP stack, as opposed to a MAMP or WAMP stack.</description>
+    </item>
+    
+    <item>
+      <title>Getting set up with dploy.io</title>
+      <link>https://smutek.net/getting-set-up-with-dploy-io/</link>
+      <pubDate>Wed, 17 Jun 2015 03:03:40 +0000</pubDate>
+      
+      <guid>https://smutek.net/getting-set-up-with-dploy-io/</guid>
+      <description>Code deployments with dploy.io are truly a wonderful thing, here&amp;rsquo;s a quick video walk-through showing how to get dploy up and running on a project.
+For this demo I&amp;rsquo;m working with a WordPress theme, but the same concepts should apply to pretty much any project. I cover both automatic and manual deployments.
+Hopefully you&amp;rsquo;ll find this video somewhat helpful.
+If you&amp;rsquo;re still living under the tyranny of FTP, do yourself a favor and check out dploy.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="jimmy.smutek">
+<meta name="description" content="In my last post I covered how to get a copy of your WordPress site running on your computer, in this post I will cover migrating your WordPress site back to your web server.
+Overview There&amp;rsquo;s 2 ways to go about this, the easy way and the really easy way. The easy way will show how to move your site back using the same free tools that we used to set up our local site." />
+<meta name="keywords" content=", Local Server, Migration, plugins" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/" />
+
+
+    <title>
+        
+            Migrating Your WordPress Site Back To Your Web Server :: smutek.net  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://smutek.net/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://smutek.net/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://smutek.net/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://smutek.net/favicon-16x16.png">
+    <link rel="manifest" href="https://smutek.net/site.webmanifest">
+    <link rel="mask-icon" href="https://smutek.net/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://smutek.net/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Migrating Your WordPress Site Back To Your Web Server">
+<meta itemprop="description" content="In my last post I covered how to get a copy of your WordPress site running on your computer, in this post I will cover migrating your WordPress site back to your web server.
+Overview There&rsquo;s 2 ways to go about this, the easy way and the really easy way. The easy way will show how to move your site back using the same free tools that we used to set up our local site.">
+<meta itemprop="datePublished" content="2015-04-15T13:46:47+00:00" />
+<meta itemprop="dateModified" content="2015-04-15T13:46:47+00:00" />
+<meta itemprop="wordCount" content="1916">
+<meta itemprop="image" content="https://smutek.net"/>
+
+
+
+<meta itemprop="keywords" content="Local Server,Migration,plugins," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://smutek.net"/>
+
+<meta name="twitter:title" content="Migrating Your WordPress Site Back To Your Web Server"/>
+<meta name="twitter:description" content="In my last post I covered how to get a copy of your WordPress site running on your computer, in this post I will cover migrating your WordPress site back to your web server.
+Overview There&rsquo;s 2 ways to go about this, the easy way and the really easy way. The easy way will show how to move your site back using the same free tools that we used to set up our local site."/>
+
+
+
+    <meta property="og:title" content="Migrating Your WordPress Site Back To Your Web Server" />
+<meta property="og:description" content="In my last post I covered how to get a copy of your WordPress site running on your computer, in this post I will cover migrating your WordPress site back to your web server.
+Overview There&rsquo;s 2 ways to go about this, the easy way and the really easy way. The easy way will show how to move your site back using the same free tools that we used to set up our local site." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/" />
+<meta property="og:image" content="https://smutek.net"/>
+<meta property="article:published_time" content="2015-04-15T13:46:47+00:00" />
+<meta property="article:modified_time" content="2015-04-15T13:46:47+00:00" />
+
+
+
+
+    <meta property="article:section" content="WordPress" />
+
+
+
+    <meta property="article:published_time" content="2015-04-15 13:46:47 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://smutek.net/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">My Interwebs Blog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://smutek.net/about-me/">About</a></li><li><a href="https://smutek.net/contact/">Contact</a></li><li><a href="https://smutek.net/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://smutek.net/migrating-your-wordpress-site-back-to-your-web-server/">Migrating Your WordPress Site Back To Your Web Server</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>In my last post I covered <a href="https://smutek.net/running-your-wordpress-site-from-your-computer/">how to get a copy of your WordPress site running on your computer</a>, in this post I will cover migrating your WordPress site back to your web server.</p>
+<!-- raw HTML omitted -->
+<h2 id="overview">Overview</h2>
+<p>There&rsquo;s 2 ways to go about this, the easy way and the really easy way. The easy way will show how to move your site back using the same free tools that we used to set up our local site. You&rsquo;ll need FTP access to your web server and access to phpMyadmin for this method.</p>
+<p>The really easy way uses the premium version of DB Migrate. Aside from a copy of DB Migrate Pro, you&rsquo;ll just need FTP access to your site. Aside from that, the really easy way is as easy as clicking a button.  Let&rsquo;s go ahead and get started.</p>
+<h2 id="the-easy-way">The Easy Way</h2>
+<p>Here&rsquo;s a screen shot of my remote site, out on the internet, that I&rsquo;ve cloned and set up to run on my computer&hellip;</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214826/live-site_rrbmke.jpg" alt="Image of a WordPress site running on a remote server"></p>
+<p>&hellip;and here&rsquo;s a shot of my redesigned, modified, local, running on my computer site that I&rsquo;m going to clone back to the web&hellip;</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214825/local-site-to-migrate_xiswws.jpg" alt="local-site-to-migrate"></p>
+<p>I&rsquo;m going to point out that this site is strictly for example. Obviously the minor changes I&rsquo;ve made here don&rsquo;t require setting up a cloned site, but the assumption is that you&rsquo;ll have made some pretty major changes to your site.</p>
+<h3 id="getting-started">Getting Started</h3>
+<p>If you haven&rsquo;t checked out my last post, How To Get WordPress running on your computer, I would suggest doing that now. Basically what we are doing here is everything we did in the last post, in reverse. I don&rsquo;t mean the steps are in reverse, rather the data will be flowing in reverse, from our local site back up to our live site.</p>
+<h3 id="copy-paths-from-live-site--export-local-database">Copy Paths from Live Site &amp; Export Local Database</h3>
+<p>The first thing we need to do is to export a copy of our local database. We&rsquo;re going to use DB Migrate to do this. If you followed along with my last post you should have DB Migrate installed on both the local site and the live site.</p>
+<p>The first thing we need to do is to copy the settings from DB Migrate on our live site, and paste them in to our local site. Here&rsquo;s a screen shot of the settings that I need to grab on my live site -</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214825/migrate-db-settings-1_r2zdy4.jpg" alt="Migrate DB Settings on Live Site"></p>
+<p>I&rsquo;m going to copy the contents of both find fields from my live site, then I&rsquo;m going to switch over to my local site and paste these settings into the replace fields on my local site. Here&rsquo;s an image of DB Migrate on my local site, once I&rsquo;ve pasted the settings.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214824/migrate-settings-copied-to-local_c7wqyx.jpg" alt="Image of Migrate DB settings copied to the local install"></p>
+<p>What we are doing here is telling DB Migrate on our local site to make a copy of the new, modified, local database - but to make this copy using the file paths from the remote site. Once you&rsquo;ve pasted the info from the live site as shown above, click migrate. DB Migrate will now export a copy of the modified local database to your downloads folder. This is the database with all our changes, we&rsquo;ll be using it to replace the database in our live site.</p>
+<p><strong>Important:</strong> Make A Copy of your live database before continuing!</p>
+<p>I cannot stress enough, <em>before you do anything else make a copy of your remote database</em>. Making a copy of your live database ensures that if something does go wrong you can quickly roll back and recover your site. If something goes wrong and you do not have a backup copy of your live database your site may not be recoverable.</p>
+<p><strong>Make a copy of your live database!</strong></p>
+<h3 id="live-database-backup">Live Database Backup</h3>
+<p>To make a backup of your live database log in to your web hosting control panel and go to phpMyadmin. If you&rsquo;re not sure how to access phpMyAdmin get in touch with your web host.</p>
+<p>Once you&rsquo;re logged in to phpMyAdmin, select your database in the column on the left.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214824/php-my-admin-1_lc6xk0.jpg" alt="Image of phpMyAdmin screen"></p>
+<p>With your database selected, choose &ldquo;Export&rdquo; from the top menu, and click the custom button, under &ldquo;export method&rdquo;. Make sure all tables are selected, in the Tables section. They should be selected by default, but make sure just incase. They will be highlighted in grey, as shown in the screenshot below.  Click &ldquo;Save Output to a file&rdquo; if it is not already selected&hellip;</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214823/php-my-admin-export_nlrvf5.jpg" alt="php-my-admin-export"></p>
+<p>Leave all of the other settings as they are, then scroll to the bottom of the page and click &ldquo;Go&rdquo;. A copy of your live database will download to your computer. Make sure it does, then put it somewhere where you&rsquo;ll be able to find it if you need it. I like to put it in its own folder, called Backup DB.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214823/live-db-backed-up_ojlm8f.jpg" alt="Image of live database downloaded and secured"></p>
+<h3 id="install-plugins-and-themes">Install Plugins, and Themes</h3>
+<p>The next step is pretty straight forward. We just need to make sure that any themes, plugins, and media files from our modified local site are also installed on our live site.</p>
+<p>In my case, I am using the Rams theme by Anders Noren on my local site. I&rsquo;ve also set up a new contact form, using Gravity Forms. I&rsquo;ll need to make sure that the Rams theme and Gravity Forms are both installed on my live website before proceeding. You&rsquo;ll want to do the same with any new plugins and themes that you might have installed.</p>
+<h3 id="upload-media-files">Upload Media Files</h3>
+<p>I&rsquo;ve also added some new images to my site, so I&rsquo;ll need to make sure that these are uploaded as well. This is where FTP comes into play. If you haven&rsquo;t added new images or media to your site you can skip this step.</p>
+<p>When I refer to media I mean anything that you&rsquo;ve uploaded to your site using the WordPress media uploader. By default, WordPress keeps all the media that you add to your site in a folder called uploads, which lives in another folder called wp-content. Inside of the uploads folder media files are organized in subfolders by year, which in turn hold folders that are organized by month.</p>
+<p>If that sounds complicated, don&rsquo;t worry, it&rsquo;s not. As an example, media files that I&rsquo;ve uploaded in April are stored in a folder titled &ldquo;04&rdquo;, which is sorted in a folder called &ldquo;2015&rdquo;, which is stored in a folder called &ldquo;uploads&rdquo;. Here&rsquo;s a screen shot of the 2015 folder on my live site.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214822/wp-uploads-folder_hfjhdu.jpg" alt="Image of WordPress uploads folder structure"></p>
+<p>Figuring out which files to upload is easy. I&rsquo;ve done all of my work in March of 2015 so the media files I need to upload will be in the folder at wp-content/uploads/2015/03</p>
+<h3 id="swap-databases">Swap Databases</h3>
+<p>Now, with our theme, plugins, and media files uploaded to our live site, we are ready to swap out the databases. Working with your sites database can be scary, and it&rsquo;s good to be cautious here since your database is arguably the single most important part of your WordPress website. It contains all your posts, pages, text content, and settings. <strong>This is why we made a backup of our live database before moving forward</strong>.</p>
+<p>The first thing we&rsquo;ll want to do is to go back to phpMyAdmin on the live site. Make sure your live database is still selected in the column to the left, and click the import button on the top row.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214822/php-my-admin-import-button_flba0d.jpg" alt="Import button in phpMyAdmin"></p>
+<p>Once you&rsquo;ve done this you&rsquo;ll see the import screen. Leave all of the settings as is and click the choose file button.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214821/php-my-admin-import-screen_qwzxpu.jpg" alt="phpMyAdmin import screen"></p>
+<p>Browse to, and select the database file that you exported from your local site with DB Migrate.</p>
+<p>Make sure you are importing the database file that you exported from DB Migrate, not your backup database.</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214820/importing-db_x7h5ax.jpg" alt="Importing the database"></p>
+<p>Once you&rsquo;ve selected your database, click Go. Once the database has imported you should see a screen that looks like this -</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214820/importing-db-success_u32cys.jpg" alt="Import database success screen"></p>
+<p>Once you&rsquo;ve imported the database switch back to your live WordPress site and navigate to settings/permalinks and click save. Most likely you will have to log back in.</p>
+<p>After saving the permalinks visit the font page of your site and, if all went well, you should see your modified site running on your live server!</p>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214819/site-migrated_huscoi.jpg" alt="Image of live site after successful migration"></p>
+<h3 id="finished">Finished!</h3>
+<p>That&rsquo;s it, you&rsquo;ve successfully moved your WordPress site from your computer back to your live server. Congratulations!</p>
+<h2 id="in-case-of-disaster">In case of disaster&hellip;</h2>
+<p>If something goes wrong, don&rsquo;t panic. This is why we made the backup of our database. Getting your site back up and running is as simple as going back to phpMyAdmin on your live site, dropping the tables you just imported, and then import you backup database. Once you&rsquo;ve done this your site will be back to normal.</p>
+<p>Jump to the 9 minute mark of my video for a walkthrough on what to do if you mess up.</p>
+<h2 id="the-really-really-easy-way">The Really Really Easy Way</h2>
+<p>I completely understand that everything above may seem complicated and if you&rsquo;ve read this far you are truly my hero and I think you&rsquo;re awesome. :)</p>
+<p>I want to point out that I intentionally try to be as wordy as possible because I want to make sure that anyone reading has a solid understanding of the process before trying it themselves. Once you understand the process it really is quite easy. I&rsquo;m able to move a site in about 5 minutes. In my work I clone sites back and forth dozens of times every week.</p>
+<p>With that said, if this moving databases business is not for you then you may want to check out DB Migrate Pro. Migrating your WordPress site back to your web server could not be easier than it is with this plugin.</p>
+<h3 id="enter-db-migrate-pro">Enter DB Migrate Pro</h3>
+<p><img src="http://res.cloudinary.com/dqrbt3vps/image/upload/v1448214819/delicious-brains-website_af9lzo.jpg" alt="Delicious Brains home page"></p>
+<p>I&rsquo;ll be honest with you, DB Migrate Pro is what I use. I can tell you that as a professional working in the self hosted WordPress space, DB Migrate Pro has saved me more time, more money, and more frustration than any other plugin I&rsquo;ve ever used. Hands down. If you are migrating a lot of databases in your day to day work then this is definitely the way to go. Or, if you have one site that you want to make a local copy of, and you just don&rsquo;t want to deal with phpMyAdmin and importing databases, then this is the plugin for you.</p>
+<p>A developers license is $199, and a personal license is $90. If you click the link at the bottom of this post you can get 20% off of your purchase.</p>
+<p>Moving your site with Db Migrate Pro is as easy as clicking a button. Seriously. You&rsquo;ll still have to make sure your themes and plugins are installed, and that your media files are uploaded (unless you have a developers license, in which case you can use the media files add on), but there&rsquo;s no fiddling about with phpMyAdmin and databases.</p>
+<p>Once you&rsquo;ve made sure that your themes, plugins, and media files have been uploaded, you just copy a special URL from your live site, paste it into the DB Migrate Pro settings page on your local site, and click migrate.</p>
+<p>I cover moving a site with Db Migrate Pro in my video starting at around the 16 minute mark. If you&rsquo;re interested in grabbing a copy of DB Migrate Pro, use the banner below to get 20% off of your purchase. The coupon will be applied automatically and you&rsquo;ll see the discount at checkout once you&rsquo;ve added a product to your cart.</p>
+<p><a href="http://t.deliciousbrains.com/aff_c?offer_id=2&amp;aff_id=1272&amp;file_id=20&amp;coupon=SUPER20">Click Here for 20% Off DB Migrate Pro</a></p>
+<p>I hope this post has been helpful. If you have any questions feel free to leave me a comment or send me an email. Thanks for reading!</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://smutek.net/tags/local-server">Local Server</a></span><span class="tag"><a href="https://smutek.net/tags/migration">Migration</a></span><span class="tag"><a href="https://smutek.net/tags/plugins">plugins</a></span>
+  				</p>
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://smutek.net">Jimmy Smutek</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://smutek.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://smutek.net/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

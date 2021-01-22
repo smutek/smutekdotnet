@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="jimmy.smutek">
+<meta name="description" content="This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&amp;rsquo;s Encrypt.
+Correction: The video opens with: &amp;hellip;this is part four of a three part series&amp;hellip; Sorry, It was late. :)
+I didn&amp;rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project." />
+<meta name="keywords" content=", bedrock, deployment, Migration, sage, trellis" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://smutek.net/shared-hosting-to-roots-stack-part-3/" />
+
+
+    <title>
+        
+            Shared hosting to Roots stack: Part 3 :: smutek.net  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://smutek.net/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://smutek.net/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://smutek.net/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://smutek.net/favicon-16x16.png">
+    <link rel="manifest" href="https://smutek.net/site.webmanifest">
+    <link rel="mask-icon" href="https://smutek.net/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://smutek.net/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Shared hosting to Roots stack: Part 3">
+<meta itemprop="description" content="This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&rsquo;s Encrypt.
+Correction: The video opens with: &hellip;this is part four of a three part series&hellip; Sorry, It was late. :)
+I didn&rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project.">
+<meta itemprop="datePublished" content="2016-06-08T02:43:32+00:00" />
+<meta itemprop="dateModified" content="2016-06-08T02:43:32+00:00" />
+<meta itemprop="wordCount" content="613">
+<meta itemprop="image" content="https://smutek.net"/>
+
+
+
+<meta itemprop="keywords" content="bedrock,deployment,Migration,sage,trellis," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://smutek.net"/>
+
+<meta name="twitter:title" content="Shared hosting to Roots stack: Part 3"/>
+<meta name="twitter:description" content="This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&rsquo;s Encrypt.
+Correction: The video opens with: &hellip;this is part four of a three part series&hellip; Sorry, It was late. :)
+I didn&rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project."/>
+
+
+
+    <meta property="og:title" content="Shared hosting to Roots stack: Part 3" />
+<meta property="og:description" content="This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&rsquo;s Encrypt.
+Correction: The video opens with: &hellip;this is part four of a three part series&hellip; Sorry, It was late. :)
+I didn&rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://smutek.net/shared-hosting-to-roots-stack-part-3/" />
+<meta property="og:image" content="https://smutek.net"/>
+<meta property="article:published_time" content="2016-06-08T02:43:32+00:00" />
+<meta property="article:modified_time" content="2016-06-08T02:43:32+00:00" />
+
+
+
+
+    <meta property="article:section" content="WordPress" />
+
+
+
+    <meta property="article:published_time" content="2016-06-08 02:43:32 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://smutek.net/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">My Interwebs Blog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://smutek.net/about-me/">About</a></li><li><a href="https://smutek.net/contact/">Contact</a></li><li><a href="https://smutek.net/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://smutek.net/shared-hosting-to-roots-stack-part-3/">Shared hosting to Roots stack: Part 3</a></h2>
+
+            
+
+            <div class="post-content">
+                
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/169790105" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>This is the third in a series of screencasts that will document the process of moving a WordPress website from a shared hosting provider to a Digital Ocean droplet with Trellis, Bedrock, and Sage, with an SSL from Let&rsquo;s Encrypt.</p>
+<p>Correction: The video opens with: <em>&hellip;this is part four of a three part series&hellip;</em> Sorry, It was late. :)</p>
+<p>I didn&rsquo;t obscure any passwords in this video but, for obvious reasons, after recording I rebuilt my droplet, reset all passwords, and redeployed the project.</p>
+<p>In the <a href="https://smutek.net/migrating-to-trellis-1/">first screen-cast</a> I setup Trellis &amp; Bedrock.</p>
+<p>In the <a href="https://smutek.net/migrating-to-trellis-2/">second screen-cast</a> I used Composer to get my theme &amp; plugins installed, dealt with a couple of premium plugins, and migrated my data into my development environment.</p>
+<p>In this screencast I setup my Digital Ocean droplet, prepare my project, provision the server and deploy the site. Yay! Thoughts and such below.</p>
+<h2 id="suggestions">Suggestions</h2>
+<h3 id="read-the-docs-carefully">Read the docs carefully.</h3>
+<p>This is the best suggestion I have to offer. I read the docs carefuly and when my first deploy failed I realized I hadn&rsquo;t read the docs carefully enough. The documentation is comprehensive, it&rsquo;s your friend.</p>
+<h3 id="make-sure-site-keys-have-been-added-correctly">Make sure site keys have been added correctly</h3>
+<p>This tripped me up a couple of times but sure enough upon closer inspection of each failed deploy there was a stray &lsquo;example.com&rsquo; in place of &lsquo;smutek.net&rsquo;. Generally if provisioning fails early on a missed site key is likely the culprit.</p>
+<h3 id="do-a-couple-dry-runs-with-a-spare-domain">Do a couple dry runs with a spare domain</h3>
+<p>Unless you&rsquo;re super comfortable with this I wouldn&rsquo;t suggest your first deploy be on a mission critical or time sensitive site. It pays to be patient, not get frustrated, and go through it a couple of times until the process and concepts sink in. If things aren&rsquo;t working out just destroy the DO box and try again. I&rsquo;d say that I&rsquo;ve done 5 or 6 deploys over the course of recording this screen-cast and at this point I&rsquo;m comfortable enough with the process.</p>
+<h2 id="notes">Notes</h2>
+<p>Here&rsquo;s the order I did things:</p>
+<h3 id="digital-ocean-setup">Digital Ocean Setup</h3>
+<ul>
+<li>Point DNS to DO</li>
+<li>Choose droplet : Ubuntu 14.0.4</li>
+<li>Add SSH Keys</li>
+<li>Create droplet</li>
+<li>Add domain to droplet (regular &amp; www)</li>
+</ul>
+<h3 id="provision--deploy">Provision &amp; Deploy</h3>
+<p>If setting up SSL with letsencrypt, be sure to have added www subdomain when adding domain to droplet</p>
+<ul>
+<li>Make sure the project is added to github</li>
+<li>Set up variables in <em>group_vars/production/wordpress_sites.yml</em></li>
+<li>Add the necessary settings for remote servers to <em>group_vars/production/vault.yml</em>
+<ul>
+<li>Generate password for <em>vault_mysql_root_password</em></li>
+<li>Generate crypted password for <em>vault_sudoer_passwords</em></li>
+<li>Generate <em>db_password</em></li>
+<li>Generate salts (be sure to use the Yaml, if using Trellis)</li>
+<li>Generate password for <em>group_vars/all/vault.yml</em>
+<ul>
+<li>Set variables in group_vars/all/mail</li>
+<li>Set &lsquo;sshd_permit_root_login: false&rsquo; in_group_vars/all/security.yml_</li>
+<li>Create a file called <em>.vault_pass</em> in /trellis. Generate a random password and save it in this file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This is your vault password. Make sure it&rsquo;s being git-ignored (it is, but double check .gitignore anyway)
+* Inform Ansible of the vault password by adding <em>vault_password_file = .vault_pass</em> to <em>trellis/ansible.cfg</em>
+* Encrypt vault.yml files. Use as needed, or encrypt all with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ansible-vault encrypt group_vars/all/vault.yml group_vars/development/vault.yml group_vars/staging/vault.yml group_vars/production/vault.yml</code></pre></div>
+<ul>
+<li>Add server hostname to <em>hosts/production</em></li>
+<li>Add public SSH keys for web &amp; admin_user groups in <em>group_vars/all/users.yml</em></li>
+</ul>
+<p>Note, make sure your public key has been added to github, or wherever. In the case of github,
+_<a href="https://github.com/username.keys_">https://github.com/username.keys_</a></p>
+<ul>
+<li>If using deploy hooks, uncomment the buildhooks in &lsquo;deploy-hooks/build-before.ym&rsquo; and replace &lsquo;sage&rsquo; with the name of your theme directory</li>
+<li>Turn on caching if using it</li>
+<li>Verify you can ssh to your box</li>
+<li>Make sure all changes have been saved, committed, and pushed to VC</li>
+<li>Run:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ansible-playbook sever.yml -e env<span style="color:#f92672">=</span>production</code></pre></div></li>
+<li>Run:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./deploy.sh production yoursite.com</code></pre></div></li>
+<li>Go to your site &amp; run through the WP Installer.</li>
+<li>Migrate database (I used DB Migrate Pro)</li>
+<li>Rejoice</li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="http://roots.io/trellis/">roots.io/trellis/</a></li>
+<li><a href="http://roots.io/bedrock/">roots.io/bedrock/</a></li>
+<li><a href="http://roots.io/sage/">roots.io/sage/</a></li>
+<li><a href="https://www.digitalocean.com/">https://www.digitalocean.com/</a></li>
+<li><a href="https://letsencrypt.org/">https://letsencrypt.org/</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://smutek.net/tags/bedrock">bedrock</a></span><span class="tag"><a href="https://smutek.net/tags/deployment">deployment</a></span><span class="tag"><a href="https://smutek.net/tags/migration">Migration</a></span><span class="tag"><a href="https://smutek.net/tags/sage">sage</a></span><span class="tag"><a href="https://smutek.net/tags/trellis">trellis</a></span>
+  				</p>
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://smutek.net">Jimmy Smutek</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://smutek.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://smutek.net/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

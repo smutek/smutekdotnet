@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="jimmy.smutek">
+<meta name="description" content="WordPress 4.5 added the custom logo feature. It&amp;rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&amp;rsquo;t always what I&amp;rsquo;m looking for. Fortunately there&amp;rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&amp;rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want." />
+<meta name="keywords" content=", bootstrap, php, sage, snippets, Tips" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://smutek.net/filtering-the-wordpress-custom-logo/" />
+
+
+    <title>
+        
+            Filtering the WordPress Custom Logo :: smutek.net  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://smutek.net/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://smutek.net/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://smutek.net/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://smutek.net/favicon-16x16.png">
+    <link rel="manifest" href="https://smutek.net/site.webmanifest">
+    <link rel="mask-icon" href="https://smutek.net/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://smutek.net/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Filtering the WordPress Custom Logo">
+<meta itemprop="description" content="WordPress 4.5 added the custom logo feature. It&rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&rsquo;t always what I&rsquo;m looking for. Fortunately there&rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want.">
+<meta itemprop="datePublished" content="2017-03-12T19:10:15+00:00" />
+<meta itemprop="dateModified" content="2017-03-12T19:10:15+00:00" />
+<meta itemprop="wordCount" content="605">
+<meta itemprop="image" content="https://smutek.net"/>
+
+
+
+<meta itemprop="keywords" content="bootstrap,php,sage,snippets,Tips," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://smutek.net"/>
+
+<meta name="twitter:title" content="Filtering the WordPress Custom Logo"/>
+<meta name="twitter:description" content="WordPress 4.5 added the custom logo feature. It&rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&rsquo;t always what I&rsquo;m looking for. Fortunately there&rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want."/>
+
+
+
+    <meta property="og:title" content="Filtering the WordPress Custom Logo" />
+<meta property="og:description" content="WordPress 4.5 added the custom logo feature. It&rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by get_custom_logo() isn&rsquo;t always what I&rsquo;m looking for. Fortunately there&rsquo;s a filter included just for this.
+I build my sites with Sage, most of them using Bootstrap for the front end. Here&rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://smutek.net/filtering-the-wordpress-custom-logo/" />
+<meta property="og:image" content="https://smutek.net"/>
+<meta property="article:published_time" content="2017-03-12T19:10:15+00:00" />
+<meta property="article:modified_time" content="2017-03-12T19:10:15+00:00" />
+
+
+
+
+    <meta property="article:section" content="WordPress" />
+
+
+
+    <meta property="article:published_time" content="2017-03-12 19:10:15 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://smutek.net/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">My Interwebs Blog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://smutek.net/about-me/">About</a></li><li><a href="https://smutek.net/contact/">Contact</a></li><li><a href="https://smutek.net/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://smutek.net/filtering-the-wordpress-custom-logo/">Filtering the WordPress Custom Logo</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>WordPress 4.5 added the <a href="https://make.wordpress.org/core/2016/03/10/custom-logo/">custom logo feature</a>. It&rsquo;s pretty nice, and where possible I try to use native WordPress functionality, but the default markup returned by <code>get_custom_logo()</code> isn&rsquo;t always what I&rsquo;m looking for. Fortunately there&rsquo;s <a href="https://core.trac.wordpress.org/browser/tags/4.7/src/wp-includes/general-template.php#L920">a filter included</a> just for this.</p>
+<p>I build my sites with <a href="https://roots.io/sage">Sage</a>, most of them using <a href="http://getbootstrap.com/">Bootstrap</a> for the front end. Here&rsquo;s a little function I wrote to leverage the native Custom Logo function, and give me back the markup I want.</p>
+<h2 id="the-goal">The Goal</h2>
+<p>So, here&rsquo;s what I&rsquo;m trying to achieve. The default custom logo gives us markup that looks like this -</p>
+<pre><code>&lt;a href=&quot;some-link&quot; class=&quot;custom-logo-link&quot; rel=&quot;home&quot; itemprop=&quot;url&quot;&gt;
+    &lt;img src=&quot;some-logo&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+<p>Whereas I&rsquo;m generally lookng for something like this -</p>
+<pre><code>&lt;a class=&quot;navbar-brand&quot; href=&quot;some-link&quot;&gt;
+  &lt;span class=&quot;sr-only&quot;&gt;Some Site&lt;/span&gt;
+  &lt;img class=&quot;img-responsive&quot; src=&quot;some-logo&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+<p>I like to include the site title regardless, and just hide it with a screen-reader friendly class when a logo is present. I also like to bake the conditional logic right into my function as a way of keeping my templates a little cleaner. Every little bit helps!</p>
+<h2 id="the-stuff">The Stuff</h2>
+<p>For sarters, the first thing to do is enable custom-logo support. I use Sage, and in versions &lt; 9 I&rsquo;ll generally drop it in <code>lib/setup.php</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">    <span style="color:#75715e">// Enable custom logo support
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// https://codex.wordpress.org/Theme_Logo
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">add_theme_support</span>( <span style="color:#e6db74">&#39;custom-logo&#39;</span> );
+</code></pre></div><p>And here&rsquo;s the function I use to filter the markup.</p>
+<p><a href="https://gist.github.com/smutek/d0daef2e46db7521661db48214762c0f#file-brand-php">https://gist.github.com/smutek/d0daef2e46db7521661db48214762c0f#file-brand-php</a></p>
+<p>Everything is commented, but here&rsquo;s the run-down.</p>
+<ul>
+<li>The function is filtering the custom logo function, so it takes that html as its input.</li>
+<li>The first thing I do is grab the site name, since I like to always include it with my output.</li>
+<li>First I check to see if we&rsquo;re on the home page - if so I&rsquo;ll wrap the site title in an H1, otherwise I&rsquo;ll wrap it in a paragraph tag since those pages will use the H1&rsquo;s for their own titles. I&rsquo;ll stash that in a variable called <code>$title</code>.</li>
+<li>Now that I&rsquo;ve got the site title squared away I set up a variable containing the link to the home page, <code>$home</code> and a variable to hold my css classes, <code>$class</code>.</li>
+<li>Next I set up my <code>$content</code> variable, which serves as my fallback, and check to see if there&rsquo;s a custom logo.</li>
+</ul>
+<p>(I know, I&rsquo;m kind of variable happy - Here&rsquo;s why I stash the site title in a variable called <code>$content</code>. <code>$home</code>, <code>$title</code> and <code>$class</code> remain constant, but <code>$content</code> will get updated if a custom logo is present, otherwise it just gets passed along to the output as is. Make sense?)</p>
+<ul>
+<li>If <code>has_custom_logo()</code> returns true, I just mirror what&rsquo;s in the <a href="https://core.trac.wordpress.org/browser/tags/4.7/src/wp-includes/general-template.php#L890">native function</a>, with my own small tweaks. I update the content to include the src to the logo file, then append the title variable, wrapped in a span tag and hidden with Bootstraps sr-only class. Otherwise, the unaltered <code>$content</code> is passed along.</li>
+<li>Finally, the markup is put together using <a href="http://php.net/manual/en/function.sprintf.php">sprintf</a>, again, mirroring the native function, and returned to the template file.</li>
+</ul>
+<h2 id="output">Output</h2>
+<p>Since we&rsquo;re just filtering the existing custom logo function nothing special is required to use it. In a typical Sage 8 site, in my <code>header.php</code> template, I&rsquo;ll replace:</p>
+<pre><code>&lt;a class=&quot;navbar-brand&quot; href=&quot;&lt;?= esc_url(home_url('/')); ?&gt;&quot;&gt;&lt;?php bloginfo('name'); ?&gt;&lt;/a&gt;
+</code></pre>
+<p>With:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">    <span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#a6e22e">the_custom_logo</span>; <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>That&rsquo;s it!</p>
+<p>The resulting markup looks something like this:</p>
+<pre><code>&lt;a href=&quot;http://local.wordpress.dev/&quot; class=&quot;navbar-brand&quot; rel=&quot;home&quot; itemprop=&quot;url&quot;&gt;
+  &lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/wp-content/uploads/2013/03/image-alignment-150x150.jpg&quot; class=&quot;brand-logo img-responsive&quot; alt=&quot;Image Alignment 150x150&quot; itemprop=&quot;logo&quot;&gt;
+  &lt;span class=&quot;sr-only&quot;&gt;&lt;h1&gt;Local WordPress Dev&lt;/h1&gt;&lt;/span&gt;
+&lt;/a&gt;
+</code></pre>
+<p>And the fallback, without a logo added:</p>
+<pre><code>&lt;a href=&quot;http://local.wordpress.dev/&quot; class=&quot;navbar-brand&quot; rel=&quot;home&quot; itemprop=&quot;url&quot;&gt;
+  &lt;h1&gt;Local WordPress Dev&lt;/h1&gt;
+&lt;/a&gt;
+</code></pre>
+<p>That&rsquo;s it! A quick, nice fallback that leverages various native WordPress super powers. :) Pretty handy.</p>
+<p>How do you work with logos in WordPress?</p>
+<p>Resources</p>
+<ul>
+<li>Custom Logo (<a href="https://make.wordpress.org/core/2016/03/10/custom-logo/">codex</a>)</li>
+<li>Custom Logo (<a href="https://core.trac.wordpress.org/browser/tags/4.7/src/wp-includes/general-template.php#L878">trac</a>)</li>
+<li><a href="https://roots.io/sage">Sage</a></li>
+<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="https://gist.github.com/smutek/d0daef2e46db7521661db48214762c0f">GitHub Gist</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://smutek.net/tags/bootstrap">bootstrap</a></span><span class="tag"><a href="https://smutek.net/tags/php">php</a></span><span class="tag"><a href="https://smutek.net/tags/sage">sage</a></span><span class="tag"><a href="https://smutek.net/tags/snippets">snippets</a></span><span class="tag"><a href="https://smutek.net/tags/tips">Tips</a></span>
+  				</p>
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://smutek.net">Jimmy Smutek</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://smutek.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://smutek.net/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

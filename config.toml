@@ -140,10 +140,10 @@ weight    = 2
 copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
 [menu]
-[[menu.main]]
-identifier = "home"
-name       = "Home"
-url        = "/"
+#[[menu.main]]
+#identifier = "home"
+#name       = "Home"
+#url        = "/"
 [[menu.main]]
 identifier = "posts"
 name       = "Posts"

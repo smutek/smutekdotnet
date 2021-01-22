@@ -28,25 +28,21 @@ I build my sites with [Sage](https://roots.io/sage), most of them using [Bootstr
 So, here's what I'm trying to achieve. The default custom logo gives us markup that looks like this -
 
 
-    
-    <code class="language-html">
     <a href="some-link" class="custom-logo-link" rel="home" itemprop="url">
-      <img src="some-logo">
+        <img src="some-logo">
     </a>
-    </code>
-
 
 
 Whereas I'm generally lookng for something like this -
 
 
     
-    <code class="language-html">
+    
     <a class="navbar-brand" href="some-link">
       <span class="sr-only">Some Site</span>
       <img class="img-responsive" src="some-logo">
     </a>
-    </code>
+    
 
 
 
@@ -62,11 +58,11 @@ For sarters, the first thing to do is enable custom-logo support. I use Sage, an
 
 
     
-    <code class="language-php">
+``` php
     // Enable custom logo support
     // https://codex.wordpress.org/Theme_Logo
     add_theme_support( 'custom-logo' );
-    </code>
+```
 
 
 
@@ -100,47 +96,37 @@ Everything is commented, but here's the run-down.
 
 Since we're just filtering the existing custom logo function nothing special is required to use it. In a typical Sage 8 site, in my `header.php` template, I'll replace:
 
-`<a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>`
+    <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
 
 With:
-
-`<?php the_custom_logo; ?>`
+```php
+    <?php the_custom_logo; ?>
+```
 
 That's it!
 
 The resulting markup looks something like this:
 
-
-    
-    <code class="language-html">
     <a href="http://local.wordpress.dev/" class="navbar-brand" rel="home" itemprop="url">
       <img width="150" height="150" src="/wp-content/uploads/2013/03/image-alignment-150x150.jpg" class="brand-logo img-responsive" alt="Image Alignment 150x150" itemprop="logo">
       <span class="sr-only"><h1>Local WordPress Dev</h1></span>
     </a>
-    </code>
-
-
 
 And the fallback, without a logo added:
 
 
     
-    <code class="language-html">
+    
     <a href="http://local.wordpress.dev/" class="navbar-brand" rel="home" itemprop="url">
       <h1>Local WordPress Dev</h1>
     </a>
-    </code>
-
-
+    
 
 That's it! A quick, nice fallback that leverages various native WordPress super powers. :) Pretty handy.
 
 How do you work with logos in WordPress?
 
 Resources
-
-
-
 
   * Custom Logo ([codex](https://make.wordpress.org/core/2016/03/10/custom-logo/))
   * Custom Logo ([trac](https://core.trac.wordpress.org/browser/tags/4.7/src/wp-includes/general-template.php#L878))

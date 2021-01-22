@@ -34,8 +34,8 @@ disable404     = false
 disableHugoGeneratorInject = false
 
 [permalinks]
-posts = "/posts/:year/:month/:title/"
-#posts = "/:title/"
+#posts = "/posts/:year/:month/:title/"
+posts = "/:title/"
 
 [author]
 name = "Jimmy Smutek"
@@ -92,7 +92,7 @@ msapplication = "#252627"
 theme = "#252627"
 
 [params.logo]
-logoText     = "Welcome To My Interwebs Blog"
+logoText     = "My Interwebs Blog"
 logoHomeLink = "/"
 # Set true to remove the logo cursor entirely.
 # logoCursorDisabled = false
@@ -102,10 +102,10 @@ logoHomeLink = "/"
 # logoCursorAnimate  = "2s"
 
 # Uncomment this if you want a portrait on your start page
-# [params.portrait]
-#   path     = "/img/image.jpg"
-#   alt      = "Portrait"
-#   maxWidth = "50px"
+[params.portrait]
+path     = "/img/circular.png"
+alt      = "Portrait"
+maxWidth = "200px"
 
 # Social icons
 [[params.social]]
@@ -145,6 +145,10 @@ identifier = "home"
 name       = "Home"
 url        = "/"
 [[menu.main]]
+identifier = "posts"
+name       = "Posts"
+url        = "posts/"
+[[menu.main]]
 identifier = "about"
 name       = "About"
 url        = "about-me/"
@@ -152,7 +156,3 @@ url        = "about-me/"
 identifier = "contact"
 name       = "Contact"
 url        = "contact/"
-[[menu.main]]
-identifier = "posts"
-name       = "Posts"
-url        = "posts/"
